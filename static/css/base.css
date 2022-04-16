@@ -2,10 +2,29 @@ html {
     height: 100%;
 }
 
-body
+body {
+    background-color: darkblue;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
 
 .browse-button {
     background-color: gold;
     color: darkblue;
+}
+
+.border-gold {
+    border-color: gold;
+}
+
+.btn-gold {
+    background-color: gold;
+    color: darkblue;
+}
+
+.text-gold {
+    color: gold;
 }
 
