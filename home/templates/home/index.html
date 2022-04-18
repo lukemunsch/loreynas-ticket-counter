@@ -4,14 +4,14 @@
 {% block page_loader %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col mb-5"></div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
 
-<div class="container h-100 mt-5">
+<div class="container h-100">
     <div class="row h-100">
         <!-- text for the reason people want to access the site -->
         <div class="col-12 col-md-5 my-auto">
@@ -20,7 +20,7 @@
                 <a href="#" class="text-uppercase text-darkblue btn-dark p-1">Browse Destinations</a>
             </div>
         </div>
-        <div class="col-12 col-md-5 offset-md-2 my-auto">
+        <div class="d-none d-md-block col-md-5 offset-md-2 my-auto">
             <div class="gold-nav text-center p-3">
                 {% if user.is_authenticated %}
                 <h3 class="mb-3">You can access your account profile directly from here</h3>
