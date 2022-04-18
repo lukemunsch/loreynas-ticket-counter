@@ -11,18 +11,28 @@
 
 {% block content %}
 
-<div class="container h-100">
+<div class="container h-100 mt-5">
     <div class="row h-100">
-        <div class="col-6 offset-1 offset-md-0 my-auto">
-            <!-- text for the reason people want to access the site -->
-            <h1 class="display-6">We are here for all of your <em>Fast-Travel</em> needs!</h1>
-            <div>
-                <h4>
-                    <a href="" class="browse-button btn btn-lg rounded-0 py-1 text-uppercase px-2">Browse Destinations</a>
-                </h4>
+        <!-- text for the reason people want to access the site -->
+        <div class="col-12 col-md-5 my-auto">
+            <div class="gold-nav text-center p-3">
+                <h3>We are here for all of your Eorzean <em>Fast-Travel</em> needs!</h3>
+                <a href="#" class="text-uppercase text-darkblue btn-dark p-1">Browse Destinations</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-5 offset-md-2 my-auto">
+            <div class="gold-nav text-center p-3">
+                {% if user.is_authenticated %}
+                <h3 class="mb-3">You can access your account profile directly from here</h3>
+                <a href="#" class="text-uppercase text-darkblue btn-dark p-1">Access My Account</a>
+                {% else %}
+                <h3 class="mb-3">You can create a profile directly from here</h3>
+                <a href="#" class="text-uppercase text-darkblue btn-dark p-1">Create Login</a>
+                {% endif %}
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}

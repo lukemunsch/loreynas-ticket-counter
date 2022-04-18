@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courgette&display=swap');
+
 html {
     height: 100%;
 }
@@ -6,11 +8,15 @@ body {
     background: url('/media/aetheryte-crystal-bg.jpeg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px); /* height of menu */
-    color: rgb(125, 180, 250);
+    font-family: 'Caveat', sans-serif;
 }
 
-.bg-dark-blue {
+.bg-darkblue {
     background-color: rgb(0, 0, 80);
+}
+
+.bg-gold {
+    background-color: gold;
 }
 
 /* Bulma */
@@ -23,25 +29,43 @@ body {
 }
 
 .main-logo-link {
+    font-family: 'Courgette', sans-serif;
+    color: gold;
+    font-weight: 700;
     width: fit-content;
 }
 
-.browse-button {
-    background-color: gold;
-    color: rgb(0, 0, 80);
+/* Button style */
+
+.btn-dark {
+    background-color: rgb(0, 0, 80);
+    color: gold !important;
+    text-decoration: none;
 }
 
-.border-gold {
-    border-color: gold;
+.gold-nav {
+    background-color: rgba(255, 215, 0, .8);
+    color: rgb(0, 0, 80);
+    border: 2px solid rgb(140, 120, 0);
 }
 
-.btn-gold {
-    background-color: gold;
-    color: rgb(0, 0, 80);
+.border-darkgold {
+    border: 2px solid rgb(140, 120, 0);
 }
+
+/* text styles */
 
 .text-gold {
     color: gold;
+}
+
+.text-darkblue {
+    color: rgb(0, 0, 80);
+}
+
+.handwrite {
+    font-family: 'Caveat', sans-serif;
+    color: gold !important;
 }
 
 /* -------------------------------- Media Queries */
