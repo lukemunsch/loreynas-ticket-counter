@@ -47,7 +47,7 @@ class District(models.Model):
     def __str__(self):
         return self.district_name
 
-    def get_friendly_area_name(self):
+    def get_friendly_district_name(self):
         """set up the friendly versions of our district names"""
         return self.friendly_district_name
 
