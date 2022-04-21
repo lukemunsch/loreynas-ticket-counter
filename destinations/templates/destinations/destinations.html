@@ -23,41 +23,88 @@
         <div class="col text-gold">
             <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                 {% for a in areas %}
-                <li class="list-inline-item underline">{{ a.friendly_area_name }}</li>
+                <li class="list-inline-item list-unstyled underline">{{ a.friendly_area_name }}</li>
                 {% endfor %}
         </div>
     </div>
     <hr class="gold-band">
     <div class="row">
-        <div class="d-none d-md-block col-md-3 text-gold px-4">
+        <div class="d-none d-lg-block col-lg-2 text-gold px-4">
             <h3 class="header-text">Available Districts</h3>
             <ul class="">
                 {% for d in districts %}
-                <li class="">{{ d.friendly_district_name }}</li>
+                <li class="list-unstyled">{{ d.friendly_district_name }}</li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="destination-container col-10 offset-1 col-md-8 offset-md-1 text-gold">
+        <div class="destination-container col-10 offset-1 col-lg-9 offset-md-1 text-gold px-4">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 {% for dest in destinations %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0">
-                        {% if product.image %}
+                <div class="col-sm-6 col-md-4 col-xl-3 mb-1">
+                    <div class="card bg-transparent h-100 border-0">
+                        {% if dest.image %}
                         <a href="#">
-                            <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.dest_name }}">
+                            <img class="card-img-top img-fluid" src="{{ dest.image.url }}" alt="{{ dest.dest_name }}">
                         </a>
                         {% else %}
                         <a href="#">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image-camera.jpg"
-                                alt="{{ destination.dest_name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png"
+                                alt="{{ dest.dest_name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <p class="mb-0">{{ dest.dest_name }}</p>
+                            <a href="#" class="text-gold plain-text">
+                                <p class="mb-0">{{ dest.dest_name }}</p>
+                            </a>
+                        </div>
+                        <div class="card-footer bg-transparent pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ dest.price }}</p>
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-gold" href="#">
+                                            <i class="fa-solid fa-location-dot"></i>{{ dest.area_name.friendly_area_name }}
+                                        </a>
+                                    </p>
+                                    {% if dest.district_name %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-gold" href="#">
+                                            <i class="fa-solid fa-location-dot"></i>{{ dest.district_name.friendly_district_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="#">Edit</a> |
+                                <a href="#" class="text-danger">Delete</a>
+                            </small>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-md-block d-xl-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                    <hr>
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

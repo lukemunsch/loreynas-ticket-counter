@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courgette&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Patrick+Hand&display=swap');
 
 html {
     height: 100%;
@@ -8,7 +8,7 @@ body {
     background: url('/media/aetheryte-crystal-bg.jpeg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px); /* height of menu */
-    font-family: 'Caveat', sans-serif;
+    font-family: 'Patrick Hand', sans-serif;
 }
 
 .bg-darkblue {
@@ -88,6 +88,10 @@ li.nav-item {
 }
 
 /* text styles */
+
+.plain-text {
+    text-decoration: none;
+}
 
 .text-gold {
     color: gold;
