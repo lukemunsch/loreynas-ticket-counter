@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Area, District, Destination
 
 
-
 class AreaAdmin(admin.ModelAdmin):
     """set up how we want to see the Area model in admin page"""
     list_display = (
