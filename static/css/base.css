@@ -24,6 +24,8 @@ body {
     background-color: gold;
 }
 
+/* nav style section */
+
 .nav-item {
     font-size: 1.3rem;
 }
@@ -54,9 +56,9 @@ li.nav-item {
     font-family: 'Patrick Hand', sans-serif !important;
 }
 
-.right-nav-icons {
+/* .right-nav-icons {
     font-size: large;
-}
+} */
 
 .overlay {
 	height: 100%;
@@ -87,6 +89,17 @@ li.nav-item {
     border: 2px solid rgb(140, 120, 0);
 }
 
+.district-vr {
+    border-right: 2px solid rgb(140, 120, 0);
+    font-size: 1.2em;
+}
+
+.area-tab {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 4px solid rgb(65, 175, 255);
+}
+
 /* text styles */
 
 .plain-text {
@@ -99,6 +112,10 @@ li.nav-item {
 
 .text-darkblue {
     color: rgb(0, 0, 80);
+}
+
+.text-lightblue {
+    color: rgb(65, 175, 255);
 }
 
 .handwrite {
@@ -129,3 +146,18 @@ li.nav-item {
           padding-top: 164px;
       }
   }
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 80px;
+    }
+
+    body {
+        height: calc(100vh - 80px);
+    }
+
+    .nav-link {
+        padding: 0.15rem;;
+    }
+}
