@@ -1,22 +1,66 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!-- {% block page_loader %}
+{% block page_header %}
 <div class="container header-container">
     <div class="row">
         <div class="col mb-5"></div>
     </div>
 </div>
-{% endblock %} -->
+{% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
-<div class="containter">
+<div class="containter-fluid">
     <div class="row">
-        <div class="col text-gold">
-            {{ destinations }}
+        <div class="col text-gold text-center">
+            <h2 class="header-text display-4">
+                Destinations
+            </h2>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col text-gold">
+            <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                {% for a in areas %}
+                <li class="list-inline-item underline">{{ a.friendly_area_name }}</li>
+                {% endfor %}
+        </div>
+    </div>
+    <hr class="gold-band">
+    <div class="row">
+        <div class="d-none d-md-block col-md-3 text-gold px-4">
+            <h3 class="header-text">Available Districts</h3>
+            <ul class="">
+                {% for d in districts %}
+                <li class="">{{ d.friendly_district_name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="destination-container col-10 offset-1 col-md-8 offset-md-1 text-gold">
+            <div class="row mt-1 mb-2"></div>
+            <div class="row">
+                {% for dest in destinations %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border-0">
+                        {% if product.image %}
+                        <a href="#">
+                            <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.dest_name }}">
+                        </a>
+                        {% else %}
+                        <a href="#">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image-camera.jpg"
+                                alt="{{ destination.dest_name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ dest.dest_name }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
-{% endblock %}
+    {% endblock %}

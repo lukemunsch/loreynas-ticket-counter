@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Courgette&family=Patrick+Hand&display=swap');
 
 html {
     height: 100%;
@@ -16,6 +16,11 @@ body {
 }
 
 .bg-gold {
+    background-color: gold;
+}
+
+.gold-band {
+    padding-bottom: 3px;
     background-color: gold;
 }
 
@@ -45,6 +50,10 @@ li.nav-item {
     width: fit-content;
 }
 
+.header-text {
+    font-family: 'Patrick Hand', sans-serif !important;
+}
+
 .right-nav-icons {
     font-size: large;
 }
@@ -72,7 +81,6 @@ li.nav-item {
     background-color: rgba(255, 215, 0, .75);
     color: rgb(0, 0, 80);
     border: 2px solid rgb(140, 120, 0);
-    margin-top: 15rem;
 }
 
 .border-darkgold {

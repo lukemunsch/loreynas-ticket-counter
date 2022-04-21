@@ -45,6 +45,8 @@ class DestinationAdmin(admin.ModelAdmin):
         'price'
     ]
 
+    ordering = ('dest_name', 'price',)
+
 
 admin.site.register(Area, AreaAdmin)
 admin.site.register(District, DistrictAdmin)
