@@ -24,7 +24,8 @@
             <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                 {% for a in areas %}
                 <li class="list-inline-item list-unstyled area-tab underline">
-                    <a href="#" class="plain-text text-gold">{{ a.friendly_area_name }}</a>
+                    <a href="{% url 'destinations' %}?area={{ a.area_name }}"
+                        class="plain-text text-gold">{{ a.friendly_area_name }}</a>
                 </li>
                 {% endfor %}
             </ul>
@@ -34,16 +35,48 @@
     <div class="row">
         <div class="d-none d-lg-block col-lg-3 px-4 district-vr">
             <h3 class="header-text text-gold py-3">Available Districts</h3>
-            <ul class="">
+            <ul>
                 {% for d in districts %}
                 <li class="list-unstyled mb-3">
-                    <a href="#" class="text-lightblue"> {{ d.friendly_district_name }}</a>
+                    <a href="{% url 'destinations' %}?district={{ d.district_name }}" class="text-lightblue">
+                        {{ d.friendly_district_name }}</a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
         <div class="destination-container col-10 offset-1 col-lg-9 offset-lg-0 text-gold px-4">
-            <div class="row mt-1 mb-2"></div>
+            <div class="row mt-1 mb-2">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector"
+                            class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                            </option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                                (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                                (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                                (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name
+                                (Z-A)</option>
+                            <option value="area_asc" {% if current_sorting == 'area_asc' %}selected{% endif %}>
+                                Area Name (A-Z)</option>
+                            <option value="area_desc" {% if current_sorting == 'area_desc' %}selected{% endif %}>Area
+                                Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-gold mt-0 text-center text-md-left">
+                        {% if search_term or current_area or current_district or current_sorting != 'None_None' %}
+                        <span class="small"><a href="{% url 'destinations' %}">Products Home</a> | </span>
+                        {% endif %}
+                        {{ destinations|length }} Destinations{% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
             <div class="row">
                 {% for dest in destinations %}
                 <div class="col-sm-6 col-md-4 col-xl-3 mb-1">
@@ -76,7 +109,8 @@
                                     </p>
                                     {% endif %}
                                     <p class="small mt-1 mb-0">
-                                        <a class="text-lightblue" href="#">
+                                        <a class="text-lightblue"
+                                            href="{% url 'destinations' %}?area={{ dest.area.area_name }}">
                                             <i class="fas fa-map mx-1"></i>{{ dest.area.friendly_area_name }}
                                         </a>
                                     </p>
@@ -125,4 +159,30 @@
         </div>
     </div>
 
+    {% endblock %}
+
+    {% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#sort-selector').change(function () {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if (selectedVal != "reset") {
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl)
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl)
+            }
+        })
+    </script>
     {% endblock %}

@@ -39,14 +39,15 @@
                     </button>
                     {% endif%}
                 </span>
-                <a href="#" class="plain-text text-gold">
-                    {% if destination.district %}
+                {% if destination.district %}
+                <a href="#"
+                    class="plain-text text-gold">
                     <h3><i class="far fa-compass mx-1"></i>
                         {{ destination.district.friendly_district_name }}
                     </h3>
-                    {% endif %}
                 </a>
-                <a href="#" class="plain-text text-gold">
+                {% endif %}
+                <a href="{% url 'destinations' %}?area={{ area.area_name }}" class="plain-text text-gold">
                     <h3>
                         <i class="fas fa-map mx-1"></i>
                         {{ destination.area.friendly_area_name }}
