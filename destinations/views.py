@@ -20,8 +20,6 @@ def all_destinations(request):
     district = None
 
     if request.GET:
-        # filter for hotspots
-
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -38,13 +36,15 @@ def all_destinations(request):
 
         if 'area' in request.GET:
             area = request.GET['area']
-            destinations = destinations.filter(area__area_name__in=area)
-            area = Area.objects.filter(area_name__in=area)
+            destinations = destinations.filter(area__area_name=area)
+            districts = districts.filter(area__area_name=area)
+            area = Area.objects.filter(area_name=area)
 
         if 'district' in request.GET:
             district = request.GET['district']
             destinations = destinations.filter(
-                district__district_name__in=district)
+                district__district_name=district)
+            district = District.objects.filter(district_name=district)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -61,11 +61,12 @@ def all_destinations(request):
     context = {
         'destinations': destinations,
         'areas': areas,
-        'current_area': area,
-        'current_district': district,
+        
         'districts': districts,
         'search_term': query,
         'current_sorting': current_sorting,
+        'current_area': area,
+        'current_district': district,
     }
     return render(request, 'destinations/destinations.html', context)
 

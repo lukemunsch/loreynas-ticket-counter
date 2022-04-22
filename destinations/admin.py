@@ -15,11 +15,11 @@ class DistrictAdmin(admin.ModelAdmin):
     """set how we want to see our district model in admin"""
     list_display = (
         'district_name',
-        'area_name',
+        'area',
     )
-    list_filter = ('area_name',)
+    list_filter = ('area',)
 
-    search_fields = ['district_name', 'area_name']
+    search_fields = ['district_name', 'area']
 
 
 class DestinationAdmin(admin.ModelAdmin):

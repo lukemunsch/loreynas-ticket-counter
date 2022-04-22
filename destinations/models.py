@@ -32,7 +32,7 @@ class Area(models.Model):
 class District(models.Model):
     """set up a sub area model for extra filtering"""
     district_name = models.CharField(max_length=100, null=False, blank=False)
-    area_name = models.ForeignKey(
+    area = models.ForeignKey(
         Area,
         on_delete=models.CASCADE,
         null=False,
