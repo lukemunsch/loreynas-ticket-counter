@@ -66,19 +66,20 @@
                         <div class="card-footer bg-transparent pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">£{{ dest.price }}</p>
-                                    <p class="small mt-1 mb-0">
-                                        <a class="text-lightblue" href="#">
-                                            <i class="fa-solid fa-location-dot"></i>{{ dest.area_name.friendly_area_name }}
-                                        </a>
-                                    </p>
                                     {% if dest.district_name %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-lightblue" href="#">
-                                            <i class="fa-solid fa-location-dot"></i>{{ dest.district_name.friendly_district_name }}
+                                            <i class="far fa-compass mx-1"></i>{{ dest.district_name.friendly_district_name }}
                                         </a>
                                     </p>
                                     {% endif %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-lightblue" href="#">
+                                            <i class="fas fa-map mx-1"></i>{{ dest.area_name.friendly_area_name }}
+                                        </a>
+                                    </p>
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ dest.price }}</p>x
+                                    
                                 </div>
                             </div>
                             {% if request.user.is_superuser %}

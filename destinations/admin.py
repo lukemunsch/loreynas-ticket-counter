@@ -24,28 +24,28 @@ class DistrictAdmin(admin.ModelAdmin):
 
 class DestinationAdmin(admin.ModelAdmin):
     """set up how we see our destination in admin page"""
-    prepopulated_fields = {'slug': ('dest_name',)}
+    prepopulated_fields = {'slug': ('name',)}
 
     list_display = (
-        'dest_name',
-        'district_name',
-        'area_name',
+        'name',
+        'district',
+        'area',
         'slug',
         'price',
         'hotspot',
     )
 
-    list_filter = ('area_name','district_name',)
+    list_filter = ('area','district',)
 
     search_fields = [
-        'dest_name',
-        'area_name',
-        'district_name',
+        'name',
+        'area',
+        'district',
         'description',
         'price'
     ]
 
-    ordering = ('dest_name', 'price',)
+    ordering = ('name', 'price',)
 
 
 admin.site.register(Area, AreaAdmin)
