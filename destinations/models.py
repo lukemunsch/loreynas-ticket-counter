@@ -1,3 +1,4 @@
+"""set up imports for models"""
 from django.db import models
 from django.template.defaultfilters import slugify
 
