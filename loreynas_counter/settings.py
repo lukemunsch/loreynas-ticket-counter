@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media', # not added by default for images
+                'wallet.contexts.wallet_contents',
             ],
         },
     },
@@ -145,3 +146,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DISCOUNT_WALLET_THRESHOLD = 5
+STANDARD_DISCOUNT_PERCENTAGE = 20

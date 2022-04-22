@@ -61,7 +61,6 @@ def all_destinations(request):
     context = {
         'destinations': destinations,
         'areas': areas,
-        
         'districts': districts,
         'search_term': query,
         'current_sorting': current_sorting,

@@ -30,7 +30,7 @@
         <div class="col-12 col-lg-6 text-left text-gold px-4">
             <div class="product-details-container mb-2 mt-md-4">
                 <h2 class="mb-0 display-6">{{ destination.name|upper }}</h2>
-                <span class="text-right">
+                <span>
                     {% if destination.hotspot %}
                     <button class="btn btn-primary w-25 h-100 px-0 rounded-1 text-right hotspot-link">
                         <a href="#" class="plain-text text-gold text-uppercase">
@@ -40,19 +40,16 @@
                     {% endif%}
                 </span>
                 {% if destination.district %}
-                <a href="#"
-                    class="plain-text text-gold">
-                    <h3><i class="far fa-compass mx-1"></i>
+                <span>
+                    <h3 class="text-gold"><i class="far fa-compass mx-1"></i>
                         {{ destination.district.friendly_district_name }}
                     </h3>
-                </a>
+                </span>
                 {% endif %}
-                <a href="{% url 'destinations' %}?area={{ area.area_name }}" class="plain-text text-gold">
-                    <h3>
-                        <i class="fas fa-map mx-1"></i>
-                        {{ destination.area.friendly_area_name }}
-                    </h3>
-                </a>
+                <h3 class="text-gold">
+                    <i class="fas fa-map mx-1"></i>
+                    {{ destination.area.friendly_area_name }}
+                </h3>
                 <p class="text-gold desc-text">
                     {{ destination.description }}
                 </p>

@@ -16,17 +16,32 @@
         <div class="col-12 col-md-5 my-auto">
             <div class="gold-nav text-center p-3">
                 <h3>We are here for all of your Eorzean <em>Fast-Travel</em> needs!</h3>
-                <a href="{% url 'destinations' %}" class="text-uppercase text-darkblue btn-dark p-1">Browse Destinations</a>
+                <a href="{% url 'destinations' %}" class="btn btn-dark rounded-1 btn-lg">
+                    <span class="text-uppercase">Browse Destinations</span>
+                    <span class="icon">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                </a>
             </div>
         </div>
         <div class="d-none d-md-block col-md-5 offset-md-2 my-auto">
             <div class="gold-nav text-center p-3">
                 {% if user.is_authenticated %}
                 <h3 class="mb-3">You can access your account profile directly from here</h3>
-                <a href="#" class="text-uppercase text-darkblue btn-dark p-1">Access My Account</a>
+                <a href="#" class="btn btn-dark rounded-1 btn-lg">
+                    <span class="text-uppercase">Access my Account</span>
+                    <span class="icon">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                </a>
                 {% else %}
                 <h3 class="mb-3">You can log in directly from here</h3>
-                <a href="#" class="text-uppercase text-darkblue btn-dark p-1">Create Login</a>
+                <a href="#" class="btn btn-dark rounded-1 btn-lg">
+                    <span class="text-uppercase">Register for Account</span>
+                    <span class="icon">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                </a>
                 {% endif %}
             </div>
         </div>
