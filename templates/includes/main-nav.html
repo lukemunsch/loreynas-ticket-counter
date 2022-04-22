@@ -10,25 +10,16 @@
                 All Destinations
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-destination-link">
-                <a href="#" class="dropdown-item">By Price</a>
-                <a href="#" class="dropdown-item ">By Rating</a>
-                <a href="#" class="dropdown-item ">By Area</a>
+                <a href="{% url 'destinations' %}?sort=name&direction=asc" class="dropdown-item">By Name</a>
+                <a href="{% url 'destinations' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'destinations' %}?sort=area&directions=asc" class="dropdown-item ">By Area</a>
                 <a href="{% url 'destinations' %}" class="dropdown-item">All Destinations</a>
             </div>
         </li>
 
-        <!-- <li class="nav-item dropdown">
-            <a class="nav-link mr-5" href="#" id="area-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Main Areas
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="areas-link">
-                <a href="#" class="dropdown-item">test</a>
-            </div>
-        </li> -->
-
         <li class="nav-item dropdown">
-            <a class="nav-link text-gold" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Check Hot Spots!
+            <a class="nav-link text-gold" href="{% url 'destinations' %}?hotspot=True">
+                Check Hotspots!
             </a>
         </li>
     </ul>

@@ -4,7 +4,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col mb-5"></div>
+        <div class="col mb-2"></div>
     </div>
 </div>
 {% endblock %}
@@ -14,35 +14,73 @@
 <div class="containter-fluid">
     <div class="row">
         <div class="col-10 offset-1 col-lg-6 offset-lg-0 px-4">
-            <div class="image-container border-darkgold my-5">
+            <div class="image-container border-darkgold my-4">
                 {% if destination.image %}
                 <a href="{{ dest.image.url }}">
-                    <img class="card-img-top img-fluid" src="{{ destination.image.url }}"
-                        alt="{{ destination.dest_name }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.name }}"
+                        target="_blank">
                 </a>
                 {% else %}
                 <a href="#">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png"
-                        alt="{{ destination.dest_name }}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png" alt="{{ destination.name }}">
                 </a>
                 {% endif %}
             </div>
         </div>
-        <div class="col-12 col-lg-6 text-left text-gold">
-            <div class="product-details-container mb-5 mt-md-5">
-                <h2 class="mb-0 display-4 ">{{ destination.dest_name|upper }}</h2>
+        <div class="col-12 col-lg-6 text-left text-gold px-4">
+            <div class="product-details-container mb-2 mt-md-4">
+                <h2 class="mb-0 display-6">{{ destination.name|upper }}</h2>
+                <span class="text-right">
+                    {% if destination.hotspot %}
+                    <button class="btn btn-primary w-25 h-100 px-0 rounded-1 text-right hotspot-link">
+                        <a href="#" class="plain-text text-gold text-uppercase">
+                            Hotspot <span class="badge badge-danger btn-dark"><i class="fas fa-exclamation"></i></span>
+                        </a>
+                    </button>
+                    {% endif%}
+                </span>
                 <a href="#" class="plain-text text-gold">
-                    <h3><i class="far fa-compass mx-1"></i>{% if destination.district_name %}
-                        {{ destination.district_name.friendly_district_name }}{% endif %}
+                    {% if destination.district %}
+                    <h3><i class="far fa-compass mx-1"></i>
+                        {{ destination.district.friendly_district_name }}
                     </h3>
+                    {% endif %}
                 </a>
                 <a href="#" class="plain-text text-gold">
                     <h3>
                         <i class="fas fa-map mx-1"></i>
-                        {{ destination.area_name.friendly_area_name }}
+                        {{ destination.area.friendly_area_name }}
                     </h3>
                 </a>
-                <p class="text-gold">{{ destination. }}</p>
+                <p class="text-gold desc-text">
+                    {{ destination.description }}
+                </p>
+                <p class="mb-0 text-left text-gold font-weight-bold display-6">£{{ destination.price }}</p>
+            </div>
+            <div class="col-12">
+                <h5><strong>Number of Tickets:</strong></h5>
+                <div class="form-group w-50 mb-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="decrement-qty btn btn-gold rounded-1" data-item_id="{{ destination.id }}"
+                                id="decrement-qty_{{ destination.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                            data-item_id="{{ destination.id }}" id="id_qty_{{ destination.id }}">
+                        <div class="input-group-append">
+                            <button class="increment-qty btn btn-gold rounded-0" data-item_id="{{ destination.id }}"
+                                id="increment-qty_{{ destination.id }}">
+                                <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

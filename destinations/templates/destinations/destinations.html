@@ -50,37 +50,46 @@
                     <div class="card bg-transparent h-100 border-0">
                         {% if dest.image %}
                         <a href="{% url 'destination_detail' dest.id %}">
-                            <img class="card-img-top border-darkgold img-fluid" src="{{ dest.image.url }}" alt="{{ dest.dest_name }}">
+                            <img class="card-img-top border-darkgold img-fluid" src="{{ dest.image.url }}"
+                                alt="{{ dest.name }}">
                         </a>
                         {% else %}
                         <a href="{% url 'destination_detail' dest.id %}">
                             <img class="card-img-top border-darkgold img-fluid" src="{{ MEDIA_URL }}noimage2.png"
-                                alt="{{ dest.dest_name }}">
+                                alt="{{ dest.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
                             <a href="{% url 'destination_detail' dest.id %}" class="text-gold plain-text">
-                                <p class="mb-0">{{ dest.dest_name }}</p>
+                                <p class="mb-0">{{ dest.name }}</p>
                             </a>
                         </div>
                         <div class="card-footer bg-transparent pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    {% if dest.district_name %}
+                                    {% if dest.district %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-lightblue" href="#">
-                                            <i class="far fa-compass mx-1"></i>{{ dest.district_name.friendly_district_name }}
+                                            <i
+                                                class="far fa-compass mx-1"></i>{{ dest.district.friendly_district_name }}
                                         </a>
                                     </p>
                                     {% endif %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-lightblue" href="#">
-                                            <i class="fas fa-map mx-1"></i>{{ dest.area_name.friendly_area_name }}
+                                            <i class="fas fa-map mx-1"></i>{{ dest.area.friendly_area_name }}
                                         </a>
                                     </p>
-                                    <p class="lead mb-0 text-left font-weight-bold">£{{ dest.price }}</p>x
-                                    
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ dest.price }}</p>
                                 </div>
+                                {% if dest.hotspot %}
+                                <button class="btn btn-primary w-25 h-100 px-0 rounded-1">
+                                    <a href="#" class="plain-text text-gold">
+                                        Hotspot <span class="badge badge-danger btn-dark"><i
+                                                class="fas fa-exclamation"></i></span>
+                                    </a>
+                                </button>
+                                {% endif%}
                             </div>
                             {% if request.user.is_superuser %}
                             <small class="ml-3">
@@ -93,22 +102,22 @@
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-5">
-                    <hr>
+                    <hr class="gold-band">
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:2 %}
                 <div class="col-12 d-none d-sm-block d-md-none mb-5">
-                    <hr>
+                    <hr class="gold-band">
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:3 %}
                 <div class="col-12 d-none d-md-block d-xl-none mb-5">
-                    <hr>
+                    <hr class="gold-band">
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:4 %}
                 <div class="col-12 d-none d-xl-block mb-5">
-                    <hr>
+                    <hr class="gold-band">
                 </div>
                 {% endif %}
                 {% endfor %}

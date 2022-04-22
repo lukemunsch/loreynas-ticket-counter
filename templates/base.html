@@ -53,7 +53,7 @@
             </div>
 
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
-                <form action="" method="GET">
+                <form action="{% url 'destinations' %}" method="GET">
                     <div class="input-group w-100">
                         <input type="text" class="form-control border rounded-0" name="q" placeholder="Search our Site">
                         <div class="input-group-append">
@@ -93,7 +93,7 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-gold{% endif %}"
                             href="#">
-                            <div class="text-center">
+                            <div class="text-center plain-text">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="handwrite my-0">
                                     {% if grand_total %}
