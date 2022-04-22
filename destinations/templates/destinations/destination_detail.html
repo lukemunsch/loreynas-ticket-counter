@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col mb-5"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="containter-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-6 px-4">
+            <div class="image-container border-darkgold my-5">
+                {% if dest.image %}
+                <a href="{{ dest.image.url }}">
+                    <img class="card-img-top img-fluid" src="{{ dest.image.url }}" alt="{{ dest.dest_name }}"
+                        target="_blank">
+                </a>
+                {% else %}
+                <a href="#">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png" alt="{{ dest.dest_name }}">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 text-left">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -4,7 +4,7 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col mb-5"></div>
+        <div class="col mb-4"></div>
     </div>
 </div>
 {% endblock %}
@@ -27,12 +27,13 @@
                     <a href="#" class="plain-text text-gold">{{ a.friendly_area_name }}</a>
                 </li>
                 {% endfor %}
+            </ul>
         </div>
     </div>
     <hr class="gold-band">
     <div class="row">
         <div class="d-none d-lg-block col-lg-3 px-4 district-vr">
-            <h3 class="header-text text-gold">Available Districts</h3>
+            <h3 class="header-text text-gold py-3">Available Districts</h3>
             <ul class="">
                 {% for d in districts %}
                 <li class="list-unstyled mb-3">
@@ -48,17 +49,17 @@
                 <div class="col-sm-6 col-md-4 col-xl-3 mb-1">
                     <div class="card bg-transparent h-100 border-0">
                         {% if dest.image %}
-                        <a href="#">
-                            <img class="card-img-top img-fluid" src="{{ dest.image.url }}" alt="{{ dest.dest_name }}">
+                        <a href="{% url 'destination_detail' dest.id %}">
+                            <img class="card-img-top border-darkgold img-fluid" src="{{ dest.image.url }}" alt="{{ dest.dest_name }}">
                         </a>
                         {% else %}
-                        <a href="#">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png"
+                        <a href="{% url 'destination_detail' dest.id %}">
+                            <img class="card-img-top border-darkgold img-fluid" src="{{ MEDIA_URL }}noimage2.png"
                                 alt="{{ dest.dest_name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <a href="#" class="text-gold plain-text">
+                            <a href="{% url 'destination_detail' dest.id %}" class="text-gold plain-text">
                                 <p class="mb-0">{{ dest.dest_name }}</p>
                             </a>
                         </div>
