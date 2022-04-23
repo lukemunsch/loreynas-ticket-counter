@@ -24,8 +24,9 @@
             <ul class="list-inline list-unstyled text-center my-0">
                 {% for a in areas %}
                 <li class="list-inline-item list-unstyled area-tab underline p-1">
-                    <a href="{% url 'destinations' %}?area={{ a.area_name }}"
-                        class="plain-text text-gold">{{ a.friendly_area_name }}</a>
+                    <a href="{% url 'destinations' %}?area={{ a.area_name }}" class="plain-text text-gold">
+                        <h5>{{ a.friendly_area_name }}</h5>
+                    </a>
                 </li>
                 {% endfor %}
             </ul>
@@ -44,10 +45,10 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="destination-container col-10 offset-1 col-lg-9 offset-lg-0 text-gold px-4">
-            <div class="row mt-1 mb-2">
+        <div class="destination-container col-10 offset-1 col-lg-9 offset-lg-0 text-gold px-4 h-100">
+            <div class="row h-100 pb-3 mx-3">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                    <div class="sort-select-wrapper w-50">
+                    <div class="sort-select-wrapper">
                         <select id="sort-selector"
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}darkgold{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
@@ -67,13 +68,16 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 order-md-first">
-                    <p class="text-gold mt-0">
+                <div class="col-12 col-md-6 order-md-first my-auto">
+                    <p class="text-gold my-auto">
                         {% if search_term or current_area or current_district or current_sorting != 'None_None' %}
-                        <span class="plain-text text-gold"><a href="{% url 'destinations' %}">Reset</a> | </span>
+                        <span class="plain-text text-gold reset-btn"><a href="{% url 'destinations' %}">Reset</a> |
+                        </span>
                         {% endif %}
-                        {{ destinations|length }} Destinations{% if search_term %} found for
-                        <strong>"{{ search_term }}"</strong>{% endif %}
+                        <span>
+                            {{ destinations|length }} Destinations{% if search_term %} found for
+                            <strong>"{{ search_term }}"</strong>{% endif %}
+                        </span>
                     </p>
                 </div>
             </div>
@@ -114,7 +118,7 @@
                                             <i class="fas fa-map mx-1"></i>{{ dest.area.friendly_area_name }}
                                         </a>
                                     </p>
-                                    <p class="lead mb-0 text-left font-weight-bold">£{{ dest.price }}</p>
+                                    <p class="lead mb-0 text-left font-weight-bold">{{ dest.price }} Gil</p>
                                 </div>
                                 {% if dest.hotspot %}
                                 <button class="btn btn-primary w-25 h-100 px-0 rounded-1">
@@ -170,8 +174,8 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-    $('.btt-link').click(function(){
-        window.scrollTo(0,0)
+    $('.btt-link').click(function () {
+        window.scrollTo(0, 0)
     })
 </script>
 

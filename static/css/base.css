@@ -37,18 +37,18 @@ li.nav-item {
     padding: 0 1.75rem;
 }
 
-.area-tab a {
+.area-tab h5 {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 4px solid transparent;
     border-bottom: 4px solid rgb(65, 175, 255);
     padding: 2px;
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 
-.area-tab a:hover, 
-.area-tab a:active, 
-.area-tab a:focus {
+.area-tab h5:hover, 
+.area-tab h5:active, 
+.area-tab h5:focus {
     text-decoration: none;
     color: gold !important;
     border: 4px solid rgb(65, 175, 255);
@@ -124,6 +124,16 @@ li.nav-item {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.reset-btn {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: rgb(65, 175, 255);
+}
+
+.reset-btn:hover {
+    color: rgb(65, 175, 255) !important;
 }
 
 .gold-nav {
