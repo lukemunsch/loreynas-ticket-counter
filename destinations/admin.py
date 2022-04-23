@@ -30,9 +30,9 @@ class DestinationAdmin(admin.ModelAdmin):
         'name',
         'district',
         'area',
-        'slug',
         'price',
         'hotspot',
+        'image',
     )
 
     list_filter = ('area','district',)
