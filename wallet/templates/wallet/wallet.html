@@ -22,7 +22,81 @@
     <div class="row">
         <div class="col">
             {% if wallet_tickets %}
-            <div class="table-responsive rounded-1"></div>
+            <div class="table-responsive rounded-1 text-gold">
+                <table class="table table-sm table-borderless">
+                    <thead class="bg-gold text-darkblue">
+                        <tr class="larger-text">
+                            <th scope="col">Destination Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for ticket in wallet_tickets %}
+                    <tbody>
+                        <tr>
+                            <td class="p-3 w-25">
+                                <img src="{{ ticket.destination.image.url }}" alt="{{ ticket.destination.name }}"
+                                    class="img-fluid border-darkgold">
+                            </td>
+                            <td class="p-3">
+                                <h2 class="my-0 text-gold"><strong>{{ ticket.destination.name }}</strong></h2>
+                                {% if ticket.destination.district %}
+                                <p class="mt-1 mb-0 text-lightblue">
+                                    <i
+                                        class="far fa-compass mx-1"></i>{{ ticket.destination.district.friendly_district_name }}
+                                </p>
+                                {% endif %}
+                                <p class="mt-1 mb-0 text-lightblue">
+                                    <i class="fas fa-map mx-1"></i>{{ ticket.destination.area.friendly_area_name }}
+                                </p>
+                            </td>
+                            <td class="p-3">
+                                <p class="my-0 larger-text text-gold"><strong>{{ ticket.destination.price }}
+                                        gil</strong>
+                                </p>
+                            </td>
+                            <td class="p-3">
+                                <p class="my-0 text-gold"><strong>{{ ticket.quantity }}</strong></p>
+                            </td>
+                            <td class="p-3">
+                                <p class="my-0 larger-text text-gold"><strong>{{ ticket.destination.price }}
+                                        gil</strong>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    <tr>
+                        <td class="pt-5 text-gold text-right" colspan="5">
+                            <h6><strong>Wallet Total: </strong></h6>
+                            <h6>Discount: {{ discount|floatformat:2 }} gil</h6>
+                            <h4 class="mt-4"><strong>Grand Total: {{ grand_total|floatformat:2 }} gil</strong></h4>
+                            {% if discount_wallet_delta > 0 %}
+                            <h6 class="mb-1 text-lightblue">
+                                You can get 20% saving on your total by adding <strong>{{ discount_wallet_delta }}
+                                    more</strong> tickets!
+                            </h6>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="5">
+                            <a href="{% url 'destinations' %}" class="btn btn-lg btn-gold rounded-1">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-circle-left"></i>
+                                </span>
+                                <span>Return to Destinations</span>
+                            </a>
+                            <a href="#" class="btn btn-lg btn-gold rounded-1">
+                                <span>Head to Payments</span>
+                                <span class="icon"><i class="fas fa-cash-register"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             {% else %}
             <p class="lead text-gold mb-5">You haven't chosen anywhere to go yet!</p>
             <a href="{% url 'destinations' %}" class="btn btn-gold rounded-1 btn-lg">

@@ -65,8 +65,8 @@
                 </form>
             </div>
 
-            <div class="col-12 col-lg-4 my-auto px-5 py-1 py-lg-0 right-nav-icons">
-                <ul class="list-inline list-unstyled text-right my-0">
+            <div class="col-12 col-lg-4 my-auto px-5 py-1 py-lg-0 text-right">
+                <ul class="list-inline list-unstyled my-0">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
@@ -91,15 +91,15 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-gold{% endif %}"
+                        <a class="{% if grand_total %}text-lightblue font-weight-bold{% else %}text-gold{% endif %}"
                             href="{% url 'view_wallet' %}">
                             <div class="text-center plain-text">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                    {{ grand_total|floatformat:2 }} Gil
+                                    {{ grand_total|floatformat:2 }} gil
                                     {% else %}
-                                    0.00 Gil
+                                    0.00 gil
                                     {% endif %}
                                 </p>
                             </div>

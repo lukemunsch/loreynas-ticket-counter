@@ -52,16 +52,12 @@ li.nav-item {
     text-decoration: none;
     color: gold !important;
     border: 4px solid rgb(65, 175, 255);
+    transition: border, .2s ease-in-out;
 }
 
 .sort-select-wrapper {
     text-align: right;
     padding-right: 10px;
-}
-
-.right-nav-icons {
-    text-align: right;
-    font-size: 1.2em;
 }
 
 /* Bulma */
@@ -157,6 +153,10 @@ li.nav-item {
 
 /* text styles */
 
+.text-right {
+    text-align: right;
+}
+
 .plain-text {
     text-decoration: none;
 }
@@ -165,7 +165,7 @@ li.nav-item {
     color: gold;
 }
 
-.desc-text {
+.larger-text {
     font-size: 1.2em;
 }
 

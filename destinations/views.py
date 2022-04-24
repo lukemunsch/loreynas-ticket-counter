@@ -13,7 +13,6 @@ def all_destinations(request):
     districts = District.objects.all()
 
     query = None
-    # hotspots = None
     sort = None
     direction = None
     area = None

@@ -30,27 +30,31 @@
         <div class="col-12 col-lg-6 text-left text-gold px-4">
             <div class="product-details-container mb-2 mt-md-4">
                 <div>
-                    <h2 class="mb-0">{{ destination.name|upper }}</h2>
-
-                    {% if destination.hotspot %}
-                    <button class="btn btn-primary w-25 h-100 px-0 rounded-1 text-right hotspot-link">
-                        <a href="#" class="plain-text text-gold text-uppercase">
-                            Hotspot <span class="badge badge-danger btn-dark"><i class="fas fa-exclamation"></i></span>
-                        </a>
-                    </button>
-                    {% endif%}
+                    <span>
+                        <h2 class="mb-3">{{ destination.name|upper }}</h2>
+                    </span>
+                    <span class="text-right">
+                        {% if destination.hotspot %}
+                        <button class="btn btn-primary w-25 h-100 px-0 rounded-1 hotspot-link mb-2">
+                            <a href="#" class="plain-text text-gold text-uppercase">
+                                Hotspot <span class="badge badge-danger btn-dark"><i
+                                        class="fas fa-exclamation"></i></span>
+                            </a>
+                        </button>
+                        {% endif%}
+                    </span>
 
                 </div>
-                <span class="mb-3">
+                <span class="mb-5">
                     <h4 class="text-gold">
                         {% if destination.district %}{{ destination.district.friendly_district_name }} in
                         {% endif %}{{ destination.area.friendly_area_name }}
                     </h4>
                 </span>
-                <p class="text-gold desc-text">
+                <p class="text-gold larger-text">
                     {{ destination.description }}
                 </p>
-                <h4 class="mb-0 text-left text-gold">{{ destination.price }} Gil</h4>
+                <h4 class="mb-0 text-left text-gold">{{ destination.price }} gil</h4>
             </div>
             <form action="{% url 'add_to_wallet' destination.id %}" method="POST" class="form">
                 {% csrf_token %}
@@ -68,10 +72,12 @@
                                         </span>
                                     </button>
                                 </div>
-                                <input type="number" class="form-control qty_input" name="quantity" value="1" min="1"
-                                    max="99" data-ticket_id="{{ destination.id }}" id="id_qty_{{ destination.id }}">
+                                <input type="number" class="form-control qty_input text-center" name="quantity"
+                                    value="1" min="1" max="99" data-ticket_id="{{ destination.id }}"
+                                    id="id_qty_{{ destination.id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-gold rounded-0 increment-qty_{{ destination.id }}"
+                                    <button
+                                        class="increment-qty btn btn-gold rounded-0 increment-qty_{{ destination.id }}"
                                         data-ticket_id="{{ destination.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>

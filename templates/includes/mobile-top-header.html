@@ -44,15 +44,15 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
+    <a class="{% if grand_total %}text-lightblue font-weight-bold{% else %}text-gold{% endif %} nav-link d-block d-lg-none"
         href="{% url 'view_wallet' %}">
-        <div class="text-center text-gold">
+        <div class="text-center">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             <p class="my-0">
                 {% if grand_total %}
-                {{ grand_total|floatformat:2 }} Gil
+                {{ grand_total|floatformat:2 }} gil
                 {% else %}
-                0.00 Gil
+                0.00 gil
                 {% endif %}
             </p>
         </div>
