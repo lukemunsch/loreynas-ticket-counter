@@ -20,6 +20,10 @@ body {
     background-color: gold;
 }
 
+.bg-lightblue {
+    background-color: rgb(65, 175, 255);
+}
+
 .gold-band {
     padding-bottom: 3px;
     background-color: gold;

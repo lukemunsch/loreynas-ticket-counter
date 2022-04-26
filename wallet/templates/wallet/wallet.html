@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load wallet_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -93,7 +94,7 @@
                                     id="remove_{{ ticket.ticket_id }}"><small>Remove</small></a>
                             </td>
                             <td class="p-3">
-                                <p class="my-0 larger-text text-gold"><strong>{{ ticket.destination.price }}
+                                <p class="my-0 larger-text text-gold"><strong>{{ ticket.destination.price | calc_subtotal:ticket.quantity }}
                                         gil</strong>
                                 </p>
                             </td>
@@ -101,10 +102,12 @@
                     </tbody>
                     {% endfor %}
                     <tr>
-                        <td class="pt-5 text-gold text-right" colspan="5">
-                            <h6><strong>Wallet Total: </strong></h6>
-                            <h6>Discount: {{ discount|floatformat:2 }} gil</h6>
-                            <h4 class="mt-4"><strong>Grand Total: {{ grand_total|floatformat:2 }} gil</strong></h4>
+                        <td class="pt-5 text-right" colspan="5">
+                            <h4 class="text-gold"><strong>Wallet Total: <small>{{ total|floatformat:2 }} gil</small></strong></h4>
+                            {% if discount %}
+                            <h3 class="text-lightblue">Discount: {{ discount|floatformat:2 }} gil</h3>
+                            {% endif %}
+                            <h2 class="mt-4 text-gold"><strong class="text-uppercase">Grand Total: {{ grand_total|floatformat:2 }}</strong> gil</h2>
                             {% if discount_wallet_delta > 0 %}
                             <h6 class="mb-1 text-lightblue">
                                 You can get 20% saving on your total by adding <strong>{{ discount_wallet_delta }}
