@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.contrib import messages
+
 from destinations.models import Destination
 
 
@@ -18,8 +20,14 @@ def add_to_wallet(request, ticket_id):
 
     if ticket_id in list(wallet.keys()):
         wallet[ticket_id] += quantity
+        messages.success(request, (
+            f'We have updated {destination.name} ticket '
+            f'quantity to {wallet[ticket_id]}'))
     else:
         wallet[ticket_id] = quantity
+        messages.success(request, (
+            f'We have successfully added {destination.name} x{wallet[ticket_id]} '
+            f'to your wallet!'))
     
     request.session['wallet'] = wallet
     return redirect(redirect_url)
@@ -31,12 +39,17 @@ def update_wallet(request, ticket_id):
     destination = get_object_or_404(Destination, pk=ticket_id)
     quantity = int(request.POST.get('quantity'))
     wallet = request.session.get('wallet', {})
-    print(quantity)
 
     if quantity > 0:
         wallet[ticket_id] = quantity
+        messages.success(request, (
+            f'We have updated {destination.name} ticket '
+            f'quantity to {wallet[ticket_id]}'))
     else:
         wallet.pop(ticket_id)
+        messages.error(request, (
+            f'We have removed {destination.name} x{wallet[ticket_id]} '
+            f'from your wallet'))
     
     request.session['wallet'] = wallet
     return redirect(reverse('view_wallet'))
@@ -49,6 +62,9 @@ def remove_from_wallet(request, ticket_id):
         wallet = request.session.get('wallet', {})
 
         wallet.pop(ticket_id)
+        messages.error(request, (
+            f'We have removed {destination.name} x{wallet[ticket_id]} '
+            f'from your wallet'))
         
         request.session['wallet'] = wallet
         return redirect(reverse('view_wallet'))
