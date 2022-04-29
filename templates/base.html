@@ -77,11 +77,6 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="#" class="dropdown-item">Area Management</a>
-                            <a href="#" class="dropdown-item">District Management</a>
-                            <a href="#" class="dropdown-item">Destination Management</a>
-                            {% endif %}
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}

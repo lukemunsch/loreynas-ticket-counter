@@ -47,8 +47,8 @@ def update_wallet(request, ticket_id):
             f'quantity to {wallet[ticket_id]}'))
     else:
         wallet.pop(ticket_id)
-        messages.error(request, (
-            f'We have removed {destination.name} x{wallet[ticket_id]} '
+        messages.warning(request, (
+            f'We have removed {destination.name} '
             f'from your wallet'))
     
     request.session['wallet'] = wallet
@@ -59,12 +59,10 @@ def remove_from_wallet(request, ticket_id):
     """Remove specific ticket in the wallet when clicking remove"""
     try:
         destination = get_object_or_404(Destination, pk=ticket_id)
+        quantity = int(request.POST.get('quantity'))
         wallet = request.session.get('wallet', {})
 
         wallet.pop(ticket_id)
-        messages.error(request, (
-            f'We have removed {destination.name} x{wallet[ticket_id]} '
-            f'from your wallet'))
         
         request.session['wallet'] = wallet
         return redirect(reverse('view_wallet'))

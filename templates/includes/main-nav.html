@@ -16,11 +16,28 @@
                 <a href="{% url 'destinations' %}" class="dropdown-item">All Destinations</a>
             </div>
         </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link text-gold" href="#">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
                 Check Hotspots!
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{% url 'areas' %}" class="font-weight-bold nav-link mr-5" id="area-link">Area List</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'districts' %}" class="font-weight-bold nav-link mr-5" id="district-link">District list</a>
+        </li>
+        {% if request.user.is_superuser %}
+        <li class="nav-item dropdown">
+            <a class="font-weight-bold nav-link mr-5" href="#" id="content-admin-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin Management
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="content-admin-link">
+                <a href="#" class="dropdown-item">Add Area</a>
+                <a href="#" class="dropdown-item">Add District</a>
+                <a href="#" class="dropdown-item ">Add Destination</a>
+            </div>
+        </li>
+        {% endif %}
     </ul>
 </div>

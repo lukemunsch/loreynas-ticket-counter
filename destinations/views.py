@@ -6,6 +6,24 @@ from django.db.models.functions import Lower
 from .models import Destination, Area, District
 
 
+def all_areas(request):
+    """set up a page for all areas"""
+    areas = Area.objects.all()
+    context = {
+        'areas': areas,
+    }
+    return render(request, 'destinations/areas.html', context)
+
+
+def all_districts(request):
+    """set up a page for all areas"""
+    districts = District.objects.all()
+    context = {
+        'districts': districts,
+    }
+    return render(request, 'destinations/districts.html', context)
+
+
 def all_destinations(request):
     """set up our index view"""
     destinations = Destination.objects.all()

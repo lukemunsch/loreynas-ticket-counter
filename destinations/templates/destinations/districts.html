@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col mb-4"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="containter-fluid">
+    <div class="row">
+        <div class="destination-container col-10 offset-1 text-gold px-0 h-100">
+            <div class="text-center">
+                <h3>All Districts</h3>
+                <hr class="gold-band">
+            </div>
+            <div class="row">
+                {% for d in districts %}
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-1">
+                    <div class="card bg-transparent h-100 border-darkgold">
+                        <div class="card-body pb-0">
+                            <p class="text-gold plain-text mb-0">{{ d.friendly_district_name }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-lightblue small mt-1 mb-0">
+                                        <i class="fas fa-map mx-1"></i>located in {{ d.area.friendly_area_name }}
+                                    </p>
+                                </div>
+                            </div>
+                            {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="#">Edit</a> |
+                                <a href="#" class="text-danger">Delete</a>
+                            </small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-2">
+                    <hr class="gold-band">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-none mb-3">
+                    <hr class="gold-band">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-md-block d-lg-none mb-3">
+                    <hr class="gold-band">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-3">
+                    <hr class="gold-band">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:6 %}
+                <div class="col-12 d-none d-xl-block mb-3">
+                    <hr class="gold-band">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btt-button shadow-sm rounded-1 btn-gold border-darkgold">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function () {
+        window.scrollTo(0, 0)
+    })
+</script>
+
+
+{% endblock %}

@@ -3,7 +3,8 @@
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-lightblue text-darkblue">
         <h5 class="mx-auto"><strong>Awesome!</strong></h5>
-        <button type="button" class="btn btn-close text-right ml-2 mb-1 close text-darkblue" data-dismiss="toast" aria-label="Close">
+        <button type="button" class="btn btn-close text-right ml-2 mb-1 close text-darkblue" data-dismiss="toast"
+            aria-label="Close">
         </button>
     </div>
     <div class="toast-body bg-lightblue">
@@ -13,5 +14,48 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
+        {% if grand_total and not on_profile_page %}
+            <p class="text-darkblue py-1">Your Bag now has {{ ticket_count }}</p>
+            <div class="bag-notification-wrapper">
+                {% for ticket in wallet_tickets %}
+                    <div class="row">
+                        <div class="col-3 my-1">
+                            {% if ticket.destination.image %}
+                            <img class="w-100" src="{{ ticket.destination.image.url }}" alt="{{ ticket.destination.name }}">
+                            {% else %}
+                            <img class="w-100" src="{{ MEDIA_URL }}noimage2.png" alt="{{ ticket.destination.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-9 text-darkblue">
+                            <p class="my-0"><strong>{{ ticket.destination.name }}</strong></p>
+                            <p class="my-0 small">Quantity: {{ ticket.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col text-right">
+                    <strong><p class="mt-3 mb-1 text-darkblue">
+                        Total: {{ total|floatformat:2 }} gil
+                        <span>
+                            {% if not discount_wallet_delta > 0 %}
+                            with {{ discount|floatformat:2 }} gil SAVED!
+                            {% endif %}
+                        </span>
+                    </p></strong>
+                    {% if discount_wallet_delta > 0 %}
+                        <p class="mb-1 p-2 bg-gold shadow-sm text-darkblue text-center">
+                            Add <strong>{{ discount_wallet_delta }}</strong> more tickets to receive {{ standard_discount_percentage }}% off!
+                        </p>
+                    {% endif %}
+                    <a href="{% url 'view_wallet' %}" class="btn w-100 btn-dark btn-block rounded-1">
+                        <span class="text-uppercase">Head to your Wallet</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>
