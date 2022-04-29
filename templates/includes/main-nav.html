@@ -7,7 +7,7 @@
         </li>
         <li class="nav-item dropdown">
             <a class="font-weight-bold nav-link mr-5" href="#" id="all-destination-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Destinations
+                All Destinations <i class="fas fa-caret-down"></i>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-destination-link">
                 <a href="{% url 'destinations' %}?sort=name&direction=asc" class="dropdown-item">By Name</a>
@@ -30,7 +30,7 @@
         {% if request.user.is_superuser %}
         <li class="nav-item dropdown">
             <a class="font-weight-bold nav-link mr-5" href="#" id="content-admin-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Admin Management
+                Admin Management <i class="fas fa-caret-down"></i>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="content-admin-link">
                 <a href="#" class="dropdown-item">Add Area</a>

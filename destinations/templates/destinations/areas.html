@@ -14,14 +14,14 @@
 <div class="containter-fluid">
     <div class="row">
         <div class="col-12 text-center text-gold">
-            <h2>All Areas</h2>
+            <h1 class="display-3">All Areas</h1>
             <hr class="gold-band">
         </div>
         <div class="destination-container col-10 offset-1 col-lg-9 offset-lg-0 text-gold h-100 mx-auto">
             {% for area in areas %}
             <div class="row h-100 pb-3 mx-3">
                 <div class="col-3 text-right mb-1">
-                    <h3>{{ area.friendly_area_name }}</h3>
+                    <h3><i class="fas fa-map mx-1"></i>{{ area.friendly_area_name }}</h3>
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="#">Edit</a> |
