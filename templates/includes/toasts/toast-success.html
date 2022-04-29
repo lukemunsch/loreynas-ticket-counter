@@ -19,14 +19,14 @@
             <div class="bag-notification-wrapper">
                 {% for ticket in wallet_tickets %}
                     <div class="row">
-                        <div class="col-3 my-1">
+                        <div class="col-6 my-1">
                             {% if ticket.destination.image %}
                             <img class="w-100" src="{{ ticket.destination.image.url }}" alt="{{ ticket.destination.name }}">
                             {% else %}
                             <img class="w-100" src="{{ MEDIA_URL }}noimage2.png" alt="{{ ticket.destination.name }}">
                             {% endif %}
                         </div>
-                        <div class="col-9 text-darkblue">
+                        <div class="col-6 text-darkblue">
                             <p class="my-0"><strong>{{ ticket.destination.name }}</strong></p>
                             <p class="my-0 small">Quantity: {{ ticket.quantity }}</p>
                         </div>
