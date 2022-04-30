@@ -56,7 +56,7 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=15, decimal_places=2, null=False, blank=False, editable=False)
 
     def __str__(self):
-        return 
+        return f'{self.destination.slug} on order {self.order.order_number}'
 
     def save(self, *args, **kwargs):
         """override save method to set line item total price if not already set"""
