@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
 
     'home',
     'destinations',
@@ -50,6 +51,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'loreynas_counter.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,6 +70,10 @@ TEMPLATES = [
                 'django.template.context_processors.media', # not added by default for images
                 'wallet.contexts.wallet_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

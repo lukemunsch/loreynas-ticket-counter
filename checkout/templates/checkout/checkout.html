@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col mb-5"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-gold text-center text-uppercase px-5">Completing your Purchase</h2>
+            <hr class="gold-band">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p class="text-gold larger-text">Please fill out the Form below!</p>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded-1 px-3 mb-5">
+                    <lengend class="fieldset-label text-gold px-2">Details</lengend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded-1 px-3 mb-5"></fieldset>
+                <fieldset class="rounded-1 px-3 mb-5"></fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+ 
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'destinations/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // update qty on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form[0].requestSubmit();
+    })
+
+    $('.remove-ticket').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var ticketId = $(this).attr('id').split('remove_')[1];
+        var url = `remove/${ticketId}/`;
+        var data = {
+            "csrfmiddlewaretoken": csrfToken
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
+
+{% endblock %}
