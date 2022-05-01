@@ -5,7 +5,8 @@ from .forms import OrderForm
 
 def checkout(request):
     """set up our view for checking out our wallet"""
-    wallet = request.session.get(wallet, {})
+    wallet = request.session.get('wallet', {})
+
     if not wallet:
         messages.error(request, 'You have forgotten to add tickets to your wallet!')
         return redirect(reverse('destinations'))
