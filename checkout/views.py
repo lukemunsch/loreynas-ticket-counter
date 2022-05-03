@@ -14,16 +14,18 @@ def checkout(request):
     """set up our view for checking out our wallet"""
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+
     if request.method == 'POST':
         wallet = request.session.get('wallet', {})
 
         form_data = {
-            'full_name': request.POST['ful_name'],
+            'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'town_or_city': request.POST['town_or_city'],
             'country': request.POST['country'],
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
@@ -37,7 +39,7 @@ def checkout(request):
                     )
                     order_line_item.save()
 
-                except Destiantion.DoesNotExist:
+                except Destination.DoesNotExist:
                     messages.error(
                         request,
                         ("One of the destinations in your wallet wasn't found in our database."
@@ -47,7 +49,7 @@ def checkout(request):
                     return redirect(reverse('view_wallet'))
 
             # Save the info to the user's profile if all is well
-            request.session['save_info'] = 'save-info' in request.POST
+            request.session['save-info'] = 'save-info' in request.POST
             return redirect(reverse(
                 'checkout_success',
                 args=[order.order_number]
@@ -77,7 +79,7 @@ def checkout(request):
         order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Your Public key is missing; did you forget to set it in your environement?')
+        messages.warning(request, 'Your Public Key is missing; did you forget to set it in your environement?')
 
     template = 'checkout/checkout.html'
     context = {

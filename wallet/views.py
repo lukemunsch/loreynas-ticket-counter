@@ -57,15 +57,16 @@ def update_wallet(request, ticket_id):
 
 def remove_from_wallet(request, ticket_id):
     """Remove specific ticket in the wallet when clicking remove"""
-    try:
-        destination = get_object_or_404(Destination, pk=ticket_id)
-        quantity = int(request.POST.get('quantity'))
-        wallet = request.session.get('wallet', {})
+    destination = get_object_or_404(Destination, pk=ticket_id)
+    wallet = request.session.get('wallet', {})
 
+    try:
         wallet.pop(ticket_id)
-        
+        messages.success(request,
+            f'We have successfully removed {destination.name} from your wallet!')
+            
         request.session['wallet'] = wallet
-        return redirect(reverse('view_wallet'))
+        return HttpResponse(status=200)
 
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
