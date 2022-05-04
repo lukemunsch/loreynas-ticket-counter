@@ -25,17 +25,17 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
-    def generate_order_number(self):
+    def _generate_order_number(self):
         """generate random unique order number"""
         return uuid.uuid4().hex.upper()
 
-    def update_totals(self):
+    def update_total(self):
         """update the grand total each time a line item is added
         accounting for discount"""
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.total_count = self.lineitems.aggregate(Sum('quantity'))['quantity__sum'] or 0
         if self.total_count > settings.DISCOUNT_WALLET_THRESHOLD:
-            self.discount = self.order_total * STANDARD_DISCOUNT_PERCENTAGE / 100
+            self.discount = self.order_total * settings.STANDARD_DISCOUNT_PERCENTAGE / 100
         else:
             self.discount = 0
         self.grand_total = self.order_total - self.discount
@@ -51,7 +51,7 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     """set up how we view the line items in our checkout app"""
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=False, blank=False, related_name='lineitems')
-    dest_name = models.ForeignKey(Destination, on_delete=models.CASCADE, null=False, blank=False)
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=15, decimal_places=2, null=False, blank=False, editable=False)
 

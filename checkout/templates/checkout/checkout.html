@@ -52,8 +52,8 @@
                 <div class="col-6 text-gold">
                     <p class="my-0"><strong>{{ ticket.destination.name }}</strong></p>
                     {% if ticket.destination.district %}
-                    <p class="my-0">located in {{ ticket.destination.district.friendly_district_name }} - 
-                    {% endif %}{{ ticket.destination.area.friendly_area_name }}</p>
+                    <p class="my-0">located in {{ ticket.destination.district.friendly_district_name }} -
+                        {% endif %}{{ ticket.destination.area.friendly_area_name }}</p>
                     <p class="my-0"></p>
                     <p class="my-0 small">Quantity: {{ ticket.quantity }}</p>
                 </div>
@@ -108,11 +108,8 @@
                 </fieldset>
                 <fieldset class="px-3">
                     <legend class="fieldset-label small text-gold px-2 w-auto">Payment</legend>
-                    <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>
-                    <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                    <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
@@ -134,7 +131,8 @@
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
                         <span>Your are about to make a card payment for <strong>{{ grand_total|floatformat:2 }}
-                                gil</strong></span>
+                                gil</strong>
+                        </span>
                     </p>
                 </div>
             </form>

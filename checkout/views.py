@@ -1,13 +1,16 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.contrib import messages
 from django.conf import settings
+
 from .forms import OrderForm
+from .models import Order, OrderLineItem
 
 from wallet.contexts import wallet_contents
 import stripe
 
 from destinations.models import Destination
-from .models import Order, OrderLineItem
 
 
 def checkout(request):
@@ -84,8 +87,8 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'stripe_public_key',
-        'client_secret': 'intent.client_secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
     return render(request, template, context)
 
@@ -95,9 +98,9 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save-info')
     order = get_object_or_404(Order, order_number=order_number)
 
-    messages.success(request, f'Order successfully Processed! \
+    messages.success(request, (f'Order successfully Processed! \
         Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}')
+        email will be sent to {order.email}'))
 
     if 'wallet' in request.session:
         del request.session['wallet']
