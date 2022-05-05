@@ -288,3 +288,9 @@ input[name='q']::placeholder {
         padding: 0.15rem;;
     }
 }
+
+@media (min-width: 768px) {
+    .text-md-right {
+        text-align: right;
+    }
+}

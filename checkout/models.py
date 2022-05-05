@@ -34,7 +34,7 @@ class Order(models.Model):
         accounting for discount"""
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.total_count = self.lineitems.aggregate(Sum('quantity'))['quantity__sum'] or 0
-        if self.total_count > settings.DISCOUNT_WALLET_THRESHOLD:
+        if self.total_count >= settings.DISCOUNT_WALLET_THRESHOLD:
             self.discount = self.order_total * settings.STANDARD_DISCOUNT_PERCENTAGE / 100
         else:
             self.discount = 0
