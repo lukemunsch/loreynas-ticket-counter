@@ -4,8 +4,12 @@
 
 {% block head_title %}{% trans "Sign Up Closed" %}{% endblock %}
 
-{% block content %}
-<h1>{% trans "Sign Up Closed" %}</h1>
+{% block inner_content %}
+<hr class="gold_band">
+<h1 class="text-gold text-center">{% trans "Sign Up Closed" %}</h1>
+<hr class="gold-band">
 
-<p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
+<p class="text-gold">{% trans "We are sorry, but the sign up is currently closed." %}</p>
+<a href="{% url 'home' %}" class="btn btn-gold btn-lg rounded-1 mt-3">Go to Home <i
+    class="fas fa-home"></i></a>
 {% endblock %}

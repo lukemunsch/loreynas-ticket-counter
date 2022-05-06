@@ -4,8 +4,12 @@
 
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
-{% block content %}
-<h1>{% trans "Account Inactive" %}</h1>
+{% block inner_content %}
+<hr class="gold-band">
+<h1 class="text-gold text-center mb-3">{% trans "Account Inactive" %}</h1>
+<hr class="gold-band">
 
-<p>{% trans "This account is inactive." %}</p>
+<p class="text-gold mt-3">{% trans "This account is inactive." %}</p>
+<a href="{% url 'home' %}" class="btn btn-gold btn-lg rounded-1 mt-3">Go to Home <i
+    class="fas fa-home"></i></a>
 {% endblock %}

@@ -258,6 +258,35 @@ input[name='q']::placeholder {
       max-width: 80%;
     }
   }
+
+  /* Allauth form formatting */
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #979797;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 1.5;
+}
+
+.allauth-form-inner-content a {
+	color: rgb(65, 175, 255);
+}
   
   /* fixed top navbar only on medium and up */
   @media (min-width: 992px) {
