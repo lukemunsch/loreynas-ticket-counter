@@ -1,6 +1,7 @@
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse
 )
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -9,8 +10,26 @@ from .models import Order, OrderLineItem
 
 from wallet.contexts import wallet_contents
 import stripe
+import json
 
 from destinations.models import Destination
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+            'wallet': json.dumps(request.session.get('wallet', {})),
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be processed \
+            right now. Please try again later!')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -52,7 +71,7 @@ def checkout(request):
                     return redirect(reverse('view_wallet'))
 
             # Save the info to the user's profile if all is well
-            request.session['save-info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save_info' in request.POST
             return redirect(reverse(
                 'checkout_success',
                 args=[order.order_number]
@@ -95,7 +114,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """set up the view for when our payments are successful"""
-    save_info = request.session.get('save-info')
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.success(request, (f'Order successfully Processed! \

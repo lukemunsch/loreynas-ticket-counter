@@ -43,3 +43,7 @@ The list of destinations will continue to increase while destinations are discov
 ## User Stories
 
 kanban board with user stories broken up into sprints
+
+## Bugs
+
+secret key as exposed so a new secret key was generated
