@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 
+from .models import Order, OrderLineItem
+from destinations.models import Destination
+
 
 class StripeWH_Handler:
     """handle stripe webhooks"""
@@ -25,7 +28,7 @@ class StripeWH_Handler:
 
         order_exists = False
         try:
-            order = Order.object.get(
+            order = Order.objects.get(
                 full_name__iexact=billing_details.name,
                 email__iexact=billing_details.email,
                 phone_number__iexact=billing_details.phone,
@@ -39,11 +42,10 @@ class StripeWH_Handler:
                 content=(
                     f'Webhook received: {event["type"]} | SUCCESS: '
                     'Verified order already in database'
-                ), status=200
-            )
+                ), status=200)
         except Order.DoesNotExist:
             try:
-                order = Order.object.create(
+                order = Order.objects.create(
                     full_name=billing_details.name,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
