@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'destinations',
     'wallet',
     'checkout',
+    'profiles',
 ]
 
 MIDDLEWARE = [
