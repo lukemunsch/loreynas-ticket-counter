@@ -6,13 +6,12 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
+from destinations.models import Destination
 from .models import Order, OrderLineItem
 
 from wallet.contexts import wallet_contents
 import stripe
 import json
-
-from destinations.models import Destination
 
 
 @require_POST
@@ -21,9 +20,9 @@ def cache_checkout_data(request):
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
+            'wallet': json.dumps(request.session.get('wallet', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
-            'wallet': json.dumps(request.session.get('wallet', {})),
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -75,7 +74,7 @@ def checkout(request):
                     return redirect(reverse('view_wallet'))
 
             # Save the info to the user's profile if all is well
-            request.session['save_info'] = 'save_info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
                 'checkout_success',
                 args=[order.order_number]
@@ -87,7 +86,6 @@ def checkout(request):
 
     else:
         wallet = request.session.get('wallet', {})
-
         if not wallet:
             messages.error(request, 'You have forgotten to add tickets to your wallet!')
             return redirect(reverse('destinations'))
@@ -132,4 +130,5 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
+    
     return render(request, template, context)

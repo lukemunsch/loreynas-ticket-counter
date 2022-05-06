@@ -27,8 +27,18 @@
 
 #payment-form .form-control,
 #card-element {
-    color: #979797;
+    color: #000;
     border: 1px solid #000;
+}
+
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #979797 !important;
 }
 
 .fieldset-label {
