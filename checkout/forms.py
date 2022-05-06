@@ -18,7 +18,6 @@ class OrderForm(forms.ModelForm):
             'email': 'Email Address',
             'phone_number': 'Phone Number',
             'town_or_city': 'Town or City',
-            'country': 'Country',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
