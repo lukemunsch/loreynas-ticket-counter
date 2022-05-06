@@ -10,9 +10,9 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 class OrderAdmin(admin.ModelAdmin):
     """set up admin page for orer model"""
-    readonly_fields = ('order_number', 'date', 'discount', 'order_total', 'grand_total',)
+    readonly_fields = ('order_number', 'date', 'discount', 'order_total', 'grand_total', 'original_wallet', 'stripe_pid',)
     inlines = (OrderLineItemAdminInline,)
-    fields = ('order_number', 'date', 'full_name', 'email', 'phone_number', 'town_or_city', 'country',  'order_total', 'discount', 'grand_total',)
+    fields = ('order_number', 'date', 'full_name', 'email', 'phone_number', 'town_or_city', 'country',  'order_total', 'discount', 'grand_total', 'original_wallet', 'stripe_pid',)
     list_display = ('order_number', 'date', 'full_name', 'order_total', 'discount', 'grand_total',)
     ordering = ('-date',)
 
