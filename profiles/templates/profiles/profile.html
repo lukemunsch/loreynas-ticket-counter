@@ -39,11 +39,42 @@
         </div>
         <div class="col-12 col-lg-6 text-gold">
             <h4 class="text-lightblue">Order History: </h4>
-            {{ orders }}
+            <div class="order-history table-responsive">
+                <table class="table table-sm table-borderless text-gold">
+                    <thead>
+                        <tr class="larger-text">
+                            <th>Order No.</th>
+                            <th>Date</th>
+                            <th>Ticket</th>
+                            <th>Order Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'order_history' order.order_number %}"
+                                    title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
+                            </td>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for ticket in order.lineitems.all %}
+                                    <li class="small">{{ ticket.destination.name }} x{{ ticket.quantity }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ order.grand_total }} gil</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>

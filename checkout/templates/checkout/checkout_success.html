@@ -115,7 +115,8 @@
                         <p class="small">{{ ticket.destination.name }}</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="small text-lightblue">{{ ticket.quantity }} ticket{% if ticket.quantity > 1 %}s{% endif %} @
+                        <p class="small text-lightblue">{{ ticket.quantity }}
+                            ticket{% if ticket.quantity > 1 %}s{% endif %} @
                             {{ ticket.destination.price }} gil {% if ticket.quantity > 1 %}each{% endif %}</p>
                     </div>
                 </div>
@@ -156,11 +157,18 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
+            {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn btn-gold rounded-1 my-2">
+                <span>Return to Profile</span>
+            </a>
+            {% else %}
             <a href="{% url 'destinations' %}" class="btn btn-gold rounded-1 my-2">
                 <i class="fas fa-chevron-circle-left"></i>
                 </span>
                 <span>Return to Destinations</span>
             </a>
+            {% endif %}
+
         </div>
     </div>
 </div>
