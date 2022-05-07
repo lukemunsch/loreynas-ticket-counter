@@ -217,7 +217,6 @@ li.nav-item {
 
 .district-vr {
     border-right: 2px solid rgb(140, 120, 0);
-    font-size: 1.2em;
 }
 
 /* text styles */
@@ -251,7 +250,7 @@ li.nav-item {
 }
 
 input[name='q']::placeholder {
-    color: darkblue;
+    color: #000050;
 }
 
 /* -------------------------------- Media Queries */

@@ -1,0 +1,26 @@
+#profile-update-form input::placeholder {
+    color: darkblue;
+}
+
+#profile-update-form input {
+    margin-bottom: .5rem;
+    color: #000050;
+}
+
+#profile-update-form {
+    color: darkblue !important;
+}
+
+#profile-update-form .form-control {
+    color: darkblue !important;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000050;
+}
+
+#id_default_country,
+#id_default_country option:first-child {
+    color: #000050;
+}

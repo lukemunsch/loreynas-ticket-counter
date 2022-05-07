@@ -24,6 +24,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col text-gold mb-5">
+            <h3>This is your profile page, {{ profile }}:</h3>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12 col-lg-6">
             <h4 class="text-lightblue">Default Location Info: </h4>
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
@@ -38,4 +43,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

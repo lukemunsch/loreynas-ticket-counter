@@ -28,7 +28,7 @@
             <div class="gold-nav text-center p-3">
                 {% if user.is_authenticated %}
                 <h3 class="mb-3">You can access your account profile directly from here</h3>
-                <a href="#" class="btn btn-dark rounded-1 btn-lg">
+                <a href="{% url 'profile' %}" class="btn btn-dark rounded-1 btn-lg">
                     <span class="text-uppercase">Access my Account</span>
                     <span class="icon">
                         <i class="fas fa-chevron-right"></i>
@@ -36,8 +36,8 @@
                 </a>
                 {% else %}
                 <h3 class="mb-3">You can log in directly from here</h3>
-                <a href="#" class="btn btn-dark rounded-1 btn-lg">
-                    <span class="text-uppercase">Register for Account</span>
+                <a href="{% url 'account_login' %}" class="btn btn-dark rounded-1 btn-lg">
+                    <span class="text-uppercase">Account Login</span>
                     <span class="icon">
                         <i class="fas fa-chevron-right"></i>
                     </span>
