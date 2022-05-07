@@ -23,5 +23,19 @@
             <hr class="gold-band">
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h4 class="text-lightblue">Default Location Info: </h4>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-gold btn-lg rounded-1 float-right my-3">Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6 text-gold">
+            <h4 class="text-lightblue">Order History: </h4>
+            {{ orders }}
+        </div>
+    </div>
 </div>
 {% endblock %}

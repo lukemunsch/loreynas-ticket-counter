@@ -226,6 +226,10 @@ li.nav-item {
     text-align: right;
 }
 
+.float-right {
+    align-items: right;
+}
+
 .plain-text {
     text-decoration: none;
 }
