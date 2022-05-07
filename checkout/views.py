@@ -9,6 +9,9 @@ from .forms import OrderForm
 from destinations.models import Destination
 from .models import Order, OrderLineItem
 
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
+
 from wallet.contexts import wallet_contents
 import stripe
 import json

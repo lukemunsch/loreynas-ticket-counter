@@ -156,16 +156,19 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-7 text-right">
+        <div class="col-12 text-center">
             {% if from_profile %}
             <a href="{% url 'profile' %}" class="btn btn-gold rounded-1 my-2">
-                <span>Return to Profile</span>
+                <span>Return to Profile <i class="fas fa-address-card"></i></span>
             </a>
             {% else %}
             <a href="{% url 'destinations' %}" class="btn btn-gold rounded-1 my-2">
                 <i class="fas fa-chevron-circle-left"></i>
                 </span>
                 <span>Return to Destinations</span>
+            </a>
+            <a href="{% url 'profile' %}" class="btn btn-gold rounded-1 my-2">
+                <span>Head to your Profile <i class="fas fa-address-card"></i></span>
             </a>
             {% endif %}
 
