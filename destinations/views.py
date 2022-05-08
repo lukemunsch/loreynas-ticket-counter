@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Destination, Area, District
-from .forms import AreaForm
+from .forms import AreaForm, DistrictForm
 
 
 def all_areas(request):
@@ -97,10 +97,43 @@ def destination_detail(request, destination_id):
     }
     return render(request, 'destinations/destination_detail.html', context)
 
+
 def add_area(request):
     """add a new area to the database"""
+    if request.method == 'POST':
+        form = AreaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New Area Added Successfully!')
+            return redirect(reverse('add_area'))
+        else:
+            messages.error(request, 'Failed to add area - Make sure all details are valid!')
+    else:
+        form = AreaForm()
+
     form = AreaForm()
     template = 'destinations/add_area.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
+
+
+def add_district(request):
+    """add a new area to the database"""
+    if request.method == 'POST':
+        form = DistrictForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New District Added Successfully!')
+            return redirect(reverse('add_district'))
+        else:
+            messages.error(request, 'Failed to add district - Make sure all details are valid!')
+    else:
+        form = DistrictForm()
+
+    form = DistrictForm()
+    template = 'destinations/add_district.html'
     context = {
         'form': form,
     }

@@ -15,18 +15,18 @@
     <div class="row">
         <div class="col-12">
             <hr>
-            <h2 class="text-gold mb-4 text-uppercase text-center">Add a new area</h2>
+            <h2 class="text-gold mb-4 text-uppercase text-center">Add a new district</h2>
             <hr class="gold-band">
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-8 offset-md-2">
-            <form method="POST" action="{% url 'add_area' %}" class="form text-gold mb-2">
+            <form method="POST" action="{% url 'add_district' %}" class="form text-gold mb-2">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-right my-3">
                     <a href="{% url 'destinations' %}" class="btn btn-gold btn-lg rounded-1"><i class="fas fa-times-circle"></i> Cancel</a>
-                    <button class="btn btn-gold btn-lg rounded-1" type="submit"><i class="fas fa-map mx-1"></i> Add Area</button>
+                    <button class="btn btn-gold btn-lg rounded-1" type="submit"><i class="fas fa-compass mx-1"></i> Add District</button>
                 </div>
             </form>
         </div>
