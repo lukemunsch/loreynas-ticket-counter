@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Destination, Area, District
+from .forms import AreaForm
 
 
 def all_areas(request):
@@ -95,3 +96,12 @@ def destination_detail(request, destination_id):
         'destination': destination,
     }
     return render(request, 'destinations/destination_detail.html', context)
+
+def add_area(request):
+    """add a new area to the database"""
+    form = AreaForm()
+    template = 'destinations/add_area.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)

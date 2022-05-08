@@ -13,9 +13,10 @@ class Area(models.Model):
     )
     area_description = models.TextField()
     friendly_area_name = models.CharField(
-        max_length=254,
-        null=True,
-        blank=True
+        max_length=100,
+        default='',
+        null=False,
+        blank=False
     )
 
     class Meta:
@@ -40,9 +41,10 @@ class District(models.Model):
         blank=False
     )
     friendly_district_name = models.CharField(
-        max_length=254,
-        null=True,
-        blank=True
+        max_length=100,
+        default='',
+        null=False,
+        blank=False
     )
 
     def __str__(self):
