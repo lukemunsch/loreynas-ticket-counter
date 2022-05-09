@@ -11,4 +11,5 @@ urlpatterns = [
     path('edit_area/<int:area_id>', views.edit_area, name='edit_area'),
     path('districts/', views.all_districts, name='districts'),
     path('add_district/', views.add_district, name='add_district'),
+    path('edit_district/<int:district_id>', views.edit_district, name='edit_district'),
 ]

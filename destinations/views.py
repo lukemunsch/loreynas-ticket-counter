@@ -121,35 +121,6 @@ def add_area(request):
     return render(request, template, context)
 
 
-def edit_area(request, area_id):
-    """set up form to edit an existing area"""
-    area = get_object_or_404(Area, pk=area_id)
-    if request.method == 'POST':
-        form = AreaForm(request.POST, request.FILES, instance=area)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Successfully updated { area.friendly_area_name }')
-            return redirect(reverse('destination_detail', args=[area.id]))
-        else:
-            messages.error(request, (
-                'Failed to update area. '
-                'Please make sure all details are correct.'
-            ))
-    else:
-        form = AreaForm(instance=area)
-        messages.info(request, f'You are editing { area.friendly_area_name }')
-
-    
-
-
-    template = 'destinations/edit_area.html'
-    context = {
-        'form': form,
-        'area': area,
-    }
-    return render(request, template, context)
-
-
 def add_district(request):
     """add a new district to the database"""
     if request.method == 'POST':
@@ -190,3 +161,60 @@ def add_destination(request):
         'form': form,
     }
     return render(request, template, context)
+
+
+# section for editing our database entries
+def edit_area(request, area_id):
+    """set up form to edit an existing area"""
+    area = get_object_or_404(Area, pk=area_id)
+    if request.method == 'POST':
+        form = AreaForm(request.POST, request.FILES, instance=area)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated { area.friendly_area_name }')
+            return redirect(reverse('areas'))
+        else:
+            messages.error(request, (
+                'Failed to update area. '
+                'Please make sure all details are correct.'
+            ))
+    else:
+        form = AreaForm(instance=area)
+        messages.info(request, f'You are editing { area.friendly_area_name }')
+
+
+    template = 'destinations/edit_area.html'
+    context = {
+        'form': form,
+        'area': area,
+    }
+    return render(request, template, context)
+
+
+def edit_district(request, district_id):
+    """set up form to edit an existing area"""
+    district = get_object_or_404(District, pk=district_id)
+    if request.method == 'POST':
+        form = DistrictForm(request.POST, request.FILES, instance=district)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated { district.friendly_district_name }')
+            return redirect(reverse('districts'))
+        else:
+            messages.error(request, (
+                'Failed to update district. '
+                'Please make sure all details are correct.'
+            ))
+    else:
+        form = DistrictForm(instance=district)
+        messages.info(request, f'You are editing { district.friendly_district_name }')
+
+
+    template = 'destinations/edit_district.html'
+    context = {
+        'form': form,
+        'district': district,
+    }
+    return render(request, template, context)
+
+
