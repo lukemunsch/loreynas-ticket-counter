@@ -56,6 +56,12 @@
                 </p>
                 <h4 class="mb-0 text-left text-gold">{{ destination.price }} gil</h4>
             </div>
+            {% if request.user.is_superuser %}
+            <div class="ml-3">
+                <a href="#">Edit</a> |
+                <a href="#" class="text-danger">Delete</a>
+            </div>
+            {% endif %}
             <form action="{% url 'add_to_wallet' destination.id %}" method="POST" class="form">
                 {% csrf_token %}
                 <div class="form-row">
@@ -64,18 +70,20 @@
                         <div class="form-group w-50">
                             <div class="input-group input-group-{{ destination.id }} border-darkgold">
                                 <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-gold rounded-0 decrement-qty_{{ destination.id }}" 
-                                                data-ticket_id="{{ destination.id }}">
+                                    <button
+                                        class="decrement-qty btn btn-gold rounded-0 decrement-qty_{{ destination.id }}"
+                                        data-ticket_id="{{ destination.id }}">
                                         <span class="icon">
                                             <i class="fas fa-minus"></i>
                                         </span>
                                     </button>
                                 </div>
                                 <input class="form-control qty_input id_qty_{{ destination.id }}" type="number"
-                                            name="quantity" value="1" min="1" max="99" data-ticket_id="{{ destination.id }}">
+                                    name="quantity" value="1" min="1" max="99" data-ticket_id="{{ destination.id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-gold rounded-0 increment-qty_{{ destination.id }}"
-                                                data-ticket_id="{{ destination.id }}">
+                                    <button
+                                        class="increment-qty btn btn-gold rounded-0 increment-qty_{{ destination.id }}"
+                                        data-ticket_id="{{ destination.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>
                                         </span>

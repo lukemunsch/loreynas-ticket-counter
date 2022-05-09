@@ -7,6 +7,7 @@ from .models import Destination, Area, District
 from .forms import AreaForm, DistrictForm, DestinationForm
 
 
+# rendering views of models
 def all_areas(request):
     """set up a page for all areas"""
     areas = Area.objects.all()
@@ -88,6 +89,7 @@ def all_destinations(request):
     return render(request, 'destinations/destinations.html', context)
 
 
+# display details of specific destination
 def destination_detail(request, destination_id):
     """set up view once we have selected a specific destination"""
     destination = get_object_or_404(Destination, pk=destination_id)
@@ -98,6 +100,7 @@ def destination_detail(request, destination_id):
     return render(request, 'destinations/destination_detail.html', context)
 
 
+# adding new entries to database
 def add_area(request):
     """add a new area to the database"""
     if request.method == 'POST':
@@ -120,7 +123,7 @@ def add_area(request):
 
 
 def add_district(request):
-    """add a new area to the database"""
+    """add a new district to the database"""
     if request.method == 'POST':
         form = DistrictForm(request.POST)
         if form.is_valid():
@@ -141,9 +144,9 @@ def add_district(request):
 
 
 def add_destination(request):
-    """add a new area to the database"""
+    """add a new destination to the database"""
     if request.method == 'POST':
-        form = DestinationForm(request.POST)
+        form = DestinationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'New Destination Added Successfully!')

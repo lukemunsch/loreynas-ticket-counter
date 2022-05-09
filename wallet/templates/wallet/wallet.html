@@ -38,8 +38,13 @@
                     <tbody>
                         <tr>
                             <td class="p-3 w-25">
-                                <img src="{{ ticket.destination.image.url }}" alt="{{ ticket.destination.name }}"
-                                    class="img-fluid border-darkgold">
+                                {% if ticket.destination.image %}
+                                <img class="img-fluid border-darkgold" src="{{ ticket.destination.image.url }}"
+                                    alt="{{ ticket.destination.name }}">
+                                {% else %}
+                                <img class="img-fluid border-darkgold" src="{{ MEDIA_URL }}noimage2.png"
+                                    alt="{{ ticket.destination.name }}">
+                                {% endif %}
                             </td>
                             <td class="p-3">
                                 <h4 class="my-0 text-gold"><strong>{{ ticket.destination.name }}</strong></h4>
@@ -78,7 +83,8 @@
                                                 type="number" name="quantity" value="{{ ticket.quantity }}" min="1"
                                                 max="99" data-ticket_id="{{ ticket.ticket_id }}">
                                             <div class="input-group-append">
-                                                <button class="increment-qty btn btn-sm btn-gold rounded-0 increment-qty_{{ ticket.ticket_id }}"
+                                                <button
+                                                    class="increment-qty btn btn-sm btn-gold rounded-0 increment-qty_{{ ticket.ticket_id }}"
                                                     data-ticket_id="{{ ticket.ticket_id }}">
                                                     <span>
                                                         <i class="fas fa-sm fa-plus"></i>
@@ -94,7 +100,8 @@
                                     id="remove_{{ ticket.ticket_id }}"><small>Remove</small></a>
                             </td>
                             <td class="p-3">
-                                <p class="my-0 larger-text text-gold"><strong>{{ ticket.destination.price | calc_subtotal:ticket.quantity }}
+                                <p class="my-0 larger-text text-gold">
+                                    <strong>{{ ticket.destination.price | calc_subtotal:ticket.quantity }}
                                         gil</strong>
                                 </p>
                             </td>
@@ -103,11 +110,13 @@
                     {% endfor %}
                     <tr>
                         <td class="pt-5 text-right" colspan="5">
-                            <h4 class="text-gold"><strong>Wallet Total: <small>{{ total|floatformat:2 }} gil</small></strong></h4>
+                            <h4 class="text-gold"><strong>Wallet Total: <small>{{ total|floatformat:2 }}
+                                        gil</small></strong></h4>
                             {% if discount %}
                             <h3 class="text-lightblue">Discount: {{ discount|floatformat:2 }} gil</h3>
                             {% endif %}
-                            <h2 class="mt-4 text-gold"><strong class="text-uppercase">Grand Total: {{ grand_total|floatformat:2 }}</strong> gil</h2>
+                            <h2 class="mt-4 text-gold"><strong class="text-uppercase">Grand Total:
+                                    {{ grand_total|floatformat:2 }}</strong> gil</h2>
                             {% if discount_wallet_delta > 0 %}
                             <h6 class="mb-1 text-lightblue">
                                 You can get 20% saving on your total by adding <strong>{{ discount_wallet_delta }}
@@ -144,7 +153,7 @@
         </div>
     </div>
 </div>
- 
+
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
