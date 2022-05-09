@@ -47,6 +47,9 @@ class District(models.Model):
         blank=False
     )
 
+    class Meta:
+        ordering = ['district_name']
+
     def __str__(self):
         return self.district_name
 

@@ -31,3 +31,23 @@ class DistrictForm(forms.ModelForm):
         self.fields['area'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-darkgold rounded-1'
+
+
+class DestinationForm(forms.ModelForm):
+    """set up the form to create a district"""
+    class Meta:
+        model = Destination
+        fields = ['name', 'district', 'area', 'description', 'hotspot', 'price', 'image_url', 'image'] 
+        
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        areas = Area.objects.all()
+        districts = District.objects.all()
+        friendly_area_names = [(a.id, a.get_friendly_area_name()) for a in areas]
+        friendly_district_names = [(d.id, d.get_friendly_district_name()) for d in districts]
+
+        self.fields['area'].choices = friendly_area_names
+        self.fields['district'].choices = friendly_district_names
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-darkgold rounded-1'

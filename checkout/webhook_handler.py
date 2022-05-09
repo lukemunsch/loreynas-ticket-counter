@@ -55,9 +55,9 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_phone_number = billing_details.phone,
-                profile.default_town_or_city = billing_details.address.city,
-                profile.default_country = billing_details.address.country,
+                profile.default_phone_number = billing_details.phone
+                profile.default_town_or_city = billing_details.address.city
+                profile.default_country = billing_details.address.country
                 profile.save()                
 
         order_exists = False
