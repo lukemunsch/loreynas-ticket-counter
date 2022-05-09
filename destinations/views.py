@@ -100,7 +100,6 @@ def destination_detail(request, destination_id):
     return render(request, 'destinations/destination_detail.html', context)
 
 
-# adding new entries to database
 def add_area(request):
     """add a new area to the database"""
     if request.method == 'POST':
@@ -118,6 +117,35 @@ def add_area(request):
     template = 'destinations/add_area.html'
     context = {
         'form': form,
+    }
+    return render(request, template, context)
+
+
+def edit_area(request, area_id):
+    """set up form to edit an existing area"""
+    area = get_object_or_404(Area, pk=area_id)
+    if request.method == 'POST':
+        form = AreaForm(request.POST, request.FILES, instance=area)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated { area.friendly_area_name }')
+            return redirect(reverse('destination_detail', args=[area.id]))
+        else:
+            messages.error(request, (
+                'Failed to update area. '
+                'Please make sure all details are correct.'
+            ))
+    else:
+        form = AreaForm(instance=area)
+        messages.info(request, f'You are editing { area.friendly_area_name }')
+
+    
+
+
+    template = 'destinations/edit_area.html'
+    context = {
+        'form': form,
+        'area': area,
     }
     return render(request, template, context)
 
