@@ -276,3 +276,19 @@ def delete_district(request, district_id):
         'district': district,
     }
     return render(request, template, context)
+
+
+def delete_destination(request, destination_id):
+    """delete destination with protection redirect"""
+    destination = get_object_or_404(Destination, pk=destination_id)
+
+    if request.method == 'POST':
+        destination.delete()
+        messages.success(request, f'Successfully deleted {destination.name}')
+        return redirect(reverse('destinations'))
+
+    template = 'destinations/delete_destination.html'
+    context = {
+        'destination': destination,
+    }
+    return render(request, template, context)

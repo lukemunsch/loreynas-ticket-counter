@@ -7,6 +7,7 @@ urlpatterns = [
     path('<int:destination_id>/', views.destination_detail, name='destination_detail'),
     path('add_destination/', views.add_destination, name='add_destination'),
     path('edit_destination/<int:destination_id>', views.edit_destination, name='edit_destination'),
+    path('delete_destination/<int:destination_id>', views.delete_destination, name='delete_destination'),
 
     path('areas/', views.all_areas, name='areas'),
     path('add_area/', views.add_area, name='add_area'),

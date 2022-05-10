@@ -13,27 +13,27 @@
 <div class="overlay"></div>
 <div class="containter-fluid mx-5">
     <hr class="gold-band">
-    <h1 class="text-gold text-center">Delete District?</h1>
+    <h1 class="text-gold text-center">Delete Destination?</h1>
     <hr class="gold-band">
 
     <div class="row">
         <div class="col-12 col-md-8 text-center offset-md-2 mb-5">
-            <h3 class="text-gold mb-3">Are you sure you want to delete the following district: </h3>
+            <h3 class="text-gold mb-3">Are you sure you want to delete the following destination: </h3>
             <p class="text-gold mt-3">
-                {{ district.friendly_district_name|upper }}
+                {{ destination.name|upper }}
             </p>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-8 offset-md-2">
-            <h3 class="text-danger text-center">WARNING - This will permanently delete the district</h3>
+            <h3 class="text-danger text-center">WARNING - This will permanently delete the destination</h3>
         </div>
         <div class="col-12 col-md-8 offset-md-2 text-center mb-2">
             <form method="POST" class="form mt-3">
                 {% csrf_token %}
                 <div class="mt-3">
                     <h4 class="text-gold">Delete?</h4>
-                    <a href="{% url 'districts' %}" class="btn btn-gold btn-lg rounded-1">
+                    <a href="{% url 'destinations' %}" class="btn btn-gold btn-lg rounded-1">
                         <i class="fas fa-times-circle"></i>Cancel
                     </a>
                     <button type="submit" class="btn btn-lg btn-gold rounded-1" aria-label="delete"><i
