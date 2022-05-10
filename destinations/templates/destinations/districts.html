@@ -36,7 +36,7 @@
                             </div>
                             {% if request.user.is_superuser %}
                             <small class="ml-3">
-                                <a href="{% url 'edit_district' %}">Edit</a> |
+                                <a href="{% url 'update_district' district.id %}">Edit</a> |
                                 <a href="#" class="text-danger">Delete</a>
                             </small>
                             {% endif %}

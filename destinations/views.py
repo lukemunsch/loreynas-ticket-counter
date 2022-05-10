@@ -168,7 +168,7 @@ def edit_area(request, area_id):
     """set up form to edit an existing area"""
     area = get_object_or_404(Area, pk=area_id)
     if request.method == 'POST':
-        form = AreaForm(request.POST, request.FILES, instance=area)
+        form = AreaForm(request.POST, instance=area)
         if form.is_valid():
             form.save()
             messages.success(request, f'Successfully updated { area.friendly_area_name }')
@@ -195,7 +195,7 @@ def edit_district(request, district_id):
     """set up form to edit an existing district"""
     district = get_object_or_404(District, pk=district_id)
     if request.method == 'POST':
-        form = DistrictForm(request.POST, request.FILES, instance=district)
+        form = DistrictForm(request.POST, instance=district)
         if form.is_valid():
             form.save()
             messages.success(request, f'Successfully updated { district.friendly_district_name }')
