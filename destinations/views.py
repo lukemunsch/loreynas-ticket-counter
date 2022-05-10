@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 
 from .models import Destination, Area, District
 from .forms import AreaForm, DistrictForm, DestinationForm
@@ -100,8 +101,13 @@ def destination_detail(request, destination_id):
     return render(request, 'destinations/destination_detail.html', context)
 
 
+@login_required
 def add_area(request):
     """add a new area to the database"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = AreaForm(request.POST)
         if form.is_valid():
@@ -123,6 +129,10 @@ def add_area(request):
 
 def add_district(request):
     """add a new district to the database"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = DistrictForm(request.POST)
         if form.is_valid():
@@ -142,8 +152,13 @@ def add_district(request):
     return render(request, template, context)
 
 
+@login_required
 def add_destination(request):
     """add a new destination to the database"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = DestinationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -164,8 +179,13 @@ def add_destination(request):
 
 
 # section for editing our database entries
+@login_required
 def edit_area(request, area_id):
     """set up form to edit an existing area"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     area = get_object_or_404(Area, pk=area_id)
     if request.method == 'POST':
         form = AreaForm(request.POST, instance=area)
@@ -191,8 +211,13 @@ def edit_area(request, area_id):
     return render(request, template, context)
 
 
+@login_required
 def edit_district(request, district_id):
     """set up form to edit an existing district"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     district = get_object_or_404(District, pk=district_id)
     if request.method == 'POST':
         form = DistrictForm(request.POST, instance=district)
@@ -218,8 +243,13 @@ def edit_district(request, district_id):
     return render(request, template, context)
 
 
+@login_required
 def edit_destination(request, destination_id):
     """set up form to edit an existing destination"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     destination = get_object_or_404(Destination, pk=destination_id)
     if request.method == 'POST':
         form = DestinationForm(request.POST, request.FILES, instance=destination)
@@ -246,8 +276,13 @@ def edit_destination(request, destination_id):
 
 
 # deleting scetion of our code
+@login_required
 def delete_area(request, area_id):
     """delete area with protection redirect"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     area = get_object_or_404(Area, pk=area_id)
 
     if request.method == 'POST':
@@ -262,8 +297,13 @@ def delete_area(request, area_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_district(request, district_id):
     """delete district with protection redirect"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     district = get_object_or_404(District, pk=district_id)
 
     if request.method == 'POST':
@@ -278,8 +318,13 @@ def delete_district(request, district_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_destination(request, destination_id):
     """delete destination with protection redirect"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        return redirect(reverse('home'))
+
     destination = get_object_or_404(Destination, pk=destination_id)
 
     if request.method == 'POST':
