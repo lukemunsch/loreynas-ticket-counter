@@ -192,7 +192,7 @@ def edit_area(request, area_id):
 
 
 def edit_district(request, district_id):
-    """set up form to edit an existing area"""
+    """set up form to edit an existing district"""
     district = get_object_or_404(District, pk=district_id)
     if request.method == 'POST':
         form = DistrictForm(request.POST, request.FILES, instance=district)
@@ -218,3 +218,61 @@ def edit_district(request, district_id):
     return render(request, template, context)
 
 
+def edit_destination(request, destination_id):
+    """set up form to edit an existing destination"""
+    destination = get_object_or_404(Destination, pk=destination_id)
+    if request.method == 'POST':
+        form = DestinationForm(request.POST, request.FILES, instance=destination)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated { destination.name }')
+            return redirect(reverse('destinations'))
+        else:
+            messages.error(request, (
+                'Failed to update destination. '
+                'Please make sure all details are correct.'
+            ))
+    else:
+        form = DestinationForm(instance=destination)
+        messages.info(request, f'You are editing { destination.name }')
+
+
+    template = 'destinations/edit_destination.html'
+    context = {
+        'form': form,
+        'destination': destination,
+    }
+    return render(request, template, context)
+
+
+# deleting scetion of our code
+def delete_area(request, area_id):
+    """delete area with protection redirect"""
+    area = get_object_or_404(Area, pk=area_id)
+
+    if request.method == 'POST':
+        area.delete()
+        messages.success(request, f'Successfully deleted {area.friendly_area_name}')
+        return redirect(reverse('areas'))
+
+    template = 'destinations/delete_area.html'
+    context = {
+        'area': area,
+    }
+    return render(request, template, context)
+
+
+def delete_district(request, district_id):
+    """delete district with protection redirect"""
+    district = get_object_or_404(District, pk=district_id)
+
+    if request.method == 'POST':
+        district.delete()
+        messages.success(request, f'Successfully deleted {district.friendly_district_name}')
+        return redirect(reverse('districts'))
+
+    template = 'destinations/delete_district.html'
+    context = {
+        'district': district,
+    }
+    return render(request, template, context)

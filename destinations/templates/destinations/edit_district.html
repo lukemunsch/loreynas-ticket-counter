@@ -25,8 +25,10 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-right my-3">
-                    <a href="{% url 'destinations' %}" class="btn btn-gold btn-lg rounded-1"><i class="fas fa-times-circle"></i> Cancel</a>
-                    <button class="btn btn-gold btn-lg rounded-1" type="submit"><i class="fas fa-compass mx-1"></i> Update District</button>
+                    <a href="{% url 'districts' %}" class="btn btn-gold btn-lg rounded-1"><i
+                            class="fas fa-times-circle"></i> Cancel</a>
+                    <button class="btn btn-gold btn-lg rounded-1" type="submit"><i class="fas fa-compass mx-1"></i>
+                        Update District</button>
                 </div>
             </form>
         </div>

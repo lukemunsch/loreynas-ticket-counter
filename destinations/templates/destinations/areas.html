@@ -21,15 +21,15 @@
             {% for area in areas %}
             <div class="row h-100 pb-3 mx-3">
                 <div class="col-3 text-right mb-1">
-                    <h3><i class="fas fa-map mx-1"></i>{{ area.friendly_area_name }}</h3>
+                    <h3><i class="fas fa-map mx-3"></i>{{ area.friendly_area_name }}</h3>
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="#">Edit</a> |
-                        <a href="#" class="text-danger">Delete</a>
+                        <a href="{% url 'edit_area' area.id %}">Edit</a> |
+                        <a href="{% url 'delete_area' area.id %}" class="text-danger">Delete</a>
                     </small>
                     {% endif %}
                 </div>
-                <div class="col-9 mb-1">
+                <div class="col-8 offset-md-1 mb-1">
                     <p class="mb-1 larger-text">{{ area.area_description }}</p>
                 </div>
 
