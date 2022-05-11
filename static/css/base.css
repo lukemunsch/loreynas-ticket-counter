@@ -116,6 +116,14 @@ li.nav-item {
     font-family: 'Courgette', sans-serif;
 }
 
+.btn-white {
+    background-color: white;
+    color: rgb(0, 0, 80) !important;
+    text-decoration: none;
+    font-family: 'Courgette', sans-serif;
+    border: 2px solid rgb(140, 120, 0);
+}
+
 .btt-button {
     text-decoration: none;
     height: 42px;

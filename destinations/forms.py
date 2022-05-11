@@ -1,5 +1,6 @@
 from django import forms
 from .models import Area, District, Destination
+from .widgets import CustomClearableFileInput
 
 
 class AreaForm(forms.ModelForm):
@@ -37,8 +38,22 @@ class DestinationForm(forms.ModelForm):
     """set up the form to create a district"""
     class Meta:
         model = Destination
-        fields = ['name', 'district', 'area', 'description', 'hotspot', 'price', 'image_url', 'image'] 
-        
+        fields = [
+            'name',
+            'district',
+            'area',
+            'description',
+            'hotspot',
+            'price',
+            'image_url',
+            'image'
+        ]
+
+    image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

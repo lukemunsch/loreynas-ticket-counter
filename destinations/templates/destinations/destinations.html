@@ -106,7 +106,7 @@
                                 <div class="col">
                                     {% if dest.district %}
                                     <p class="small mt-1 mb-0">
-                                        <a class="text-lightblue" href="#">
+                                        <a class="text-lightblue" href="{% url 'destinations' %}?district={{ dest.district.district_name }}">
                                             <i
                                                 class="far fa-compass mx-1"></i>{{ dest.district.friendly_district_name }}
                                         </a>
