@@ -113,7 +113,7 @@ def add_area(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'New Area Added Successfully!')
-            return redirect(reverse('add_area'))
+            return redirect(reverse('areas'))
         else:
             messages.error(request, 'Failed to add area - Make sure all details are valid!')
     else:
