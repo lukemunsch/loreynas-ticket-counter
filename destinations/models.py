@@ -70,7 +70,8 @@ class Destination(models.Model):
         District,
         on_delete=models.SET_NULL,
         null=True,
-        blank=True
+        blank=True,
+        default=''
     )
     area = models.ForeignKey(
         Area,

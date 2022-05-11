@@ -49,6 +49,9 @@ class DestinationForm(forms.ModelForm):
             'image'
         ]
 
+    district = forms.ModelChoiceField(
+        queryset=District.objects.all()
+    )
     image = forms.ImageField(
         label='Image',
         required=False,

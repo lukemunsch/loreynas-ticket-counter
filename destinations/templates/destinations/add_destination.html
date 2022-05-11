@@ -23,7 +23,13 @@
         <div class="col-12 col-md-8 offset-md-2">
             <form method="POST" action="{% url 'add_destination' %}" class="form text-gold mb-2">
                 {% csrf_token %}
-                {{ form|crispy }}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
                 <div class="text-right my-3">
                     <a href="{% url 'destinations' %}" class="btn btn-gold btn-lg rounded-1"><i class="fas fa-times-circle"></i> Cancel</a>
                     <button class="btn btn-gold btn-lg rounded-1" type="submit">Add Destination</button>
@@ -32,4 +38,14 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`You have chosen - ${file.name} - as your new image!`);
+        });
+    </script>
 {% endblock %}
