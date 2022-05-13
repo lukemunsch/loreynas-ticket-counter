@@ -20,12 +20,12 @@
             </div>
             <div class="row mb-3">
                 {% for d in districts %}
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-1">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-1 small-districts">
                     <div class="card bg-transparent h-100 border-darkgold">
                         <div class="card-body pb-0">
                             <p class="text-gold larger-text plain-text mb-0">{{ d.friendly_district_name }}</p>
                         </div>
-                        <div class="card-footer bg-transparent pt-0 border-0 text-left">
+                        <div class="card-footer bg-transparent pt-0 border-0">
                             <div class="row">
                                 <div class="col">
                                     <p class="text-gold small mt-1 mb-0">located in:</p>
@@ -49,7 +49,7 @@
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-md-none mb-3">
+                <div class="col-12 d-none d-sm-block d-md-none mb-3">
                     <hr class="gold-band text-center">
                 </div>
                 {% endif %}

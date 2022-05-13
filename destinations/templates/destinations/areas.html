@@ -19,9 +19,9 @@
         </div>
         <div class="destination-container col-10 offset-1 col-lg-9 offset-lg-0 text-gold h-100 mx-auto">
             {% for area in areas %}
-            <div class="row h-100 pb-3 mx-3">
-                <div class="col-3 text-right mb-1">
-                    <h3><i class="fas fa-map mx-3"></i>{{ area.friendly_area_name }}</h3>
+            <div class="row h-100 pb-3 mr-3">
+                <div class="col-3 text-left mb-1">
+                    <h3 class="area-name-small"><i class="fas fa-map mx-3"></i>{{ area.friendly_area_name }}</h3>
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="{% url 'edit_area' area.id %}">Edit</a> |
@@ -30,7 +30,7 @@
                     {% endif %}
                 </div>
                 <div class="col-8 offset-md-1 mb-1">
-                    <p class="mb-1 larger-text">{{ area.area_description }}</p>
+                    <p class="mb-1">{{ area.area_description }}</p>
                 </div>
 
             </div>

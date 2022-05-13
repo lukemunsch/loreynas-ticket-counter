@@ -44,7 +44,6 @@ li.nav-item {
 .area-list {
     align-items: center;
     text-align: center;
-    overflow-x: auto;
 }
 
 .area-tab h5 {
@@ -381,5 +380,21 @@ input[name='q']::placeholder {
 @media (min-width: 768px) {
     .text-md-right {
         text-align: right;
+    }
+}
+
+@media (max-width: 576px) {
+    .small-districts {
+        text-align: center;
+    }
+
+    h5.area-list-a {
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .area-name-small {
+        font-size: 1rem;
     }
 }

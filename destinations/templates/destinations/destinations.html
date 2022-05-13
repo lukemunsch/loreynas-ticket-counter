@@ -25,9 +25,9 @@
         <div class="col text-gold">
             <ul class="list-inline list-unstyled text-center area-list my-0">
                 {% for a in areas %}
-                <li class="list-inline-item list-unstyled area-tab underline p-1">
+                <li class="list-inline-item list-unstyled area-tab underline">
                     <a href="{% url 'destinations' %}?area={{ a.area_name }}" class="plain-text text-gold">
-                        <h5>{{ a.friendly_area_name }}</h5>
+                        <h5 class="area-list-a">{{ a.friendly_area_name }}</h5>
                     </a>
                 </li>
                 {% endfor %}
@@ -108,7 +108,8 @@
                                 <div class="col">
                                     {% if dest.district %}
                                     <p class="small mt-1 mb-0">
-                                        <a class="text-lightblue" href="{% url 'destinations' %}?district={{ dest.district.district_name }}">
+                                        <a class="text-lightblue"
+                                            href="{% url 'destinations' %}?district={{ dest.district.district_name }}">
                                             <i
                                                 class="far fa-compass mx-1"></i>{{ dest.district.friendly_district_name }}
                                         </a>

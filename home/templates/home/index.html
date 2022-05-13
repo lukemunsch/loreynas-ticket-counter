@@ -14,7 +14,7 @@
 <div class="container h-100">
     <div class="row home-btn-container h-100">
         <div class="col-12 col-md-5 my-auto">
-            <div class="gold-nav text-center p-3">
+            <div class="gold-nav text-center p-3 mb-3">
                 <h3>We are here for all of your Eorzean <em>Fast-Travel</em> needs!</h3>
                 <a href="{% url 'destinations' %}" class="btn btn-dark rounded-1 btn-lg">
                     <span class="text-uppercase">Browse Destinations</span>
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="d-none d-md-block col-md-5 offset-md-2 my-auto">
-            <div class="gold-nav text-center p-3">
+            <div class="gold-nav text-center p-3 mb-3">
                 {% if user.is_authenticated %}
                 <h3 class="mb-3">You can access your account profile directly from here</h3>
                 <a href="{% url 'profile' %}" class="btn btn-dark rounded-1 btn-lg">
