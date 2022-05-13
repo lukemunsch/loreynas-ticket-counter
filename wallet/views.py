@@ -1,11 +1,17 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse
+)
 from django.contrib import messages
 
 from destinations.models import Destination
 
 
 def view_wallet(request):
-    """set up our wallet view to hold our 
+    """set up our wallet view to hold our
     tickets for purchasing when ready"""
     return render(request, 'wallet/wallet.html')
 
@@ -26,9 +32,9 @@ def add_to_wallet(request, ticket_id):
     else:
         wallet[ticket_id] = quantity
         messages.success(request, (
-            f'We have successfully added {destination.name} x{wallet[ticket_id]} '
-            f'to your wallet!'))
-    
+            f'We have successfully added {destination.name} '
+            f'x{wallet[ticket_id]} to your wallet!'))
+
     request.session['wallet'] = wallet
     return redirect(redirect_url)
 
@@ -50,7 +56,7 @@ def update_wallet(request, ticket_id):
         messages.warning(request, (
             f'We have removed {destination.name} '
             f'from your wallet'))
-    
+
     request.session['wallet'] = wallet
     return redirect(reverse('view_wallet'))
 
@@ -62,9 +68,12 @@ def remove_from_wallet(request, ticket_id):
 
     try:
         wallet.pop(ticket_id)
-        messages.success(request,
-            f'We have successfully removed {destination.name} from your wallet!')
-            
+        messages.success(
+            request, (
+                f'We have successfully removed '
+                f'{destination.name} from your wallet!')
+        )
+
         request.session['wallet'] = wallet
         return HttpResponse(status=200)
 

@@ -35,7 +35,7 @@ class DestinationAdmin(admin.ModelAdmin):
         'image',
     )
 
-    list_filter = ('area','district',)
+    list_filter = ('area', 'district',)
 
     search_fields = [
         'name',

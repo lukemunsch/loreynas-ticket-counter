@@ -58,7 +58,7 @@ class StripeWH_Handler:
                 profile.default_phone_number = billing_details.phone
                 profile.default_town_or_city = billing_details.address.city
                 profile.default_country = billing_details.address.country
-                profile.save()                
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -77,7 +77,7 @@ class StripeWH_Handler:
 
                 order_exists = True
                 break
-                
+
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)

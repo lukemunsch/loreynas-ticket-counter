@@ -1,6 +1,7 @@
 Hello, {{order.full_name}}!
 
-This is a confirmation email to thank you for your recent purchase at Loreyna's Ticket Counter.
+This is a confirmation email to thank you for your 
+recent purchase at Loreyna's Ticket Counter.
 Information about your order is below:
 
 Order Number: {{ order.order_number }}
@@ -10,7 +11,8 @@ Order Total: {{ order.order_total }}
 Discount: {{ order.discount }}
 Grand Total: {{ order.grand_total }}
 
-You can redeem this order at any of the Aetheryte Plazas in Eorzea.
+You can redeem this order at any of the 
+Aetheryte Plazas in Eorzea.
 
 We currently have your phone number on order as {{ order.phone_number }}
 

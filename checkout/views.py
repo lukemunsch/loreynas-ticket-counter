@@ -69,9 +69,11 @@ def checkout(request):
 
                 except Destination.DoesNotExist:
                     messages.error(
-                        request,
-                        ("One of the destinations in your wallet wasn't found in our database."
-                        "Please call us for assistance!")
+                        request, (
+                            "One of the destinations in your wallet "
+                            "wasn't found in our database. "
+                            "Please call us for assistance!"
+                        )
                     )
                     order.delete()
                     return redirect(reverse('view_wallet'))
@@ -90,7 +92,10 @@ def checkout(request):
     else:
         wallet = request.session.get('wallet', {})
         if not wallet:
-            messages.error(request, 'You have forgotten to add tickets to your wallet!')
+            messages.error(
+                request,
+                'You have forgotten to add tickets to your wallet!'
+            )
             return redirect(reverse('destinations'))
 
         current_wallet = wallet_contents(request)
@@ -119,7 +124,11 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Your Public Key is missing; did you forget to set it in your environement?')
+        messages.warning(
+            request,
+            'Your Public Key is missing; '
+            'did you forget to set it in your environement?'
+        )
 
     template = 'checkout/checkout.html'
     context = {
@@ -162,5 +171,5 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
-    
+
     return render(request, template, context)

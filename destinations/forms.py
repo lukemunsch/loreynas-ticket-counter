@@ -9,8 +9,12 @@ class AreaForm(forms.ModelForm):
         model = Area
         fields = '__all__'
         widgets = {
-            'area_name': forms.TextInput(attrs={'placeholder': 'area_name_in_this_style_please'}),
-            'friendly_area_name': forms.TextInput(attrs={'placeholder': 'Normal Name Format'})
+            'area_name': forms.TextInput(
+                attrs={'placeholder': 'area_name_in_this_style_please'}
+            ),
+            'friendly_area_name': forms.TextInput(
+                attrs={'placeholder': 'Normal Name Format'}
+            )
         }
 
 
@@ -20,8 +24,12 @@ class DistrictForm(forms.ModelForm):
         model = District
         fields = '__all__'
         widgets = {
-            'district_name': forms.TextInput(attrs={'placeholder': 'district_name_in_this_style_please'}),
-            'friendly_district_name': forms.TextInput(attrs={'placeholder': 'Normal Name Format'})
+            'district_name': forms.TextInput(
+                attrs={'placeholder': 'district_name_in_this_style_please'}
+            ),
+            'friendly_district_name': forms.TextInput(
+                attrs={'placeholder': 'Normal Name Format'}
+            )
         }
 
     def __init__(self, *args, **kwargs):
@@ -62,8 +70,12 @@ class DestinationForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         areas = Area.objects.all()
         districts = District.objects.all()
-        friendly_area_names = [(a.id, a.get_friendly_area_name()) for a in areas]
-        friendly_district_names = [(d.id, d.get_friendly_district_name()) for d in districts]
+        friendly_area_names = [(
+            a.id, a.get_friendly_area_name()
+        ) for a in areas]
+        friendly_district_names = [(
+            d.id, d.get_friendly_district_name()
+        ) for d in districts]
 
         self.fields['area'].choices = friendly_area_names
         self.fields['district'].choices = friendly_district_names

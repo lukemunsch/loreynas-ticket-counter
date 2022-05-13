@@ -45,7 +45,9 @@ def all_destinations(request):
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
-                destinations = destinations.annotate(lower_name=Lower('name'))
+                destinations = destinations.annotate(
+                    lower_name=Lower('name')
+                )
             if sortkey == 'area':
                 sortkey = 'area__name'
             if 'direction' in request.GET:
@@ -105,7 +107,10 @@ def destination_detail(request, destination_id):
 def add_area(request):
     """add a new area to the database"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -115,7 +120,10 @@ def add_area(request):
             messages.success(request, 'New Area Added Successfully!')
             return redirect(reverse('areas'))
         else:
-            messages.error(request, 'Failed to add area - Make sure all details are valid!')
+            messages.error(
+                request,
+                'Failed to add area - Make sure all details are valid!'
+            )
     else:
         form = AreaForm()
 
@@ -130,7 +138,10 @@ def add_area(request):
 def add_district(request):
     """add a new district to the database"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -140,7 +151,10 @@ def add_district(request):
             messages.success(request, 'New District Added Successfully!')
             return redirect(reverse('add_district'))
         else:
-            messages.error(request, 'Failed to add district - Make sure all details are valid!')
+            messages.error(
+                request,
+                'Failed to add district - Make sure all details are valid!'
+            )
     else:
         form = DistrictForm()
 
@@ -156,17 +170,26 @@ def add_district(request):
 def add_destination(request):
     """add a new destination to the database"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = DestinationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'New Destination Added Successfully!')
+            messages.success(
+                request,
+                'New Destination Added Successfully!'
+            )
             return redirect(reverse('add_destination'))
         else:
-            messages.error(request, 'Failed to add destination - Make sure all details are valid!')
+            messages.error(
+                request,
+                'Failed to add destination - Make sure all details are valid!'
+            )
     else:
         form = DestinationForm()
 
@@ -183,7 +206,10 @@ def add_destination(request):
 def edit_area(request, area_id):
     """set up form to edit an existing area"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     area = get_object_or_404(Area, pk=area_id)
@@ -191,7 +217,10 @@ def edit_area(request, area_id):
         form = AreaForm(request.POST, instance=area)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Successfully updated { area.friendly_area_name }')
+            messages.success(
+                request,
+                f'Successfully updated { area.friendly_area_name }'
+            )
             return redirect(reverse('areas'))
         else:
             messages.error(request, (
@@ -200,8 +229,10 @@ def edit_area(request, area_id):
             ))
     else:
         form = AreaForm(instance=area)
-        messages.info(request, f'You are editing { area.friendly_area_name }')
-
+        messages.info(
+            request,
+            f'You are editing { area.friendly_area_name }'
+        )
 
     template = 'destinations/edit_area.html'
     context = {
@@ -215,7 +246,10 @@ def edit_area(request, area_id):
 def edit_district(request, district_id):
     """set up form to edit an existing district"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     district = get_object_or_404(District, pk=district_id)
@@ -223,7 +257,10 @@ def edit_district(request, district_id):
         form = DistrictForm(request.POST, instance=district)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Successfully updated { district.friendly_district_name }')
+            messages.success(
+                request,
+                f'Successfully updated { district.friendly_district_name }'
+            )
             return redirect(reverse('districts'))
         else:
             messages.error(request, (
@@ -232,8 +269,10 @@ def edit_district(request, district_id):
             ))
     else:
         form = DistrictForm(instance=district)
-        messages.info(request, f'You are editing { district.friendly_district_name }')
-
+        messages.info(
+            request,
+            f'You are editing { district.friendly_district_name }'
+        )
 
     template = 'destinations/edit_district.html'
     context = {
@@ -247,15 +286,25 @@ def edit_district(request, district_id):
 def edit_destination(request, destination_id):
     """set up form to edit an existing destination"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     destination = get_object_or_404(Destination, pk=destination_id)
     if request.method == 'POST':
-        form = DestinationForm(request.POST, request.FILES, instance=destination)
+        form = DestinationForm(
+            request.POST,
+            request.FILES,
+            instance=destination
+        )
         if form.is_valid():
             form.save()
-            messages.success(request, f'Successfully updated { destination.name }')
+            messages.success(
+                request,
+                f'Successfully updated { destination.name }'
+            )
             return redirect(reverse('destinations'))
         else:
             messages.error(request, (
@@ -265,7 +314,6 @@ def edit_destination(request, destination_id):
     else:
         form = DestinationForm(instance=destination)
         messages.info(request, f'You are editing { destination.name }')
-
 
     template = 'destinations/edit_destination.html'
     context = {
@@ -280,14 +328,20 @@ def edit_destination(request, destination_id):
 def delete_area(request, area_id):
     """delete area with protection redirect"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     area = get_object_or_404(Area, pk=area_id)
 
     if request.method == 'POST':
         area.delete()
-        messages.success(request, f'Successfully deleted {area.friendly_area_name}')
+        messages.success(
+            request,
+            f'Successfully deleted {area.friendly_area_name}'
+        )
         return redirect(reverse('areas'))
 
     template = 'destinations/delete_area.html'
@@ -301,14 +355,19 @@ def delete_area(request, area_id):
 def delete_district(request, district_id):
     """delete district with protection redirect"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     district = get_object_or_404(District, pk=district_id)
 
     if request.method == 'POST':
         district.delete()
-        messages.success(request, f'Successfully deleted {district.friendly_district_name}')
+        messages.success(
+            request, f'Successfully deleted {district.friendly_district_name}'
+        )
         return redirect(reverse('districts'))
 
     template = 'destinations/delete_district.html'
@@ -322,7 +381,10 @@ def delete_district(request, district_id):
 def delete_destination(request, destination_id):
     """delete destination with protection redirect"""
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you are not permitted to access this page.')
+        messages.error(
+            request,
+            'Sorry, you are not permitted to access this page.'
+        )
         return redirect(reverse('home'))
 
     destination = get_object_or_404(Destination, pk=destination_id)

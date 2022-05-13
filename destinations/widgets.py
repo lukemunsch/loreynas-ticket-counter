@@ -7,4 +7,6 @@ class CustomClearableFileInput(ClearableFileInput):
 
     initial_text = ('Current Image')
     input_text = ('')
-    template_name = ('destinations/custom_widget_template/custom_clearable_file_input.html')
+    template_name = (
+        'destinations/custom_widget_template/custom_clearable_file_input.html'
+    )
