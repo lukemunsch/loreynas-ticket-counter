@@ -7,9 +7,9 @@ Information about your order is below:
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
-Order Total: {{ order.order_total }}
-Discount: {{ order.discount }}
-Grand Total: {{ order.grand_total }}
+Order Total: {{ order.order_total }} gil
+Discount: {{ order.discount }} gil
+Grand Total: {{ order.grand_total }} gil
 
 You can redeem this order at any of the 
 Aetheryte Plazas in Eorzea.

@@ -47,3 +47,7 @@ kanban board with user stories broken up into sprints
 ## Bugs
 
 secret key as exposed so a new secret key was generated
+
+## Credits
+
+- https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317 - This page helped me to build a custom 404 html page in order to make the user experience much improved.
