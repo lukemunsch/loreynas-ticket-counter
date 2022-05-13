@@ -397,9 +397,18 @@ input[name='q']::placeholder {
     h5.area-list-a {
         font-size: .8rem;
     }
+
+    .btn.btn-gold.rounded-1 {
+        padding: .375rem;
+    }
+
+    .btn.btn-lg.btn-gold.rounded-1 {
+        font-size: .6rem;
+        padding: .375rem;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
     .area-name-small {
         font-size: 1rem;
     }
@@ -419,5 +428,9 @@ input[name='q']::placeholder {
 
     #discount-banner h4 {
         font-size: .9rem;
+    }
+
+    .increment-qty, .decrement-qty {
+        padding: .25rem .5rem !important;
     }
 }

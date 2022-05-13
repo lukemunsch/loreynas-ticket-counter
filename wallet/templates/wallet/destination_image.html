@@ -1,0 +1,5 @@
+{% if ticket.destination.image %}
+<img class="img-fluid border-darkgold" src="{{ ticket.destination.image.url }}" alt="{{ ticket.destination.name }}">
+{% else %}
+<img class="img-fluid border-darkgold" src="{{ MEDIA_URL }}noimage2.png" alt="{{ ticket.destination.name }}">
+{% endif %}

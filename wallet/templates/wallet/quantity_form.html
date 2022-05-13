@@ -1,0 +1,28 @@
+<form action="{% url 'update_wallet' ticket.ticket_id %}" method="POST" class="form update-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group input-group-{{ ticket.ticket_id }} border-darkgold">
+            <div class="input-group-prepend">
+                <button class="decrement-qty btn btn-sm btn-gold rounded-0 decrement-qty_{{ ticket.ticket_id }}"
+                    data-ticket_id="{{ ticket.ticket_id }}">
+                    <span>
+                        <i class="fas fa-sm fa-minus"></i>
+                    </span>
+                </button>
+            </div>
+            <input class="form-control form-control-sm qty_input id_qty_{{ ticket.ticket_id }}" type="number"
+                name="quantity" value="{{ ticket.quantity }}" min="1" max="99" data-ticket_id="{{ ticket.ticket_id }}">
+            <div class="input-group-append">
+                <button class="increment-qty btn btn-sm btn-gold rounded-0 increment-qty_{{ ticket.ticket_id }}"
+                    data-ticket_id="{{ ticket.ticket_id }}">
+                    <span>
+                        <i class="fas fa-sm fa-plus"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<a class="update-link text-lightblue"><small>Update</small></a>
+<a class="remove-ticket text-danger float-right" id="remove_{{ ticket.ticket_id }}"><small>Remove</small></a>

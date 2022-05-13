@@ -1,0 +1,9 @@
+<h4 class="my-0 text-gold"><strong>{{ ticket.destination.name }}</strong></h4>
+{% if ticket.destination.district %}
+<p class="mt-1 mb-0 text-lightblue">
+    <i class="far fa-compass mx-1"></i>{{ ticket.destination.district.friendly_district_name }}
+</p>
+{% endif %}
+<p class="mt-1 mb-0 text-lightblue">
+    <i class="fas fa-map mx-1"></i>{{ ticket.destination.area.friendly_area_name }}
+</p>

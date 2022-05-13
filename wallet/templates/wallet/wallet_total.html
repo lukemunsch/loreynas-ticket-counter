@@ -1,0 +1,13 @@
+<h4 class="text-gold"><strong>Wallet Total: <small>{{ total|floatformat:2 }}
+    gil</small></strong></h4>
+{% if discount %}
+<h3 class="text-lightblue">Discount: {{ discount|floatformat:2 }} gil</h3>
+{% endif %}
+<h2 class="mt-4 text-gold"><strong class="text-uppercase">Grand Total:
+{{ grand_total|floatformat:2 }}</strong> gil</h2>
+{% if discount_wallet_delta > 0 %}
+<h6 class="mb-1 text-lightblue d-none d-md-block">
+You can get 20% saving on your total by adding <strong>{{ discount_wallet_delta }}
+more</strong> tickets!
+</h6>
+{% endif %}
