@@ -49,7 +49,7 @@
         </div>
         <div class="destination-container col-10 offset-1 col-lg-9 offset-lg-0 text-gold px-4 h-100">
             <div class="row h-100 pb-3 mx-3">
-                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex pb-3 justify-content-center justify-content-md-end">
                     <div class="sort-select-wrapper">
                         <select id="sort-selector"
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}darkgold{% endif %}">
@@ -70,7 +70,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 order-md-first my-auto">
+                <div class="col-12 col-md-6 order-md-first my-auto d-flex justify-content-center justify-content-md-start">
                     <p class="text-gold my-auto">
                         {% if search_term or current_area or current_district or current_sorting != 'None_None' %}
                         <span class="plain-text text-gold reset-btn"><a href="{% url 'destinations' %}">Reset</a> |
