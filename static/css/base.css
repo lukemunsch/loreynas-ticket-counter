@@ -131,6 +131,12 @@ li.nav-item {
     cursor: pointer;
 }
 
+.btn-lg:hover {
+    background-color: rgb(65, 175, 255);
+    color: rgb(0, 0, 80) !important;
+    text-decoration: none;
+}
+
 .custom-checkbox .custom-control-label::before {
     border-radius: 8%;
     border-color: rgb(65, 175, 255);
