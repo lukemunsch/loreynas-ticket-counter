@@ -1,4 +1,4 @@
-AmIResponsive header image
+![Loreyna's Ticket Counter Responsive Image](media/readme-images/am-i-resp-img.png)
 
 # Loreyna's Ticket Counter
 
@@ -28,9 +28,13 @@ AmIResponsive header image
 
 ## Link to Live Site
 
-
+https://loreynas-ticket-counter.herokuapp.com
 
 ## LudicChart ERD Diagram
+
+
+
+## Wireframes
 
 
 
@@ -44,10 +48,45 @@ The list of destinations will continue to increase while destinations are discov
 
 kanban board with user stories broken up into sprints
 
+## Features
+
+
+
+## Features to Implement
+
+
+
+## Testing
+
+
+
 ## Bugs
 
 secret key as exposed so a new secret key was generated
 
+## Deployment
+
+To deploy Loreyna's Ticket Counter, allow other people to run the app and see it working, there are 3 methods to allow you to complete these actions:
+
+### Forking and Cloning
+
+Accessing GitHub and navigating to my repositories will allow users to copy my code directly from the source, either by forking or cloning: Accessing the Loreyna's Ticket Counter repository and clicking on the code button next to Gitpod link will bring up a menu to create a repository of your own in your own GitHub repo. There is also the Download zip file option which will allow you to save a copy of my code as well.
+
+### Local Deployment
+
+For local deployment of Loreyna's Ticket Counter, I will be using Gitpod to edit and run my workspace;
+- From GitHub, once the repository has been created (either as a new project or by forking/cloning) I will then click on the Gitpod button to implement the creation of a workspace to edit the promotional sales review system.
+
+***The workspace should not be closed due to the env.py file; as it is never added to GitHub, if you create a new workspace you will need to re-add the env.py file and reinstall all libraries used each time. Pinning a workspace and accessing it from Gitpod workspaces will save time and repetition***
+
+
+### Remote Deployment
+
+insert here
+
 ## Credits
 
 - https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317 - This page helped me to build a custom 404 html page in order to make the user experience much improved.
+- All of the amazing team members working at the tutor team for the Code Institute, whom, without which, I would be a blubbering mess!
+- My mentor Chris Quinn who has provided me with sound guidance and direction from the inception of Loreyna's Ticket Counter.
+- All of the learning materials I have been studying provided by the Code Institute.
