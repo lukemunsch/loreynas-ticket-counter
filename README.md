@@ -11,6 +11,16 @@
 5. [User Stories](#user-stories)
 6. [Features](#features)
     1. [Index Page](#index-page)
+    2. [Destination Page](#index-page)
+    3. [Areas Page](#index-page)
+    4. [District Page](#index-page)
+    5. [Add/Edit Pages](#index-page)
+    6. [Delete Page](#index-page)
+    7. [Destination Detail Page](#index-page)
+    8. [Wallet Page](#index-page)
+    9. [Checkout Page](#index-page)
+    10. [Confirmation Page](#index-page)
+    11. [Profile Page](#index-page)
 7. [Features to Implement](#features-to-implement)
 8. [Testing](#testing)
     1. [Lighthouse Reports](#lighthouse-reports)
@@ -50,15 +60,49 @@ kanban board with user stories broken up into sprints
 
 ## Features
 
+Style and design choices
+
+### Index Page
+
+### Destination Page
+
+### Areas Page
+
+### Districts Page
+
+### Add/Edit Page
+
+### Delete Page
+
+### Destination Detail Page
+
+### Wallet Page
+
+### Checkout Page
+
+### Confirmation Page
+
+### Profile Page
+
 
 
 ## Features to Implement
 
-
+Hotspot Filtering
 
 ## Testing
 
+Lighthouse Reports
 
+HTML Validation
+
+CSS Validation
+
+PEP8 Validation
+
+Manual Testing
+
+Automated Testing
 
 ## Bugs
 
@@ -82,7 +126,137 @@ For local deployment of Loreyna's Ticket Counter, I will be using Gitpod to edit
 
 ### Remote Deployment
 
-insert here
+For deployment of Loreyna's Ticket Counter, there are a number of steps required to complete this action;
+
+- We are using the Site Heroku for our deployment;
+    - In Heroku, create a new app and give it a name befitting your project.
+    - In settings, we first need to make sure the config vars contain DEVELOPMENT with the value of False.
+- We need to make sure a couple of our variable in our settings app are updated so that they are no longer developer enabled.
+    - For our DEBUG setting;
+            DEBUG = 'DEVELOPMENT' in os.environ
+    - For our DATABASES variable;
+            if 'DATABASE_URL' in os.environ:
+                DATABASES = {
+                    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+                }
+            else:
+                DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.sqlite3',
+                        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                    }
+                }
+    This is to ensure that the debug and database are using the correct variables so that when Loreyna's Ticket Counter is deployed, the users will be unable to see any of the secrets from the debug window and the correct database is being used.
+- We need to set up our Stripe variables in settings and our Heroku dashboard in order to allow our deployed site to continue working.
+    - Once you have logged in and set up our stripe endpoint using the code institute's walkthrough and cheat sheet, we can add the following variables to settings.py;
+
+            STRIPE_CURRENCY = 'gbp'
+            STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+            STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+            STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+    - In our dashboard settings for Gitpod, we need to add these in order for our environmental variables to work while in deployment.
+        - Add the above variables to the env settings
+        - For each variable, go to stripe and copy the secret codes
+        - Add them to the relevant variables.
+    
+    - In Heroku, we need to include the last three as config vars in the settings page on the heroku dashboard.
+- We will need to set up our resources so that the deployed project can work correctly;
+
+        pip3 install gunicorn
+        pip3 install dj_database_url
+        pip3 install psycopg2-binary
+
+        pip3 freeze > requirements.txt
+
+- For our deployment, we will be using Heroku and we need to set up our database for the deployed version;
+    - We need to add the Heroku Postgres resource from the Resources tab in the Heroku dashboard. This will assign us a variable which we will then need to add to our env.py file so that no one except ourselves can see it.
+- For all of our deployed apps, we need to set up a Procfile to instruct Heroku how to handle the application;
+    - In our Procfile, we need to add;
+
+            web: gunicorn loreynas_counter.wsgi:application
+
+- We need to add our AWS for media storage to the heroku variables as well;
+    - First log in to AWS dashboard and set up your bucket using the code institute's walkthrough and cheat sheet.
+    - You will end up producing an excel document that contains secret values that we need to use in Heroku in order to see our media.
+    - Add the following KEY : Value variables to the Heroku Config Vars;
+
+            AWS_ACCESS_KEY_ID : 'value'
+            AWS_SECRET_ACCESS_KEY : 'value'
+            USE_AWS : True
+
+- For the emails and ability to send confirmations, we need to set up a few variables for the settings.py file and a couple in the heroku config variables.
+    - In settings.py, add;
+
+            if 'DEVELOPEMENT' in os.environ:
+                EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+                DEFAULT_FROM_EMAIL = 'loreynascounter@aetheryte.com'
+            else:
+                EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+                EMAIL_USE_TLS = True
+                EMAIL_PORT = 587
+                EMAIL_HOST = 'smtp.gmail.com'
+                EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+                EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+                DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+    
+    - In Heroku config vars, add;
+
+            EMAIL_HOST_PASS : 'leave blank for now'
+            EMAIL_HOST_USER : 'your email address'
+
+    ***It is best to use a gmail for this as our walkthrough from code institute gives clear instructions on how to set this up.***
+    
+    - In mail.google.com, go to the cog/settings for the account
+    - Click Accounts and Imports tab
+    - Click Other Google Account Settings
+    - Head to security
+    - Make sure 2-Step-Auth is turned on
+    - Under this, click on App Passwords
+    - Select Mail on first drop down
+    - Select Other on second drop down and add text 'Django'
+    - Once completed, you have generated a 16 digit code - Copy this
+    - In Heroku dashboard config vars, add in;
+
+            EMAIL_HOST_PASS : 'paste 16-digit code here'
+    
+    This will now allow our emails to correctly send from deployed site.
+
+- Now we need to connect our Gitpod to Heroku
+
+***Due to a serious Security breach, we are unable to link our gitpod to heroku using conventional means - this means we need to take an alternative approach; HEROKU CLI THROUGH GITPOD***
+
+- To start the process, we need to sign in to Heroku CLI in the terminal;
+        
+        heroku login -i
+    
+- Sign in with your regular email account for heroku
+
+- If you have an up-to-date account with Heroku, you will have switched on 2 step auth for your account, so you cannot sign in using you password; To get around this;
+    - You can head to your account icon in Heroku dashboard
+    - Select Account Settings
+    - Scroll to bottom and reveal your API key
+    - Copy this code and paste into your password field in terminal.
+- You should now be connected to Heroku CLI which means we can now complete the Deployment procedure;
+    - In terminal, type;
+
+            heroku git:remote -a heroku-app-name
+
+***This must contain the app name we have set up in heorku otherwise the app will not connect***
+
+- As we have now linked up our new database to postgres, we need to migrate all our files to the new database;
+
+        python3 manage.py migrate 
+
+***You do not need to makemigrations first as we have already created them, we just need to move them to the correct place***
+        
+        git add .
+        git commit -m "Complete deployment process to Heroku"
+        git push
+        git push heroku main
+
+***By pushing to Heroku main, we are sending a copy for all of our code to Heroku to be deployed which means we can avoid the issue regarding the Security breach and not being able to connect for auto or manual deployments***
+
 
 ## Credits
 
