@@ -42,15 +42,38 @@ https://loreynas-ticket-counter.herokuapp.com
 
 ## LudicChart ERD Diagram
 
-
+[Loreyna's Ticket Counter ERD](media/readme-images/loreynas-counter-erd.png)
 
 ## Wireframes
 
+In order to help me realise how i want to build the site, i have created a series of wireframes using Balsamiq:
 
+[Index page](media/readme-images/index.png)
+
+[Destinations](media/readme-images/destinations.png)
+
+[Destination Details](media/readme-images/destination-details.png)
+
+[Area List](media/readme-images/areas.png)
+
+[District List](media/readme-images/districts.png)
+
+[Add/Edit Entry](media/readme-images/addandedit.png)
+
+[Delete](media/readme-images/delete.png)
+
+[Wallet](media/readme-images/wallet.png)
+
+[Checkout](media/readme-images/checkout.png)
+
+[Confirmation](media/readme-images/confirmation.png)
+
+[Profile](media/readme-images/profile.png)
 
 ## Overview
 
-The app for Loreyna's Ticket Counter is an online ticket sales site that allows adventurers to book their travel destinations to anywhere on Eorzea. The tickets are a digital product and therefore have no delivery requirements, the products are redeemable from the aetheryte plaza to anywhere that also houses an aetheryte crystal.
+As a fan of the Final Fantasy franchise, I have enjoyed all aspects of the game and thought how interesting it would be the make a location site that people can browse and see the complete list of destinations for the 14th game in the series. As a fan of the game, I am forever trying to find the correct locations for travelling and this allows user to search for their destinations and admins to update Loreyna's Ticket Counter whenever new desitnations or locations are released.
+The app for Loreyna's Ticket Counter is foremost an online ticket sales site that allows adventurers to book their travel destinations to anywhere on Eorzea. The tickets are a digital product and therefore have no delivery requirements, the products are redeemable from the aetheryte plaza to anywhere that also houses an aetheryte crystal.
 The site offers a simple as well as helpful solution to navigate the wide world of Eorzea; locating where you would like to travel to and searching from a list of locations, with the feature to filter based on the main locations in the world and even the more specific districts within the locations. Each specific destination has a recogniseable image, a supporting description, there is even a badge that can be added to specific hotspots for people to see where is most popular.
 The list of destinations will continue to increase while destinations are discovered and new Aetheryte crystals are installed, which means that the site owners will be able to update and keep materials fresh for the adventurers that want to travel to these destinations as and when they want.
 
@@ -60,7 +83,9 @@ kanban board with user stories broken up into sprints
 
 ## Features
 
-Style and design choices
+I am a huge fan of the Final Fantasy gaming franchise and decided to adopt a similar style to Loreyna's Ticket Counter.
+
+The color scheme I have chosen is the dark blue for a night feel and then a gold colour for the text; where the background has changed to gold I have inverted the colours so the text would be the dark blue. I have included some borders and section dividers for my site which are a darker gold colur; still standing out from the dark background but not drawing the attention away from the text and objects. When differentiation is needed from the normal dark blue or gold colours, I have included a lightblue contrasting colour that is similar to the design of the Aetheryte crystal in the image from the home page. The inspiration for the gold is taken from the gold band around the Aetheryte crystal and what all adventurers are really after besides glory - Gold.
 
 ### Index Page
 
