@@ -89,6 +89,9 @@ The color scheme I have chosen is the dark blue for a night feel and then a gold
 
 ### Index Page
 
+For the index page, I wanted to have a simple navigation that is clear to the users as to what each button means.
+The background image is an iconic Aetheryte Crystal which most users who visit the site woud recognise almost immediately. The image also sets up the color scheme for the rest of the site witht the dark blue main color, light blue and golds that stand out from the image.
+
 ### Destination Page
 
 ### Areas Page

@@ -340,6 +340,8 @@ input[name='q']::placeholder {
     min-height: 100%;
     opacity: 0;
     cursor: pointer;
+    color: #000050;
+    background-color: gold;
 }
 
 .custom-checkbox .custom-control-label::before {
