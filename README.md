@@ -87,10 +87,15 @@ I am a huge fan of the Final Fantasy gaming franchise and decided to adopt a sim
 
 The color scheme I have chosen is the dark blue for a night feel and then a gold colour for the text; where the background has changed to gold I have inverted the colours so the text would be the dark blue. I have included some borders and section dividers for my site which are a darker gold colur; still standing out from the dark background but not drawing the attention away from the text and objects. When differentiation is needed from the normal dark blue or gold colours, I have included a lightblue contrasting colour that is similar to the design of the Aetheryte crystal in the image from the home page. The inspiration for the gold is taken from the gold band around the Aetheryte crystal and what all adventurers are really after besides glory - Gold.
 
+### Main Nav Bar
+
+I wanted to have a simple navigation that is clear to the users as to what each button means. The title of the site will be a simple gold Title linking back to the home page, a search bar that allows users to search for a destination term at any time, as well as a link to profile page or login in/out/sign up page and a link to the wallet so that users can see what they are currently going to be spending at any time. All text is written in gold and the title has a different font to make sure it stands out slightly more than the regular used text font.
+
 ### Index Page
 
-For the index page, I wanted to have a simple navigation that is clear to the users as to what each button means.
 The background image is an iconic Aetheryte Crystal which most users who visit the site woud recognise almost immediately. The image also sets up the color scheme for the rest of the site witht the dark blue main color, light blue and golds that stand out from the image.
+
+[Index and nav bar](media/readme-images/ss-index.png)
 
 ### Destination Page
 
