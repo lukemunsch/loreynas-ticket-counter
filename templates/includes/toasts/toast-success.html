@@ -45,7 +45,7 @@
                     </p></strong>
                     {% if discount_wallet_delta > 0 %}
                         <p class="mb-1 p-2 bg-gold shadow-sm text-darkblue text-center">
-                            Add <strong>{{ discount_wallet_delta }}</strong> more tickets to receive {{ standard_discount_percentage }}% off!
+                            Add <strong>{{ discount_wallet_delta }}</strong> more tickets to receive {{ DISC_PERC }}% off!
                         </p>
                     {% endif %}
                     <a href="{% url 'view_wallet' %}" class="btn w-100 btn-dark btn-block rounded-1">

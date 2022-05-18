@@ -21,12 +21,12 @@ def wallet_contents(request):
             'destination': destination,
         })
 
-    if ticket_count >= settings.DISCOUNT_WALLET_THRESHOLD:
-        discount = total * Decimal(settings.STANDARD_DISCOUNT_PERCENTAGE / 100)
+    if ticket_count >= settings.DISC_THRESHOLD:
+        discount = total * Decimal(settings.DISC_PERC / 100)
         discount_wallet_delta = 0
     else:
         discount = 0
-        discount_wallet_delta = settings.DISCOUNT_WALLET_THRESHOLD-ticket_count
+        discount_wallet_delta = settings.DISC_THRESHOLD-ticket_count
 
     grand_total = total - discount
 
@@ -36,8 +36,8 @@ def wallet_contents(request):
         'ticket_count': ticket_count,
         'discount': discount,
         'discount_wallet_delta': discount_wallet_delta,
-        'discount_wallet_threshold': settings.DISCOUNT_WALLET_THRESHOLD,
-        'standard_discount_percentage': settings.STANDARD_DISCOUNT_PERCENTAGE,
+        'DISC_THRESHOLD': settings.DISC_THRESHOLD,
+        'DISC_PERC': settings.DISC_PERC,
         'grand_total': grand_total,
     }
     return context
