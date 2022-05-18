@@ -99,25 +99,63 @@ The background image is an iconic Aetheryte Crystal which most users who visit t
 
 ### Destination Page
 
+The destination page is a collection of card styled items that wil allow the user to gleam some simple information such as name and location details as well as price. The list at the top of the page below the header is all the current available list of areas that the admins have assigned, allowing the users to filter the list of destinations. We also have a list of districts on the left hand side which will also filter and reduce depending on the area chosen.
+
+[Destination page](media/readme-images/ss-destinations.png)
+
 ### Areas Page
+
+The area page is a simple page for listing the areas and a description for them so that users can decide if they want to go to these specific areas. The text is in gold to stand our from the background and there are simple links (if logged in as an admin) to allow admins to edit or delete the entry.
+
+[Areas page](media/readme-images/ss-areas.png)
 
 ### Districts Page
 
+The districts are also a simply displayed list of available districts for the areas that we have set up. These will be arranged as cards as they have very little information; we only need to know the Name of the district and the area that it is associated with. This will also have admin only edit | delete links. Main text written in gold and area text written in light blue.
+
+[Districts page](media/readme-images/ss-districts.png)
+
 ### Add/Edit Page
+
+The add and edit page will be identical in appearance as they both fulfill the same criteria; to post the details, whether new details or updating details. The forms themselves will have white backgrounds to help them stand out against the dark blue and muted grey text that disappears when there is text inputted. the buttons will align with the same style that the rest of the site has with gold background and dark blue text. a simple icon on each button to identify the action pairing with the text.
+
+[Add/Edit page](media/readme-images/ss-add-edit.png)
 
 ### Delete Page
 
+The delete page is a safeguard against accidental deletions; the page itself is a basic text driven page with request that the admin definitely wants to delete the specific entry. Main text is again written in gold and the wanring text is written in red to make sure the user is fully aware of the action. The name of the entry is written on the page as well so that the user knows what they are deleting with buttons to either cancel and go back or complete the deleting process in the same style of gold with dark bue text and icon.
+
+[Delete page](media/readme-images/ss-delete.png)
+
 ### Destination Detail Page
+
+The destiantion detail page is a much more in depth look at a specific destiantion; the larger image displaying on the page will give them user a view of the destiantion, with the details such as description and location in a more eloquent and visible style. There is also the links for admins to edit and delete this entry if need be, with simple quantity adjuster and gold buttons to keep the style in line with the rest of the site.
+
+[Destination Details](media/readme-images/ss-destination-detail.png)
 
 ### Wallet Page
 
+The wallet page has a list of destinations one on top of the other; images, names price, quantity and subtotal for how much each specific destination is going to cost. A the bottom fo the page we can see a total for the ticket wallet and if there are 5 or more tickets in the wallet then a discount of 20% is applied to the wallet and the savings are listed in light blue to draw attention away from the gold text. Two buttons for returning to the destinations page or heading to the checkout page in the same style as the other pages.
+
+[Wallet page](media/readme-images/ss-wallet.png)
+
 ### Checkout Page
+
+The checkout page is going to have a form on he left hand side of the page for inputting our name/email and location information as well as our stripe card details input. Gold buttons for completing purchase or adjusting the wallet before checking out again. On the right hand side there is a list of all the destination images, details and subtotal for that location. We can also the the total, discount and grand total for the wllet so the user has a clear idea of what they are paying for and how much it will be.
+
+[Checkout page](media/readme-images/ss-checkout.png)
 
 ### Confirmation Page
 
+The confirmation page is basic text, most text writen in gold but the specific details, such as the information we inputted into form is displayed in light blue. the display is broken down into three sections for orde details, personal details and order tickets; all in the same gold and lightblue pairing styles.
+
+[Confirmation page](media/readme-images/ss-confirmation.png)
+
 ### Profile Page
 
+Out profile page will consist of a form on the left hand side where a user can store information, either directly from the checkout page or manually add them so that they will display on new orders they place automatically if the user is signed in. on the right hand side we also have a list of previous orders so that the user can see what they have ordered in the past in case they want to go back to the same places again. the order history is written in a simple table that will scroll vertically through the list.
 
+[Profile page](media/readme-images/ss-profile.png)
 
 ## Features to Implement
 
@@ -297,3 +335,4 @@ For deployment of Loreyna's Ticket Counter, there are a number of steps required
 - All of the amazing team members working at the tutor team for the Code Institute, whom, without which, I would be a blubbering mess!
 - My mentor Chris Quinn who has provided me with sound guidance and direction from the inception of Loreyna's Ticket Counter.
 - All of the learning materials I have been studying provided by the Code Institute.
+- Final fantasy images and names are used for educational purposes only and the information and images are taken from google searching of the specific destinations. This site is completely non profit and is not used for marketing of any kind.
