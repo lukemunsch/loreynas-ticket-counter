@@ -163,17 +163,21 @@ Hotspot Filtering
 
 ## Testing
 
-Lighthouse Reports
+### Lighthouse Reports
 
-HTML Validation
+### HTML Validation
 
-CSS Validation
 
-PEP8 Validation
 
-Manual Testing
+### CSS Validation
 
-Automated Testing
+I have passed through my css files into the https://jigsaw.w3.org/ checker and report no issues with my code.
+
+### PEP8 Validation
+
+### Manual Testing
+
+### Automated Testing
 
 ## Bugs
 
