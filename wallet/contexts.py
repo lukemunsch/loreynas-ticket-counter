@@ -26,7 +26,7 @@ def wallet_contents(request):
         discount_wallet_delta = 0
     else:
         discount = 0
-        discount_wallet_delta = settings.DISCOUNT_WALLET_THRESHOLD - ticket_count
+        discount_wallet_delta = settings.DISCOUNT_WALLET_THRESHOLD-ticket_count
 
     grand_total = total - discount
 

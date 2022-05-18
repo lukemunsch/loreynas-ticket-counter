@@ -16,9 +16,8 @@
         <div class="col-10 offset-1 col-lg-6 offset-lg-0 px-4">
             <div class="image-container border-darkgold my-4">
                 {% if destination.image %}
-                <a href="{{ dest.image.url }}">
-                    <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.name }}"
-                        target="_blank">
+                <a href="{{ dest.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.name }}">
                 </a>
                 {% else %}
                 <a href="#">
@@ -30,27 +29,21 @@
         <div class="col-12 col-lg-6 text-left text-gold px-4">
             <div class="product-details-container mb-2 mt-md-4">
                 <div>
-                    <span>
-                        <h2 class="mb-3">{{ destination.name|upper }}</h2>
-                    </span>
+                    <h2 class="mb-3">{{ destination.name|upper }}</h2>
                     <span class="text-right">
                         {% if destination.hotspot %}
                         <button class="btn btn-primary w-25 h-100 px-0 rounded-1 hotspot-link mb-2">
-                            <a href="#" class="plain-text text-gold text-uppercase">
                                 Hotspot <span class="badge badge-danger btn-dark"><i
                                         class="fas fa-exclamation"></i></span>
-                            </a>
                         </button>
                         {% endif%}
                     </span>
 
                 </div>
-                <span class="mb-5">
-                    <h4 class="text-gold">
-                        Located in {% if destination.district %}{{ destination.district.friendly_district_name }} -
-                        {% endif %}{{ destination.area.friendly_area_name }}
-                    </h4>
-                </span>
+                <h4 class="text-gold mb-5">
+                    Located in {% if destination.district %}{{ destination.district.friendly_district_name }} -
+                    {% endif %}{{ destination.area.friendly_area_name }}
+                </h4>
                 <p class="text-gold larger-text">
                     {{ destination.description }}
                 </p>
