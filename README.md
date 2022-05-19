@@ -34,7 +34,9 @@
     1. [Forking and Cloning](#forking-and-cloning)
     2. [Local Deployment](#local-deployment)
     3. [Remote Deployment](#remote-deployment)
-11. [Credits](#credits)
+11. [MailChimp](#mailchimp)
+12. [Facebook Business page](#facebook-business-page)
+. [Credits](#credits)
 
 ## Link to Live Site
 
@@ -334,6 +336,27 @@ For deployment of Loreyna's Ticket Counter, there are a number of steps required
 
 ***By pushing to Heroku main, we are sending a copy for all of our code to Heroku to be deployed which means we can avoid the issue regarding the Security breach and not being able to connect for auto or manual deployments***
 
+## Mail Chimp
+
+I have included a mail chimp news letter sign up form to the bottom of my home page so that people can receive notifications when the admins have updated the website with new areas or district or destinations. The form is displayed in the same style as the other two button zones on the home page, with a slightly transparent gold background with a blue button with custom font.
+
+[MailChimp Signup Form](media/readme-images/ss-mailchimp-form.png)
+
+## Facebook Business Page
+
+I have created a business page using a popular social media platform to gain largest possible audience for the launch of the new business - Facebook. On the new page, I have created the main identity (the first impression) with recognisable images form the site as well as a logo containing the face of the site, Loreyna Evi'stasia herself. The categories listed are for travel and transport, as well as video game as this is related to our Final Fantasy 14 content on the site itself (for educational purposes only).
+
+I have also added the crucial information that allows visitors to my business page so that tey have a way of contacting me through; Email address or visiting my site directly with linked 'Shop On Website' button. I have no limited trading hours, my shop has no physical address as the products are digital codes redeemable at any location and (even though email doesn't actually exist) no telephone number because there is no mobile phone technology in Eorzea.
+
+There is also a first post for Loreyna's Ticket Counter which establishes that the site is now live and a very brief post explaining what visitors to my site can achieve (the purchase of tickets).
+
+[Header section](media/readme-images/fb-header.png)
+
+[About Section](media/readme-images/fb-about.png)
+
+[Images Section](media/readme-images/fb-images.png)
+
+[First Post](media/readme-images/fb-first-post.png)
 
 ## Credits
 

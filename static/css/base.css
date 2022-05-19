@@ -69,7 +69,15 @@ li.nav-item {
     padding-right: 10px;
 }
 
-
+/* mail chimp */
+#mc_embed_signup {
+    background-color: rgba(255, 215, 0, .75);
+    border: 2px solid rgb(140, 120, 0);
+    color: #000050;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 400px;
+}
 
 /* Bulma */
 .icon {
