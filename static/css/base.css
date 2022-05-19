@@ -69,6 +69,8 @@ li.nav-item {
     padding-right: 10px;
 }
 
+
+
 /* Bulma */
 .icon {
     align-items: center;
@@ -286,6 +288,11 @@ li.nav-item {
 
 .text-lightblue {
     color: rgb(65, 175, 255);
+}
+
+#search-dropdown {
+    position: absolute;
+    left: 0;
 }
 
 input[name='q']::placeholder {

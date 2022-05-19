@@ -1,4 +1,4 @@
-<ul>
+<ul id="mob-top-list">
     <li class="list-inline-item">
         <a class="text-gold nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -7,7 +7,7 @@
                 <p class="my-0">Search</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+        <div id="search-dropdown" class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
             <form class="form" method="GET" action="{% url 'destinations' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-darkgold rounded-0" type="text" name="q"

@@ -165,9 +165,11 @@ Hotspot Filtering
 
 ### Lighthouse Reports
 
+I have generated lighthouse reports for all my pages
+
 ### HTML Validation
 
-
+HTML pages have been run through https://validator.w3.org/ and the pages have all come back without errors
 
 ### CSS Validation
 
