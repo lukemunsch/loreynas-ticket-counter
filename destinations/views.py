@@ -38,6 +38,7 @@ def all_destinations(request):
     direction = None
     area = None
     district = None
+    hotspot = False
 
     if request.GET:
         if 'sort' in request.GET:
@@ -68,6 +69,13 @@ def all_destinations(request):
                 district__district_name=district)
             district = District.objects.filter(district_name=district)
 
+        if 'hotspot' in request.GET:
+            hotspot = request.GET['hotspot']
+            destinations = destinations.filter(
+                hotspot=True
+            )
+            hotspot = Destination.objects.filter(hotspot=hotspot)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -88,6 +96,7 @@ def all_destinations(request):
         'current_sorting': current_sorting,
         'current_area': area,
         'current_district': district,
+        'hotspot': hotspot,
     }
     return render(request, 'destinations/destinations.html', context)
 

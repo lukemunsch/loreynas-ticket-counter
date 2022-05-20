@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-12 col-md-6 order-md-first my-auto d-flex justify-content-center justify-content-md-start">
                     <p class="text-gold my-auto">
-                        {% if search_term or current_area or current_district or current_sorting != 'None_None' %}
+                        {% if search_term or current_area or current_district or current_sorting != 'None_None' or hotspot %}
                         <span class="plain-text text-gold reset-btn"><a href="{% url 'destinations' %}">Reset</a> |
                         </span>
                         {% endif %}
@@ -124,10 +124,10 @@
                                     <p class="lead mb-0 text-left font-weight-bold">{{ dest.price }} Gil</p>
                                 </div>
                                 {% if dest.hotspot %}
-                                <button class="btn btn-primary w-25 h-100 px-0 rounded-1">
+                                <a href="{% url 'destinations' %}?hotspot=True" class="btn btn-primary w-25 h-100 px-0 rounded-1">
                                         Hotspot <span class="badge badge-danger btn-dark"><i
                                                 class="fas fa-exclamation"></i></span>
-                                </button>
+                                        </a>
                                 {% endif%}
                             </div>
                             {% if request.user.is_superuser %}

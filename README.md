@@ -77,13 +77,20 @@ To help me realize how I want to build the site, I have created a series of wire
 ## Overview
 
 As a fan of the Final Fantasy franchise, I have enjoyed all aspects of the game and thought how interesting it would be the make a location site that people can browse and see the complete list of destinations for the 14th game in the series. As a fan of the game, I am forever trying to find the correct locations for traveling and this allows users to search for their destinations and admins to update Loreyna's Ticket Counter whenever new destinations or locations are released.
+
 The app for Loreyna's Ticket Counter is foremost an online ticket sales site that allows adventurers to book their travel destinations to anywhere on Eorzea. The tickets are a digital product and therefore have no delivery requirements, the products are redeemable from the aetheryte plaza to anywhere that also houses an aetheryte crystal.
+
 The site offers a simple as well as a helpful solution to navigate the wide world of Eorzea; locating where you would like to travel to and searching from a list of locations, with the feature to filter based on the main locations in the world and even the more specific districts within the locations. Each specific destination has a recognizable image, and a supporting description, there is even a badge that can be added to specific hotspots for people to see where is most popular.
+
 The list of destinations will continue to increase while destinations are discovered and new Aetheryte crystals are installed, which means that the site owners will be able to update and keep materials fresh for the adventurers that want to travel to these destinations as and when they want.
 
 ## User Stories
 
-kanban board with user stories broken up into sprints
+I have created a kanban board for this project to help me manage and complete tasks.
+
+In order to keep the project moving at a correct and efficient pace, I have broken down all the tasks into sprints; this will allow me to see what it is that i need to focus on in specific sections of my project and know what i am looking for next.
+
+[Loreynas Ticket Counter Project Board](https://github.com/lukemunsch/loreynas-ticket-counter/projects/1)
 
 ## Features
 
@@ -384,7 +391,11 @@ There is also the first post for Loreyna's Ticket Counter which establishes that
 
 ## Marketing Research
 
-As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for travelling to the far reaches of Eorzea. I have adigital product that enables the customers to my site to purcahse the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to get my site 
+As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for travelling to the far reaches of Eorzea. I have adigital product that enables the customers to my site to purcahse the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to market my site;
+
+## E-commerce Business Model
+
+
 
 ## Credits
 
