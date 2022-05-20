@@ -36,7 +36,8 @@
     3. [Remote Deployment](#remote-deployment)
 11. [MailChimp](#mailchimp)
 12. [Facebook Business page](#facebook-business-page)
-13. [Marketing Research](#marketing-research)
+13. [SEO Research](#seo-research)
+14. [Marketing Research](#marketing-research)
 . [Credits](#credits)
 
 ## Link to Live Site
@@ -377,9 +378,13 @@ There is also the first post for Loreyna's Ticket Counter which establishes that
 
 [First Post](media/readme-images/fb-first-post.png)
 
+## SEO Research
+
+
+
 ## Marketing Research
 
-
+As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for travelling to the far reaches of Eorzea. I have adigital product that enables the customers to my site to purcahse the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to get my site 
 
 ## Credits
 

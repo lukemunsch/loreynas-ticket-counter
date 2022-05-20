@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/wallet/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?sort=name&amp;direction=asc</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?sort=area&amp;directions=asc</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/areas/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/districts/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=abalathias_spine</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=coerthas</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=dravania</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=la_noscea</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=mor_dhona</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=thanalan</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?area=the_black_shroud</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=azys_lla</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=central_thanalan</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=eastern_thanalan</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=lower_la_noscea</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=middle_la_noscea</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=northern_thanalan</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=southern_thanalan</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=the_goblet</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=the_gold_saucer</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=the_sea_of_clouds</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=uldah</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/?district=western_thanalan</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/5/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/9/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/6/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/10/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/7/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/13/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/3/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/8/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/4/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/1/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/12/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/11/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://loreynas-ticket-counter.herokuapp.com/destinations/2/</loc>
+  <lastmod>2022-05-20T14:52:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

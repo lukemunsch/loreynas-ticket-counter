@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /wallet/
+Disallow: /profiles/
+Sitemap: https://loreynas-ticket-counter.herokuapps.com/sitemaps.xml
