@@ -88,7 +88,7 @@ The list of destinations will continue to increase while destinations are discov
 
 I have created a kanban board for this project to help me manage and complete tasks.
 
-In order to keep the project moving at a correct and efficient pace, I have broken down all the tasks into sprints; this will allow me to see what it is that i need to focus on in specific sections of my project and know what i am looking for next.
+To keep the project moving at a correct and efficient pace, I have broken down all the tasks into sprints; this will allow me to see what it is that I need to focus on in specific sections of my project and know what I am looking for next.
 
 [Loreynas Ticket Counter Project Board](https://github.com/lukemunsch/loreynas-ticket-counter/projects/1)
 
@@ -195,14 +195,14 @@ Loreyna's Ticket Counter code has been run through a PEP8 validator and reported
 For manual testing, I ran through testing the full functionality of my site to make sure it was successful and the procedures all worked properly. I also provided my site's deployed address to three different users who ran tests from their devices to see how they work;
 
 User 1 tested the account registration;
-User 1 was able to run through the complete registration process and receive the correct email and validating their address through the website. They reported no issues and email conteained only the relevant information as expected.
+User 1 was able to run through the complete registration process and receive the correct email and validate their address through the website. They reported no issues and the email contained only the relevant information as expected.
 
 User 2 tested functionality for the wallet;
-Their test was to make sure the addition of destinations into the wallet was carried out with adding destiantions of any amount to the wallet, testing the limits of minimum 1 and max 99. They further developed their test by making sure the quntity can be updated using the function button in the wallet view as well as the remove button the completely remove the destination from the wallet. The total, discount and grand total are updated and reflect correctly in the view for the wallet as well as the notifiation popups for successful additions/updates/removals. No reported issues for user's tests for any part.
+Their test was to make sure the addition of destinations into the wallet was carried out by adding destinations of any amount to the wallet, testing the limits of minimum 1 and max 99. They further developed their test by making sure the quantity can be updated using the function button in the wallet view as well as the remove button that completely removes the destination from the wallet. The total, discount, and grand total are updated and reflected correctly in the view for the wallet as well as the notification popups for successful additions/updates/removals. No reported issues for user's tests for any part.
 
-User 3 tested the checkout function and profile view, split into the two different section;
-For the checkout, the user was able to sign in and add destinations to a wallet and view them in the checkout window with all the correct information displaying on the page; totals, discounts, destinations and subtotals for each location line item for the purpose of the second set of test, they chose to save their information to their profile. Upon completing a purchase using the correct test card number, the user was correctly delivered to the confirmation page with the correct information for the purchase that was made. In one instance the confirmatin page failed to load, but the webhook completed the purchase and a confirmatin email was still delivered correctly.
-For the second section, the user was then able to view the profile page and view the correctly input information from the checkout view. The information can then be adjusted and updated correctly to then be used once again in the checkout view. The correct information was corectly displayed after checkout and the updated information showed in profile page. The updated information then displayed correctly in the checkout page again. In the profile page, there is also a list displayed on the right-hand side of the successful orders placed by the user. the list displayed only the order that the user created, with the correct information they were expecting. No reported issues with either section of the tests.
+User 3 tested the checkout function and profile view, split into the two different sections;
+For the checkout, the user was able to sign in and add destinations to a wallet and view them in the checkout window with all the correct information displayed on the page; totals, discounts, destinations, and subtotals for each location line item for the second set of test, they chose to save their information to their profile. Upon completing a purchase using the correct test card number, the user was correctly delivered to the confirmation page with the correct information for the purchase that was made. In one instance the confirmation page failed to load, but the webhook completed the purchase and a confirmation email was still delivered correctly.
+For the second section, the user was then able to view the profile page and view the correct input information from the checkout view. The information can then be adjusted and updated correctly to then be used once again in the checkout view. The correct information was correctly displayed after checkout and the updated information showed on the profile page. The updated information is then displayed correctly on the checkout page again. On the profile page, there is also a list displayed on the right-hand side of the successful orders placed by the user. the list displayed only the order that the user created, with the correct information they were expecting. No reported issues with either section of the tests.
 
 ### Automated Testing
 
@@ -210,7 +210,7 @@ coverage report after testing
 
 ## Bugs
 
-Currently there is a small issue that my icons for the smaller mobile-top-nav are not responsive and only sit on the right hand side instead of nicely displaying evenly spaced. I have adjusted it manaually but have been unable to affect the outcome in a positive way.
+Currently, there is a small issue that my icons for the smaller mobile-top-nav are not responsive and only sit on the right-hand side instead of nicely displaying evenly spaced. I have adjusted it manually but have been unable to affect the outcome positively.
 
 ## Deployment
 
@@ -361,15 +361,34 @@ For deployment of Loreyna's Ticket Counter, there are several steps required to 
 
 ***By pushing to Heroku main, we are sending a copy for all of our code to Heroku to be deployed which means we can avoid the issue regarding the Security breach and not being able to connect for auto or manual deployments***
 
-## Mail Chimp
+## E-Commerce Business Model
 
-I have included a mail chimp newsletter sign-up form at the bottom of my home page so that people can receive notifications when the admins have updated the website with new areas, districts, or destinations. The form is displayed in the same style as the other two button zones on the home page, with a slightly transparent gold background with a blue button with a custom font.
+For Loreyna's Ticket Counter, I have documented the steps to creating my business model.
 
-[MailChimp Signup Form](media/readme-images/ss-mailchimp-form.png)
+I have looked at what my site actually is; A site to search for and purchase tickets to redeem at teleportation Aetheryte plaza to any of the popular destinations around the world of Eorzea. My site contains multiple pages with sorting and filtering methods to make the search for a specific destination as efficient as possible.
 
-## Facebook Business Page
+I have focussed on how I wanted to build this with my users and visitors in mind; I wanted to build an easily navigated site that allows users to add to a storage wallet as much as they want (with incentives to purchasing multiple tickets) And receive all the communications directly to the user without the need for a physical product. The Product is a digital resource which means that there is no requirement for delivery other than the email confirmations with the order number which is then provided to the ticket counter when visiting the plaza. I have also looked into the best methods of marketing and improvements to how my site would be searched for by adding extra keword research as well. These practices and techniques I have documented below;
+
+### SEO Research
+
+I have looked into Search engine optimization for Loreyna's Ticket Counter to improve how my site appears in google searches. By adding metadata with the keywords I have discovered from the research and by adding certain keywords into my site where necessary without abusing the words, this should make my site appear better when searching on google.
+
+My research on what my users need showed me that the users who use traveling sites need to be able to navigate the site with relative ease and often need to purchase tickets quickly if they are in a rush. With that in mind, the stages to finding the locations they may need are as minimal as possible with only one click to get to the list of destinations as well as filterable and searchable fields and options to assist them.
+
+Descriptions of areas and destinations are all containing accurate information and other notes that may help users find locations that may benefit their travels. The content can be updated to add key locations as and when they are discovered to provide the users with the most up-to-date list.
+
+[Seo Research](media/readme-images/seo-research.png)
+
+## Marketing Research
+
+As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for traveling to the far reaches of Eorzea. I have a digital product that enables the customers to my site to purchase the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to market my site;
+
+### Social Media
+
+#### Facebook Business Page
 
 I have created a business page using a popular social media platform to gain the largest possible audience for the launch of the new business - Facebook. 
+The main benefit of our site is that use of social media is free to use and is becoming increasingly popular and branching across many platforms; Facebook, Instagram, Snapchat, and Twitter - By participating in Social Media marketing then the business is highly likely to receive a large number of views for people with many different desires and purposes for visiting.
 The use of social media platforms for advertising and gaining followers will allow my business to grow as more people can use it. As a travel site, it can be updated at any time with new pictures of locations and offers that users may find interesting. This can be shared by other users of social media as well as added to other platforms should the business prove effective and require expansion.
 On the new page, I have created the main identity (the first impression) with recognizable images from the site as well as a logo containing the face of the site, Loreyna Evi'stasia herself. The categories listed are for travel and transport, as well as video game as this is related to our Final Fantasy 14 content on the site itself (for educational purposes only).
 
@@ -385,23 +404,33 @@ There is also the first post for Loreyna's Ticket Counter which establishes that
 
 [First Post](media/readme-images/fb-first-post.png)
 
-## SEO Research
+Social media also provides the owners of the site to apply for paid ads for their products; Repeating the release of ads and editing them with promotions that will then be displayed in prominent places on the websites they frequesntly use.
 
-I have looked into Search engine optimisation for Loreyna's Ticket Counter in order to improve how my site appears in google searches. By adding meta data with the keywords I have discovered from the research and by adding certain keywords into my site where necessary without abusing the words, this should make my site appear better when searching on google.
+Social media also adheres to Influencer Marketing; by getting social media users with a high number of followers to post news and updates, reviews and ratings of your site, they can also provide you with steady visits from other people to your site and then they themsleves may pass on the word and other people will also come to see your site.
 
-[Seo Research](media/readme-images/seo-research.png)
+As well as influencers and paid ads, you can also pay commisions to others sites with similar products to add your adverts and links to your site into their products or confirmation emails, therefore spreading the word further through the use of other poeple. This is less beneficial as usually the fees are determined by the people you want posting your links and site in their products, so they can charge very hgh fees.
 
-## Marketing Research
+Other platforms that may be popular would also be reddit; based on the content for my site (video game locations) people looking for information on where the best places to go would be quite popular with adventure seekers. This also can be linked and shared and feature on different people's timelines.
 
-As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for travelling to the far reaches of Eorzea. I have adigital product that enables the customers to my site to purcahse the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to market my site;
+#### Content Research
 
-### Social Media
+I have been researching other sites that deal with either ticket selling or travel sites and have created a document for the research I have completed;
 
+[Content Research](media/readme-images/content-research.png)
 
+#### Email marketing
+
+I have included a mail chimp newsletter sign-up form at the bottom of my home page so that people can receive notifications when the admins have updated the website with new areas, districts, or destinations. The form is displayed in the same style as the other two button zones on the home page, with a slightly transparent gold background with a blue button with a custom font.
+
+[MailChimp Signup Form](media/readme-images/ss-mailchimp-form.png)
+
+#### Other Marketing practices
+
+The main purpose for my site is travel and ticket purchase;
 
 ## E-commerce Business Model
 
-
+My business model
 
 ## Credits
 
@@ -409,4 +438,5 @@ As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tick
 - All of the amazing team members working at the tutor team for the Code Institute, without which, I would be a blubbering mess!
 - My mentor Chris Quinn has provided me with sound guidance and direction from the inception of Loreyna's Ticket Counter.
 - All of the learning materials I have been studying are provided by the Code Institute.
-- Final fantasy images and names are used for educational purposes only and the information and images are taken from a google search for the specific destinations. This site is completely non-profit and is not used for the marketing of any kind.
+- Final fantasy images and location names are used for educational purposes only and the information and images are taken from a google search for the specific destinations. This site is completely non-profit and is not used for the marketing of any kind.
+- Google and wordtracker.com for research tips and information to improve my site's search engine optimisation

@@ -41,10 +41,10 @@
                     <h2 class="mb-3">{{ destination.name|upper }}</h2>
                     <span class="text-right">
                         {% if destination.hotspot %}
-                        <button class="btn btn-primary w-25 h-100 px-0 rounded-1 hotspot-link mb-2">
+                        <a href="{% url 'destinations' %}?hotpot=True" class="btn btn-primary w-25 h-100 px-0 rounded-1 hotspot-link mb-2">
                                 Hotspot <span class="badge badge-danger btn-dark"><i
                                         class="fas fa-exclamation"></i></span>
-                        </button>
+                                </a>
                         {% endif%}
                     </span>
                 </div>
