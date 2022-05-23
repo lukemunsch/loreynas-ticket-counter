@@ -387,11 +387,17 @@ There is also the first post for Loreyna's Ticket Counter which establishes that
 
 ## SEO Research
 
+I have looked into Search engine optimisation for Loreyna's Ticket Counter in order to improve how my site appears in google searches. By adding meta data with the keywords I have discovered from the research and by adding certain keywords into my site where necessary without abusing the words, this should make my site appear better when searching on google.
 
+[Seo Research](media/readme-images/seo-research.png)
 
 ## Marketing Research
 
 As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for travelling to the far reaches of Eorzea. I have adigital product that enables the customers to my site to purcahse the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to market my site;
+
+### Social Media
+
+
 
 ## E-commerce Business Model
 
