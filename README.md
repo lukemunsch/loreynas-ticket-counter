@@ -182,11 +182,29 @@ Out profile page will consist of a form on the left-hand side where a user can s
 
 ### HTML Validation
 
-HTML pages have been run through https://validator.w3.org/ and the pages have all come back without errors
+HTML pages have been run through https://validator.w3.org/ and the pages have all come back without errors. There are warnings for using script type="text/javascript" in the postloadjs sections, but no errors reported.
+
+[Area page](media/readme-images/validation/area-html-val.png)
+
+[destination details](media/readme-images/validation/dest-detail-html-val.png)
+
+[Destination](media/readme-images/validation/destinations-html-val.png)
+
+[Districts page](media/readme-images/validation/districts-html-val.png)
+
+[Home](media/readme-images/validation/home-html-val.png)
+
+[Password reset](media/readme-images/validation/password-reset-html-val.png)
+
+[Sign Up](media/readme-images/validation/signup-html-val.png)
+
+[Wallet](media/readme-images/validation/wallet-html-val.png)
 
 ### CSS Validation
 
 I have passed through my CSS files into the https://jigsaw.w3.org/ checker and reported no issues with my code.
+
+[CSS Validator](media/readme-images/validation/css-val.png)
 
 ### PEP8 Validation
 

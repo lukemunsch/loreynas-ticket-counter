@@ -34,7 +34,7 @@ class TestAreas(TestCase):
         """test to get our list of areas"""
         area = Area.objects.create(area_name='test')
         self.assertEqual(str(area), 'test')
-    
+
     def test_get_friendly_area_name(self):
         """test to get friendly area name"""
         area = Area.objects.create(
@@ -47,21 +47,24 @@ class TestAreas(TestCase):
         form = AreaForm({'area_name': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('area_name', form.errors.keys())
-        self.assertEqual(form.errors['area_name'][0], 'This field is required.')
+        self.assertEqual(
+            form.errors['area_name'][0],
+            'This field is required.'
+        )
 
     def test_get_area_list(self):
         """test to see if we can retrieve our list of areas"""
         response = self.client.get('/destinations/areas/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'destinations/areas.html')
-    
+
     def test_add_area_page(self):
         """test to open our add_area page"""
         response = self.client.get('/destinations/add_area/')
         self.assertEqual(response.status_code, 302)
-    
+
     def test_can_get_edit_area_page(self):
-        """test to see if we redirect correctly to our edit area page"""
+        """test get edit area page"""
         area = Area.objects.create(area_name='test_name')
         response = self.client.get(f'/destinations/edit_area/{area.id}')
         self.assertEqual(response.status_code, 302)
