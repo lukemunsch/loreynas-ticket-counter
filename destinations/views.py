@@ -332,7 +332,7 @@ def edit_destination(request, destination_id):
     return render(request, template, context)
 
 
-# deleting scetion of our code
+# deleting section of our code
 @login_required
 def delete_area(request, area_id):
     """delete area with protection redirect"""

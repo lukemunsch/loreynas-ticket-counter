@@ -76,7 +76,7 @@ li.nav-item {
     color: #000050;
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
-    width: 400px;
+    width: 390px;
 }
 
 /* Bulma */
@@ -422,6 +422,10 @@ input[name='q']::placeholder {
     .btn.btn-lg.btn-gold.rounded-1 {
         font-size: .6rem;
         padding: .375rem;
+    }
+
+    input.btn.btn-lg.btn-gold.rounded-1 {
+        padding: .68rem;
     }
 }
 

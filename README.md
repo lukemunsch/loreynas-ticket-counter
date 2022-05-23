@@ -34,11 +34,13 @@
     1. [Forking and Cloning](#forking-and-cloning)
     2. [Local Deployment](#local-deployment)
     3. [Remote Deployment](#remote-deployment)
-11. [MailChimp](#mailchimp)
-12. [Facebook Business page](#facebook-business-page)
-13. [SEO Research](#seo-research)
-14. [Marketing Research](#marketing-research)
-. [Credits](#credits)
+11. [E-Commerce Business Model](#e-commerce-business-model)
+    1. [SEO Research](#seo-research)
+12. [Marketing Research](#marketing-research)
+    1. [Facebook Business Page](#facebook-business-page)
+    2. [Content Research](#content-research)
+    3. [E-Mail Marketing](#email-marketing)
+13. [Credits](#credits)
 
 ## Link to Live Site
 
@@ -85,6 +87,14 @@ The site offers a simple as well as a helpful solution to navigate the wide worl
 The list of destinations will continue to increase while destinations are discovered and new Aetheryte crystals are installed, which means that the site owners will be able to update and keep materials fresh for the adventurers that want to travel to these destinations as and when they want.
 
 ## User Stories
+
+The main purpose for my site is for people to browse through a list of destinations - searchable and filterable to their needs - that they want to go to, add the destinations to a ticket wallet to then checkout. The confirmation emails will contain an order number that will be redeemable at any of the Aetheryte plaza around Eorzea. Advancing from the basic visit, customer can then also create a profile and store their personal information securely to speed up their checkout process the next time they choose to purchase tickets.
+
+Upon a secondary visit, customers can then review their previous orders and view them in a recreation of the original confirmation page. The users can return to browse the list of destinations or return to their profile to make any adjustments to the personal data saved.
+
+Email confirmations are primarily used as the customer MUST have an email address and VERIFY the email is correct to be able to log in to the site therefore an email means there is less risk to incorrect email addresses to the registered users.
+
+Upon all further visits, adventurers can browse through the list of destinations which may be updated periodically to either reflect new hotspots that the site owners feel are more popular or even add new destinations as they are discovered aroud the world of Eorzea.
 
 I have created a kanban board for this project to help me manage and complete tasks.
 
@@ -168,15 +178,7 @@ Out profile page will consist of a form on the left-hand side where a user can s
 
 [Profile page](media/readme-images/ss-profile.png)
 
-## Features to Implement
-
-Hotspot Filtering
-
 ## Testing
-
-### Lighthouse Reports
-
-I have generated lighthouse reports for all my pages
 
 ### HTML Validation
 
@@ -193,6 +195,30 @@ Loreyna's Ticket Counter code has been run through a PEP8 validator and reported
 ### Manual Testing
 
 For manual testing, I ran through testing the full functionality of my site to make sure it was successful and the procedures all worked properly. I also provided my site's deployed address to three different users who ran tests from their devices to see how they work;
+
+For responsivity I have tested the device on three different devices; mobile phone, ipad and desktop. The desktop screenshots are displayed above in the features section, but for the mobile and ipad I have provided screenshots for how they look in a smaple of different pages.
+
+For the mobile phone tests, the menus correctly fold away into collapsable menu where appropriate, forms and fields fill the screen instead of shrinking beyond easily managable inputs. The text was adjusted so that the larger fonts for the larger screen display smaller and less bulky on the smaller screens, but still retain the nice feel of the site.
+
+[add/Edit](media/readme-images/responsive/mobile/add-edit-resp-mob.png)
+[Area List](media/readme-images/responsive/mobile/area-list-resp-mob.png)
+[Checkout](media/readme-images/responsive/mobile/checkout-resp-mob.png)
+[Collapsed Menu](media/readme-images/responsive/mobile/colapsed-menu-resp-mob.png)
+[Destination Details](media/readme-images/responsive/mobile/dest-details-resp-mob.png)
+[Destinations List](media/readme-images/responsive/mobile/destinations-resp-mob.png)
+[Districts List](media/readme-images/responsive/mobile/district-list-resp-mob.png)
+[Wallet](media/readme-images/responsive/mobile/wallet-resp-mob.png)
+
+For the ipad view, the pages are larger and the amount of items in a line are increased but dont appear bundled all together. The forms still have a nice size to them and forms have a decent width to them, with the buttons still having a nice manage size without blocking too much of the screen around them. Drop down menues are still there as below the smaller media queries, but they still feel aesthetically correct to the size of the screen.
+
+[Add/Edit](media/readme-images/responsive/ipad/add-edit-resp-ipad.png)
+[Areas List](media/readme-images/responsive/ipad/areas-list-resp-ipad.png)
+[Checkout](media/readme-images/responsive/ipad/checkout-resp-ipad.png)
+[Destinations list](media/readme-images/responsive/ipad/destinations-resp-ipad.png)
+[Districts List](media/readme-images/responsive/ipad/district-list-resp-ipad.png)
+[Menu](media/readme-images/responsive/ipad/menu-resp-ipad.png)
+[Profile](media/readme-images/responsive/ipad/profile-resp-ipad.png)
+[Wallet](media/readme-images/responsive/ipad/wallet-resp-ipad.png)
 
 User 1 tested the account registration;
 User 1 was able to run through the complete registration process and receive the correct email and validate their address through the website. They reported no issues and the email contained only the relevant information as expected.
@@ -224,6 +250,9 @@ Accessing GitHub and navigating to my repositories will allow users to copy my c
 
 For local deployment of Loreyna's Ticket Counter, I will be using Gitpod to edit and run my workspace;
 - From GitHub, once the repository has been created (either as a new project or by forking/cloning) I will then click on the Gitpod button to implement the creation of a workspace to edit the promotional sales review system.
+- You will also need to complete the installation of packages that I have created in the current version of the site
+
+        pip3 install -r requirements.txt
 
 ***The workspace should not be closed due to the env.py file; as it is never added to GitHub, if you create a new workspace you will need to re-add the env.py file and reinstall all libraries used each time. Pinning a workspace and accessing it from Gitpod workspaces will save time and repetition***
 
@@ -234,7 +263,6 @@ For deployment of Loreyna's Ticket Counter, there are several steps required to 
 
 - We are using the Site Heroku for our deployment;
     - In Heroku, create a new app and give it a name befitting your project.
-    - In settings, we first need to make sure the config vars contain DEVELOPMENT with the value of False.
 - We need to make sure a couple of our variables in our settings app are updated so that they are no longer developer enabled.
     - For our DEBUG setting;
             DEBUG = 'DEVELOPMENT' in os.environ
@@ -251,6 +279,13 @@ For deployment of Loreyna's Ticket Counter, there are several steps required to 
                     }
                 }
     This is to ensure that the debug and database are using the correct variables so that when Loreyna's Ticket Counter is deployed, the users will be unable to see any of the secrets from the debug window and the correct database is being used.
+- We need to set up some of the environmental variables that are used on our site, but due to the nature of secret codes that external users should NOT know about, we keep them in an env.py file and declare it in the .gitignore file to avoid the secrets being made less secret. an example of an env.py file is as such;
+
+        import os
+
+        os.environ.setdefault('DATABASE_URL', 'postgres database from heroku setting config vars')
+        os.environ.setdefault('SECRET_KEY', 'any randomly generated secret code')
+
 - We need to set up our Stripe variables in settings and our Heroku dashboard to allow our deployed site to continue working.
     - Once you have logged in and set up our stripe endpoint using the code institute's walkthrough and cheat sheet, we can add the following variables to settings.py;
 
@@ -383,9 +418,7 @@ Descriptions of areas and destinations are all containing accurate information a
 
 As mentioned in my overview, Loreyna's Ticket Counter is a site for booking tickets for traveling to the far reaches of Eorzea. I have a digital product that enables the customers to my site to purchase the tickets they need and redeem them at any of the aetheryte plazas around Eorzea. With this in mind, I have looked into how it is best to market my site;
 
-### Social Media
-
-#### Facebook Business Page
+### Facebook Business Page
 
 I have created a business page using a popular social media platform to gain the largest possible audience for the launch of the new business - Facebook. 
 The main benefit of our site is that use of social media is free to use and is becoming increasingly popular and branching across many platforms; Facebook, Instagram, Snapchat, and Twitter - By participating in Social Media marketing then the business is highly likely to receive a large number of views for people with many different desires and purposes for visiting.
@@ -412,25 +445,17 @@ As well as influencers and paid ads, you can also pay commisions to others sites
 
 Other platforms that may be popular would also be reddit; based on the content for my site (video game locations) people looking for information on where the best places to go would be quite popular with adventure seekers. This also can be linked and shared and feature on different people's timelines.
 
-#### Content Research
+### Content Research
 
 I have been researching other sites that deal with either ticket selling or travel sites and have created a document for the research I have completed;
 
 [Content Research](media/readme-images/content-research.png)
 
-#### Email marketing
+### Email marketing
 
 I have included a mail chimp newsletter sign-up form at the bottom of my home page so that people can receive notifications when the admins have updated the website with new areas, districts, or destinations. The form is displayed in the same style as the other two button zones on the home page, with a slightly transparent gold background with a blue button with a custom font.
 
 [MailChimp Signup Form](media/readme-images/ss-mailchimp-form.png)
-
-#### Other Marketing practices
-
-The main purpose for my site is travel and ticket purchase;
-
-## E-commerce Business Model
-
-My business model
 
 ## Credits
 

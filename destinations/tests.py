@@ -77,8 +77,8 @@ class TestAreas(TestCase):
         """test can get delete area page and delete area"""
         area = Area.objects.create(area_name='test')
         response = self.client.get(
-            f'/destinations/delete_area/{area.id}',
+            f'/destinations/delete_area/{area.id}'
         )
         self.assertEqual(response.status_code, 302)
         with self.assertRaises(Http404):
-            get_object_or_404(Area, id=3)
+            get_object_or_404(Area, id=2)
