@@ -275,7 +275,7 @@ li.nav-item {
 }
 
 .float-right {
-    align-items: right;
+    align-items: flex-end;
 }
 
 .plain-text {
