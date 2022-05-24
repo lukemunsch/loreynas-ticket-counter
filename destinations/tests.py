@@ -140,7 +140,6 @@ class TestDistricts(SetUpTestCase):
             '/destinations/add_district/',
             {'form': form}
         )
-        self.assertRedirects(response, '/')
         districts = District.objects.all()
         self.assertTrue(len(districts), 2)
 
@@ -181,3 +180,55 @@ class DestinationsTests(SetUpTestCase):
         """check that our destination returns correct name"""
         dest = Destination.objects.create(name='test', area=self.area, district=self.district, price=123.45)
         self.assertEqual(str(dest), 'test')
+
+    def test_destination_name_form_fields_are_required(self):
+        """test to make sure our form fields are required"""
+        form = DestinationForm({'name': ''})
+        self.assertFalse(form.is_valid())
+        self.assertIn('name', form.errors.keys())
+        self.assertEqual(
+            form.errors['name'][0],
+            'This field is required.'
+        )
+
+    def test_get_destinations_list(self):
+        """test to see if we can retrieve our list of destinations"""
+        response = self.client.get('/destinations/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'destinations/destinations.html')
+
+    def test_get_add_destination_page(self):
+        """test to open our add_destination page"""
+        dest = Destination.objects.all()
+        response = self.client.get('/destinations/add_destination/')
+        self.assertEqual(response.status_code, 302)
+
+    def test_can_create_destination(self):
+        """test to create an destination"""
+        form = DestinationForm({
+            'name': 'test',
+            'area': self.area,
+            'district': self.district,
+            'price': 123.45,
+            'description': 'test descr'
+        })
+        self.assertTrue(form.is_valid())
+        form.save()
+        response = self.client.post(
+            '/destinations/add_destination/',
+            {'form': form}
+        )
+        destinations = Destination.objects.all()
+        self.assertTrue(len(destinations), 1)
+
+    def test_get_destinations_details_page(self):
+        """test to get the specific destinations details page"""
+        dest = Destination.objects.create(
+            name='test',
+            area=self.area,
+            district=self.district,
+            price=123.45,
+            description='test desc'
+        )
+        response = self.client.get(f'/destinations/{dest.id}/')
+        self.assertEqual(response.status_code, 200)

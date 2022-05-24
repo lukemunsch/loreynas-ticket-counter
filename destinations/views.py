@@ -144,6 +144,7 @@ def add_area(request):
     return render(request, template, context)
 
 
+@login_required
 def add_district(request):
     """add a new district to the database"""
     if not request.user.is_superuser:
