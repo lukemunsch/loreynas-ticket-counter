@@ -224,7 +224,74 @@ Loreyna's Ticket Counter code has been run through a PEP8 validator and reported
 
 ### Manual Testing
 
-For manual testing, I ran through testing the full functionality of my site to make sure it was successful and the procedures all worked properly. I also provided my site's deployed address to three different users who ran tests from their devices to see how they work;
+For manual testing, I ran through testing the full functionality of my site to make sure it was successful and the procedures all worked properly. I ran tests based on perspectives of super users and regular users;
+
+    - Home page and menu
+        - All links load to correct pages based on logged in state
+        - All responsive sizes display the correct expected content
+        - additional menu options only available to superusers for adding content
+    - Destinations page
+        - Sorting by links in menu operate correctly
+        - Sorting by in page methods return correct operation
+        - Filtering by Area returns smaller list of districts and destinations
+        - Filtering by district returns correct list of destinations
+        - Selecting destination redirects to correct template
+        - User access restricted to read only for non superuers
+        - Admin access grants ability to edit or remove with correct redirects
+        - Responsive sizes correctly reduce the number of locations in a row
+        - Text and area sizes correctly respond to smaller screen sizes
+        - Menu responsive design correctly displays as collapse menu button
+    - Destination Details
+        - User access restricted for non superuser profiles
+        - Admin access grants ability to edit or remove destination with correct redirects
+        - Increment and decrement button correctly change the amount of tickets to purchase
+        - Add to wallet correctly adds correct tally of tickets to functioning wallet
+        - Wallet icon in navbar correctly display correct value
+        - In page nav buttons redirect to correct templates
+        - Notification message correctly displays when adding or updating tickt amount
+        - Responsive design creates better UX for smaller screens
+    - Wallet
+        - User ability to update amount in wallet view or remove destination completely
+        - Smaller screens responsive design more appealing to users
+        - Buttons redirect to correct locations in site
+        - Totals and grand totals correctly update with ticket values and adjustments
+        - Discount content updates and changes depending on ticket count
+        - responsive design update design for better UX on smaller screens
+    - Checkout
+        - User can add personal details to be stored at a later time to profile
+        - Simple form for completing purcahse without errors
+        - Clear notifications for any errors displayed in screen
+        - Clear display for tickets and count currently in wallet
+        - Correctly displayed values for totals discount and grand totals
+        - Responsive design making UX better on smaller screens
+        - Form requires fields to be input with * for required fields
+    - Confirmation page
+        - Displays responsive text for correct purchase order information
+        - Notifications correctly display in top corner
+    - Profile page
+        - Correctly displays saved information
+        - Displays specific information for logged in user only
+        - Correctly updates information upon update request
+        - Responsive design for smaller screen for better UX
+        - Order history correctly updates with each new purchase
+        - Selecting order number redirects successfully to order confirmation reprint
+    - Add pages
+        - Attempted access from non authorized users returns error and redirect to home
+        - Form has responsive design for smaller screen improved UX
+        - Buttons redirect to correct locations
+        - Notification displayed for correct or incorrect form completion
+    - Edit pages
+        - Attempted access for non authorized users redirects to home with error notification
+        - Correctly retrieves entries data for editing
+        - Submiting changes correctly updates on redirected view
+    - Delete Pages
+        - Attempted access from non authorized users returns to home with error notification
+        - Simple text correctly display on all responsive screen sizes
+        - Entry is correctly retrieved and displayed on screen
+        - Buttons correctly redirect to relevant locations
+        - Success removal of entry is notified and updated on redirected screen
+
+I also provided my site's deployed address to three different users who ran tests from their devices to see how they work;
 
 For responsivity I have tested the device on three different devices; mobile phone, ipad and desktop. The desktop screenshots are displayed above in the features section, but for the mobile and ipad I have provided screenshots for how they look in a smaple of different pages.
 
