@@ -182,23 +182,9 @@ Out profile page will consist of a form on the left-hand side where a user can s
 
 ### HTML Validation
 
-HTML pages have been run through https://validator.w3.org/ and the pages have all come back without errors. There are warnings for using script type="text/javascript" in the postloadjs sections, but no errors reported.
+HTML pages have been run through https://validator.w3.org/ and the pages have all come back without errors.
 
-[Area page](media/readme-images/validation/area-html-val.png)
 
-[destination details](media/readme-images/validation/dest-detail-html-val.png)
-
-[Destination](media/readme-images/validation/destinations-html-val.png)
-
-[Districts page](media/readme-images/validation/districts-html-val.png)
-
-[Home](media/readme-images/validation/home-html-val.png)
-
-[Password reset](media/readme-images/validation/password-reset-html-val.png)
-
-[Sign Up](media/readme-images/validation/signup-html-val.png)
-
-[Wallet](media/readme-images/validation/wallet-html-val.png)
 
 ### CSS Validation
 
@@ -255,6 +241,8 @@ coverage report after testing
 ## Bugs
 
 Currently, there is a small issue that my icons for the smaller mobile-top-nav are not responsive and only sit on the right-hand side instead of nicely displaying evenly spaced. I have adjusted it manually but have been unable to affect the outcome positively.
+
+I have a small issue with overflow on the x-axis on screens with any content there is a small section that pushes the content to the right and this is causing the screen to be slightly to large. i HAVE ead through stackoverflow and slack to find out what might be a good fix for this, but was unable to located the cause of the issue.
 
 ## Deployment
 

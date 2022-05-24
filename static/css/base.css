@@ -7,7 +7,7 @@ html {
 body {
     background: url('/media/aetheryte-crystal-bg.jpeg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 220px); /* height of menu */
+    height: calc(100vh - 200px); /* height of menu */
     font-family: 'Patrick Hand', sans-serif;
     overflow-x: hidden;
 }
@@ -381,7 +381,7 @@ input[name='q']::placeholder {
       }
   
       .header-container {
-          padding-top: 220px;
+          padding-top: 170px;
       }
   }
 
@@ -429,6 +429,12 @@ input[name='q']::placeholder {
     }
 }
 
+@media (max-width: 410px) {
+    #mc_embed_signup {
+        display: none;
+    }
+}
+
 @media (max-width: 380px) {
     .area-name-small {
         font-size: 1rem;
@@ -454,4 +460,6 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+
+
 }
