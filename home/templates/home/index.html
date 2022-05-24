@@ -4,20 +4,20 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col mb-5"></div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
 
-<div class="container h-100">
+<div class="container-fluid h-100">
     <div class="row home-btn-container mb-5">
         <div class="col-12 col-md-5 mt-5">
             <div class="gold-nav text-center p-3">
                 <h3>We are here for all of your Eorzean <em>Fast-Travel</em> needs!</h3>
                 <a href="{% url 'destinations' %}" class="btn btn-dark rounded-1 btn-lg">
-                    <span class="text-uppercase">Browse Destinations</span>
+                    <span>Browse Destinations</span>
                     <span class="icon">
                         <i class="fas fa-chevron-right"></i>
                     </span>
@@ -29,7 +29,7 @@
                 {% if user.is_authenticated %}
                 <h3 class="mb-3">You can access your account profile directly from here</h3>
                 <a href="{% url 'profile' %}" class="btn btn-dark rounded-1 btn-lg">
-                    <span class="text-uppercase">Access my Account</span>
+                    <span>Access my Account</span>
                     <span class="icon">
                         <i class="fas fa-chevron-right"></i>
                     </span>
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="row mb-5 w-100">
+    <div class="row w-100">
         <div class="col-12">
             <div id="mc_embed_signup" class="mx-auto mb-4">
                 <form

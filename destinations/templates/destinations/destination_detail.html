@@ -21,17 +21,13 @@
             <hr class="gold-band">
         </div>
     </div>
-        <div class="row mt-3">
+    <div class="row mt-3">
         <div class="col-10 offset-1 col-lg-6 offset-lg-0 px-4">
             <div class="image-container border-darkgold my-4">
                 {% if destination.image %}
-                <a href="{{ dest.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.name }}">
-                </a>
+                <img class="card-img-top img-fluid" src="{{ destination.image.url }}" alt="{{ destination.name }}">
                 {% else %}
-                <a href="#">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png" alt="{{ destination.name }}">
-                </a>
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage2.png" alt="{{ destination.name }}">
                 {% endif %}
             </div>
         </div>
@@ -41,10 +37,10 @@
                     <h2 class="mb-3">{{ destination.name|upper }}</h2>
                     <span class="text-right">
                         {% if destination.hotspot %}
-                        <a href="{% url 'destinations' %}?hotpot=True" class="btn btn-primary w-25 h-100 px-0 rounded-1 hotspot-link mb-2">
-                                Hotspot <span class="badge badge-danger btn-dark"><i
-                                        class="fas fa-exclamation"></i></span>
-                                </a>
+                        <a href="{% url 'destinations' %}?hotpot=True"
+                            class="btn btn-primary w-25 h-100 px-0 rounded-1 hotspot-link mb-2">
+                            Hotspot <span class="badge badge-danger btn-dark"><i class="fas fa-exclamation"></i></span>
+                        </a>
                         {% endif%}
                     </span>
                 </div>
