@@ -184,16 +184,33 @@ Out profile page will consist of a form on the left-hand side where a user can s
 
 HTML pages have been run through https://validator.w3.org/ and the pages have all come back without errors.
 
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
+[Add Area](media/readme-images/validation/add-area-html-val.png)
+
+[Add Destination](media/readme-images/validation/add-dest-html-val.png)
+
+[Add District](media/readme-images/validation/add-district-html-val.png)
+
+[Areas](media/readme-images/validation/areas-html-val.png)
+
+[Checkout](media/readme-images/validation/checkout-html-val.png)
+
+[Delete Area](media/readme-images/validation/delete-area-html-val.png)
+
+[Destination Details](media/readme-images/validation/dest-detail-html-val.png)
+
+[Destinations](media/readme-images/validation/destinations-html-val.png)
+
+[Districts](media/readme-images/validation/districts-html-val.png)
+
+[Edit Destination](media/readme-images/validation/edit-dest-html-val.png)
+
+[Index](media/readme-images/validation/index-html-val.png)
+
+[Order Confirmation](media/readme-images/validation/order-conf-html-val.png)
+
+[Signup](media/readme-images/validation/signup-html-val.png)
+
+[Wallet](media/readme-images/validation/wallet-html-val.png)
 
 ### CSS Validation
 
@@ -214,23 +231,37 @@ For responsivity I have tested the device on three different devices; mobile pho
 For the mobile phone tests, the menus correctly fold away into collapsable menu where appropriate, forms and fields fill the screen instead of shrinking beyond easily managable inputs. The text was adjusted so that the larger fonts for the larger screen display smaller and less bulky on the smaller screens, but still retain the nice feel of the site.
 
 [add/Edit](media/readme-images/responsive/mobile/add-edit-resp-mob.png)
+
 [Area List](media/readme-images/responsive/mobile/area-list-resp-mob.png)
+
 [Checkout](media/readme-images/responsive/mobile/checkout-resp-mob.png)
+
 [Collapsed Menu](media/readme-images/responsive/mobile/colapsed-menu-resp-mob.png)
+
 [Destination Details](media/readme-images/responsive/mobile/dest-details-resp-mob.png)
+
 [Destinations List](media/readme-images/responsive/mobile/destinations-resp-mob.png)
+
 [Districts List](media/readme-images/responsive/mobile/district-list-resp-mob.png)
+
 [Wallet](media/readme-images/responsive/mobile/wallet-resp-mob.png)
 
 For the ipad view, the pages are larger and the amount of items in a line are increased but dont appear bundled all together. The forms still have a nice size to them and forms have a decent width to them, with the buttons still having a nice manage size without blocking too much of the screen around them. Drop down menues are still there as below the smaller media queries, but they still feel aesthetically correct to the size of the screen.
 
 [Add/Edit](media/readme-images/responsive/ipad/add-edit-resp-ipad.png)
+
 [Areas List](media/readme-images/responsive/ipad/areas-list-resp-ipad.png)
+
 [Checkout](media/readme-images/responsive/ipad/checkout-resp-ipad.png)
+
 [Destinations list](media/readme-images/responsive/ipad/destinations-resp-ipad.png)
+
 [Districts List](media/readme-images/responsive/ipad/district-list-resp-ipad.png)
+
 [Menu](media/readme-images/responsive/ipad/menu-resp-ipad.png)
+
 [Profile](media/readme-images/responsive/ipad/profile-resp-ipad.png)
+
 [Wallet](media/readme-images/responsive/ipad/wallet-resp-ipad.png)
 
 User 1 tested the account registration;
