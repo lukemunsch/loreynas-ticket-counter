@@ -136,7 +136,7 @@
 {{ block.super }}
 {% include 'destinations/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // update qty on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
@@ -158,7 +158,7 @@
     })
 </script>
 
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function () {
         window.scrollTo(0, 0)
     })
