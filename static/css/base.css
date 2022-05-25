@@ -369,6 +369,12 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 8px;
 }
+
+@media (max-width: 1046px) {
+    .disp-none {
+        display: none;
+    }
+}
   
   /* fixed top navbar only on medium and up */
   @media (min-width: 992px) {
