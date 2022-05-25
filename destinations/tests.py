@@ -33,6 +33,7 @@ class SetUpTestCase(TestCase):
     """Set up prebuilds for areas, districts and users"""
     def setUp(self):
         """set up prebuilt area, district and user"""
+        self.search_term = 'testsearch'
         self.area = Area.objects.create(area_name='test-a')
         self.district = District.objects.create(
             district_name='test-d',
@@ -308,11 +309,28 @@ class DestinationsTests(SetUpTestCase):
     def test_can_filter_by_hotspot(self):
         """test to get hotspots filtering"""
         dest = Destination.objects.all()
-        self.assertEqual(len(dest), 1)
         new_filter = self.client.get(
             '/destinations/?hotspot=True'
         )
         self.assertTrue(new_filter.status_code, 200)
+
+    def test_can_search_for_term(self):
+        """test search fucntionality"""
+        search = self.search_term
+        new_search = self.client.get(
+            f'/destinations/?q={search}'
+        )
+        self.assertTrue(new_search.status_code, 200)
+
+    def test_search_fails_as_none(self):
+        """test empty searches"""
+        search = ''
+        new_search = self.client.get(
+            f'destination/?q={search}'
+        )
+        self.assertTrue(new_search.status_code, 302)
+        self.assertTemplateUsed('/destinations/destinations.html')
+
 
     def test_no_user_authorisations(self):
         """Test if user can add/edit/delete"""
