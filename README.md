@@ -88,13 +88,13 @@ The list of destinations will continue to increase while destinations are discov
 
 ## User Stories
 
-The main purpose for my site is for people to browse through a list of destinations - searchable and filterable to their needs - that they want to go to, add the destinations to a ticket wallet to then checkout. The confirmation emails will contain an order number that will be redeemable at any of the Aetheryte plaza around Eorzea. Advancing from the basic visit, customer can then also create a profile and store their personal information securely to speed up their checkout process the next time they choose to purchase tickets.
+The main purpose of my site is for people to browse through a list of destinations - searchable and filterable to their needs - that they want to go to and add the destinations to a ticket wallet to then checkout. The confirmation emails will contain an order number that will be redeemable at any of the Aetheryte plazas around Eorzea. Advancing from the basic visit, customers can then also create a profile and store their personal information securely to speed up their checkout process the next time they choose to purchase tickets.
 
 Upon a secondary visit, customers can then review their previous orders and view them in a recreation of the original confirmation page. The users can return to browse the list of destinations or return to their profile to make any adjustments to the personal data saved.
 
-Email confirmations are primarily used as the customer MUST have an email address and VERIFY the email is correct to be able to log in to the site therefore an email means there is less risk to incorrect email addresses to the registered users.
+Email confirmations are primarily used as the customer MUST have an email address and VERIFY the email is correct to be able to log in to the site therefore an email means there is less risk of incorrect email addresses to the registered users.
 
-Upon all further visits, adventurers can browse through the list of destinations which may be updated periodically to either reflect new hotspots that the site owners feel are more popular or even add new destinations as they are discovered aroud the world of Eorzea.
+Upon all further visits, adventurers can browse through the list of destinations which may be updated periodically to either reflect new hotspots that the site owners feel are more popular or even add new destinations as they are discovered around the world of Eorzea.
 
 I have created a kanban board for this project to help me manage and complete tasks.
 
@@ -210,7 +210,7 @@ HTML pages have been run through https://validator.w3.org/ and the pages have al
 
 [Signup](media/readme-images/validation/signup-html-val.png)
 
-[Wallet](media/readme-images/validation/wallet-html-val.png)
+[Wallet](media/readme-images/validation/wallet-Html-val.png)
 
 ### CSS Validation
 
@@ -227,75 +227,75 @@ Loreyna's Ticket Counter code has been run through a PEP8 validator and reported
 For manual testing, I ran through testing the full functionality of my site to make sure it was successful and the procedures all worked properly. I ran tests based on perspectives of super users and regular users;
 
     - Home page and menu
-        - All links load to correct pages based on logged in state
+        - All links load to correct pages based on the logged-in state
         - All responsive sizes display the correct expected content
-        - additional menu options only available to superusers for adding content
+        - additional menu options are only available to superusers for adding content
     - Destinations page
-        - Sorting by links in menu operate correctly
-        - Sorting by in page methods return correct operation
-        - Filtering by Area returns smaller list of districts and destinations
-        - Filtering by district returns correct list of destinations
-        - Selecting destination redirects to correct template
-        - User access restricted to read only for non superuers
-        - Admin access grants ability to edit or remove with correct redirects
+        - Sorting by links in the menu operates correctly
+        - Sorting by in-page methods returns the correct operation
+        - Filtering by Area returns a smaller list of districts and destinations
+        - Filtering by district returns the correct list of destinations
+        - Selecting the destination redirects to the correct template
+        - User access is restricted to read-only for non-superusers
+        - Admin access grants the ability to edit or remove with correct redirects
         - Responsive sizes correctly reduce the number of locations in a row
         - Text and area sizes correctly respond to smaller screen sizes
         - Menu responsive design correctly displays as collapse menu button
     - Destination Details
-        - User access restricted for non superuser profiles
-        - Admin access grants ability to edit or remove destination with correct redirects
-        - Increment and decrement button correctly change the amount of tickets to purchase
+        - User access restricted for non-superuser profiles
+        - Admin access grants the ability to edit or remove destination with correct redirects
+        - The increment and decrement button correctly changes the number of tickets to purchase
         - Add to wallet correctly adds correct tally of tickets to functioning wallet
-        - Wallet icon in navbar correctly display correct value
+        - The wallet icon in the navbar correctly displays the correct value
         - In page nav buttons redirect to correct templates
-        - Notification message correctly displays when adding or updating tickt amount
+        - Notification message correctly displays when adding or updating ticket amount
         - Responsive design creates better UX for smaller screens
     - Wallet
-        - User ability to update amount in wallet view or remove destination completely
+        - User ability to update the amount in wallet view or remove destination completely
         - Smaller screens responsive design more appealing to users
-        - Buttons redirect to correct locations in site
+        - Buttons redirect to correct locations on site
         - Totals and grand totals correctly update with ticket values and adjustments
         - Discount content updates and changes depending on ticket count
         - responsive design update design for better UX on smaller screens
     - Checkout
         - User can add personal details to be stored at a later time to profile
-        - Simple form for completing purcahse without errors
-        - Clear notifications for any errors displayed in screen
-        - Clear display for tickets and count currently in wallet
+        - Simple form for completing purchases without errors
+        - Clear notifications for any errors displayed on the screen
+        - Clear display for tickets and count currently in the wallet
         - Correctly displayed values for totals discount and grand totals
         - Responsive design making UX better on smaller screens
         - Form requires fields to be input with * for required fields
     - Confirmation page
         - Displays responsive text for correct purchase order information
-        - Notifications correctly display in top corner
+        - Notifications are correctly displayed in the top corner
     - Profile page
         - Correctly displays saved information
-        - Displays specific information for logged in user only
+        - Displays specific information for logged-in users only
         - Correctly updates information upon update request
         - Responsive design for smaller screen for better UX
         - Order history correctly updates with each new purchase
-        - Selecting order number redirects successfully to order confirmation reprint
+        - Selecting the order number redirects successfully to order confirmation reprint
     - Add pages
-        - Attempted access from non authorized users returns error and redirect to home
-        - Form has responsive design for smaller screen improved UX
+        - Attempted access from non-authorized users returns an error and redirects to home
+        - Form has responsive design for smaller screen's improved UX
         - Buttons redirect to correct locations
         - Notification displayed for correct or incorrect form completion
     - Edit pages
-        - Attempted access for non authorized users redirects to home with error notification
+        - Attempted access for non-authorized users redirects to home with an error notification
         - Correctly retrieves entries data for editing
-        - Submiting changes correctly updates on redirected view
+        - Submitting changes correctly updates on the redirected view
     - Delete Pages
-        - Attempted access from non authorized users returns to home with error notification
+        - Attempted access from non-authorized users returns to home with error notification
         - Simple text correctly display on all responsive screen sizes
-        - Entry is correctly retrieved and displayed on screen
+        - Entry is correctly retrieved and displayed on the screen
         - Buttons correctly redirect to relevant locations
         - Success removal of entry is notified and updated on redirected screen
 
 I also provided my site's deployed address to three different users who ran tests from their devices to see how they work;
 
-For responsivity I have tested the device on three different devices; mobile phone, ipad and desktop. The desktop screenshots are displayed above in the features section, but for the mobile and ipad I have provided screenshots for how they look in a smaple of different pages.
+For responsivity, I have tested the device on three different devices; mobile phone, iPad, and desktop. The desktop screenshots are displayed above in the features section, but for the mobile and iPad, I have provided screenshots for how they look on a sample of different pages.
 
-For the mobile phone tests, the menus correctly fold away into collapsable menu where appropriate, forms and fields fill the screen instead of shrinking beyond easily managable inputs. The text was adjusted so that the larger fonts for the larger screen display smaller and less bulky on the smaller screens, but still retain the nice feel of the site.
+For the mobile phone tests, the menus correctly fold away into the collapsable menu where appropriate, and forms and fields fill the screen instead of shrinking beyond easily manageable inputs. The text was adjusted so that the larger fonts for the larger screen display smaller and less bulky on the smaller screens, but still retain the nice feel of the site.
 
 [add/Edit](media/readme-images/responsive/mobile/add-edit-resp-mob.png)
 
@@ -313,7 +313,7 @@ For the mobile phone tests, the menus correctly fold away into collapsable menu 
 
 [Wallet](media/readme-images/responsive/mobile/wallet-resp-mob.png)
 
-For the ipad view, the pages are larger and the amount of items in a line are increased but dont appear bundled all together. The forms still have a nice size to them and forms have a decent width to them, with the buttons still having a nice manage size without blocking too much of the screen around them. Drop down menues are still there as below the smaller media queries, but they still feel aesthetically correct to the size of the screen.
+For the iPad view, the pages are larger and the number of items in a line is increased but doesn't appear bundled all together. The forms still have a nice size to them and forms have a decent width to them, with the buttons still having a nice manage size without blocking too much of the screen around them. Drop-down menus are still there below the smaller media queries, but they still feel aesthetically correct to the size of the screen.
 
 [Add/Edit](media/readme-images/responsive/ipad/add-edit-resp-ipad.png)
 
@@ -343,13 +343,28 @@ For the second section, the user was then able to view the profile page and view
 
 ### Automated Testing
 
-coverage report after testing
+I have completed automated testing on my Destinations app to cover the main aspects of my site. Through the use of the built-in testing facility, I have created and documented a series of tests and generated a coverage report;
+- Testing the 3 Models; Area, District, and Destination,
+- Testing the forms for adding and editing the entries in my database,
+- Testing the views for all the additional functionality from the app;
+    - Testing to make sure we can access the correct pages
+    - Testing if a user is authorized to access the pages requested
+    - Adding entry for the three models
+    - Editing entries for the three models
+    - Deleting entries for the three models
+    - Searching facility on the list of destinations
+    - Filtering facility on the list of destinations
+    - Sorting facility on the list of destinations
+
+[Coverage report for Destinations](media/readme-images/coverage.png)
 
 ## Bugs
 
 Currently, there is a small issue that my icons for the smaller mobile-top-nav are not responsive and only sit on the right-hand side instead of nicely displaying evenly spaced. I have adjusted it manually but have been unable to affect the outcome positively.
 
-I have a small issue with overflow on the x-axis on screens with any content there is a small section that pushes the content to the right and this is causing the screen to be slightly to large. i HAVE ead through stackoverflow and slack to find out what might be a good fix for this, but was unable to located the cause of the issue.
+I have a small issue with overflow on the x-axis on screens with any content there is a small section that pushes the content to the right and this is causing the screen to be slightly too large. I have read through StackOverflow and slack to find out what might be a good fix for this but was unable to locate the cause of the issue.
+
+For my coverage, I have run through many tests, but even with the assistance of tutors from Code Institute, we were unable to understand why sections of my code for testing post requests, although the tests pass, actually still show as untested in the coverage report itself. After a few hours on chat and diving into slack channels and Stackoverflow for other people with similar queries, it was unable to be resolved, which is why my report only goes as far as 80%.
 
 ## Deployment
 
@@ -368,6 +383,12 @@ For local deployment of Loreyna's Ticket Counter, I will be using Gitpod to edit
         pip3 install -r requirements.txt
 
 ***The workspace should not be closed due to the env.py file; as it is never added to GitHub, if you create a new workspace you will need to re-add the env.py file and reinstall all libraries used each time. Pinning a workspace and accessing it from Gitpod workspaces will save time and repetition***
+- We need to set up some of the environmental variables that are used on our site, but due to the nature of secret codes that external users should NOT know about, we keep them in an env.py file and declare it in the .gitignore file to avoid the secrets being made less secret. an example of an env.py file is as such;
+
+        import os
+
+        os.environ.setdefault('DATABASE_URL', 'postgres database from heroku setting config vars')
+        os.environ.setdefault('SECRET_KEY', 'any randomly generated secret code')
 
 
 ### Remote Deployment
@@ -513,9 +534,9 @@ For deployment of Loreyna's Ticket Counter, there are several steps required to 
 
 For Loreyna's Ticket Counter, I have documented the steps to creating my business model.
 
-I have looked at what my site actually is; A site to search for and purchase tickets to redeem at teleportation Aetheryte plaza to any of the popular destinations around the world of Eorzea. My site contains multiple pages with sorting and filtering methods to make the search for a specific destination as efficient as possible.
+I have looked at what my site is; A site to search for and purchase tickets to redeem at teleportation Aetheryte plaza to any of the popular destinations around the world of Eorzea. My site contains multiple pages with sorting and filtering methods to search for a specific destination as efficiently as possible.
 
-I have focussed on how I wanted to build this with my users and visitors in mind; I wanted to build an easily navigated site that allows users to add to a storage wallet as much as they want (with incentives to purchasing multiple tickets) And receive all the communications directly to the user without the need for a physical product. The Product is a digital resource which means that there is no requirement for delivery other than the email confirmations with the order number which is then provided to the ticket counter when visiting the plaza. I have also looked into the best methods of marketing and improvements to how my site would be searched for by adding extra keword research as well. These practices and techniques I have documented below;
+I have focussed on how I wanted to build this with my users and visitors in mind; I wanted to build an easily navigated site that allows users to add to a storage wallet as much as they want (with incentives for purchasing multiple tickets) And receive all the communications directly to the user without the need for a physical product. The Product is a digital resource which means that there is no requirement for delivery other than the email confirmations with the order number which is then provided to the ticket counter when visiting the plaza. I have also looked into the best methods of marketing and improvements to how my site would be searched for by adding extra keyword research as well. These practices and techniques I have documented below;
 
 ### SEO Research
 
@@ -525,7 +546,7 @@ My research on what my users need showed me that the users who use traveling sit
 
 Descriptions of areas and destinations are all containing accurate information and other notes that may help users find locations that may benefit their travels. The content can be updated to add key locations as and when they are discovered to provide the users with the most up-to-date list.
 
-[Seo Research](media/readme-images/seo-research.png)
+[SEO Research](media/readme-images/seo-research.png)
 
 ## Marketing Research
 
@@ -550,13 +571,13 @@ There is also the first post for Loreyna's Ticket Counter which establishes that
 
 [First Post](media/readme-images/fb-first-post.png)
 
-Social media also provides the owners of the site to apply for paid ads for their products; Repeating the release of ads and editing them with promotions that will then be displayed in prominent places on the websites they frequesntly use.
+Social media also provides the owners of the site to apply for paid ads for their products; Repeating the release of ads and editing them with promotions that will then be displayed in prominent places on the websites they frequently use.
 
-Social media also adheres to Influencer Marketing; by getting social media users with a high number of followers to post news and updates, reviews and ratings of your site, they can also provide you with steady visits from other people to your site and then they themsleves may pass on the word and other people will also come to see your site.
+Social media also adheres to Influencer Marketing; by getting social media users with a high number of followers to post news and updates, reviews and ratings of your site, they can also provide you with steady visits from other people to your site and then they may pass on the word and other people will also come to see your site.
 
-As well as influencers and paid ads, you can also pay commisions to others sites with similar products to add your adverts and links to your site into their products or confirmation emails, therefore spreading the word further through the use of other poeple. This is less beneficial as usually the fees are determined by the people you want posting your links and site in their products, so they can charge very hgh fees.
+As well as influencers and paid ads, you can also pay commissions to other sites with similar products to add your adverts and links to your site into their products or confirmation emails, therefore spreading the word further through the use of other people. This is less beneficial as usually the fees are determined by the people you want posting your links and site in their products, so they can charge very high fees.
 
-Other platforms that may be popular would also be reddit; based on the content for my site (video game locations) people looking for information on where the best places to go would be quite popular with adventure seekers. This also can be linked and shared and feature on different people's timelines.
+Other platforms that may be popular would also be Reddit; based on the content for my site (video game locations) people looking for information on where the best places to go would be quite popular with adventure seekers. This also can be linked and shared and featured on different people's timelines.
 
 ### Content Research
 
@@ -577,4 +598,4 @@ I have included a mail chimp newsletter sign-up form at the bottom of my home pa
 - My mentor Chris Quinn has provided me with sound guidance and direction from the inception of Loreyna's Ticket Counter.
 - All of the learning materials I have been studying are provided by the Code Institute.
 - Final fantasy images and location names are used for educational purposes only and the information and images are taken from a google search for the specific destinations. This site is completely non-profit and is not used for the marketing of any kind.
-- Google and wordtracker.com for research tips and information to improve my site's search engine optimisation
+- Google and wordtracker.com for research tips and information to improve my site's search engine optimization
