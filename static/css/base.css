@@ -377,19 +377,19 @@ input[name='q']::placeholder {
 }
   
   /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
-      .fixed-top-desktop-only {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 1000;
-      }
-  
-      .header-container {
-          padding-top: 170px;
-      }
-  }
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .header-container {
+        padding-top: 170px;
+    }
+}
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
