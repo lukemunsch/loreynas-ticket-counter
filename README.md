@@ -218,6 +218,12 @@ I have passed through my CSS files into the https://jigsaw.w3.org/ checker and r
 
 [CSS Validator](media/readme-images/validation/css-val.png)
 
+### JShint Validation
+
+For my stripe_elements.js file I have run it through the JShint validator system in order to make sure my code is compliant. the only warnings it comes up with is the ES6 warning for my templating, but not as an error.
+
+[JShint Validator](media/readme-images/validation/jshint-val.png)
+
 ### PEP8 Validation
 
 Loreyna's Ticket Counter code has been run through a PEP8 validator and reported no issues other than migration files which are unable to be adjusted once created.
