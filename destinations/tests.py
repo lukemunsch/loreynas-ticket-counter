@@ -48,7 +48,7 @@ class SetUpTestCase(TestCase):
         )
         self.password = 'MYpassword'
         self.email = 'test@testemail.com'
-        self.username='tester123'
+        self.username = 'tester123'
         self.user = User.objects.create_user(
             username=self.username,
             email=self.email,
@@ -142,6 +142,7 @@ class TestAreas(SetUpTestCase):
         with self.assertRaises(Http404):
             get_object_or_404(Area, id=3)
 
+
 class TestDistricts(SetUpTestCase):
     """set up tests for the districts section"""
     def test_district_str_returns_district_name(self):
@@ -159,7 +160,7 @@ class TestDistricts(SetUpTestCase):
         district = District.objects.all()
         response = self.client.get('/destinations/add_district/')
         self.assertEqual(response.status_code, 302)
-    
+
     def test_can_create_district(self):
         """test to create an district"""
         form = DistrictForm({
@@ -180,7 +181,9 @@ class TestDistricts(SetUpTestCase):
         """test for district edit page"""
         area = self.area
         district = self.district
-        response = self.client.get(f'/destinations/edit_district/{district.id}')
+        response = self.client.get(
+            f'/destinations/edit_district/{district.id}'
+        )
         self.assertEqual(response.status_code, 302)
         edit = self.client.post(
             f'/destinations/edit_district/{district.id}',
@@ -192,7 +195,7 @@ class TestDistricts(SetUpTestCase):
 
     def test_get_delete_district_page(self):
         """test can get delete district page"""
-        self.user.is_superuser=True
+        self.user.is_superuser = True
         logged_in = self.logged_in
         district = self.district
         response = self.client.get(
@@ -205,6 +208,7 @@ class TestDistricts(SetUpTestCase):
             f'/destinations/delete_district/{district.id}'
         )
         self.assertRedirects(response, '/')
+
 
 class DestinationsTests(SetUpTestCase):
     """set up tests for destinations"""
@@ -260,7 +264,7 @@ class DestinationsTests(SetUpTestCase):
 
     def test_get_edit_destination_page(self):
         """test to get edit page"""
-        self.user.is_superuser=True
+        self.user.is_superuser = True
         logged_in = self.logged_in
         dest = get_object_or_404(Destination, id=self.destination.id)
         response = self.client.post(
@@ -330,7 +334,6 @@ class DestinationsTests(SetUpTestCase):
         )
         self.assertTrue(new_search.status_code, 302)
         self.assertTemplateUsed('/destinations/destinations.html')
-
 
     def test_no_user_authorisations(self):
         """Test if user can add/edit/delete"""
