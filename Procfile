@@ -1,1 +1,0 @@
-web: gunicorn loreynas_counter.wsgi:application
