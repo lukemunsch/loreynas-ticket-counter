@@ -20,7 +20,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['loreynas-ticket-counter.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['loreynas-ticket-counter.herokuapp.com', '127.0.0.1']
 
 # Add Render.com URL to allowed hosts
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
