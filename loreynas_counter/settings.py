@@ -155,7 +155,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-gb'
 
-TIME_ZONE = 'gmt'
+TIME_ZONE = 'Europe/LondonEurope/London'
 
 USE_I18N = True
 
